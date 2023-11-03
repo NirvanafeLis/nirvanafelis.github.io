@@ -279,14 +279,14 @@
   </url>
   
   <url>
-    <loc>https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://www.maonie.top/tags/c/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.maonie.top/tags/hexo/</loc>
+    <loc>https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -300,7 +300,7 @@
   </url>
   
   <url>
-    <loc>https://www.maonie.top/tags/c/</loc>
+    <loc>https://www.maonie.top/tags/hexo/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
