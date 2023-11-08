@@ -40,12 +40,12 @@ layout: false
 <ol>
 <li><p>检查现有的 SSH 密钥对。<br>在生成新的 SSH 密钥对之前，首先检查您的客户端计算机上是否已有 SSH 密钥，因为您不想覆盖现有密钥。<br>运行以下 ls 命令以查看是否存在现有 SSH 密钥：<br><code>ls -al ~/.ssh/id_*.pub</code><br>如果存在现有密钥，您可以使用这些密钥并跳过下一步或备份旧密钥并生成新密钥。<br>如果您看到 No such file or directory 或 no matches found 意味着您没有 SSH 密钥，则可以继续执行下一步并生成新密钥。</p>
 </li>
-<li><p>生成新的 SSH 密钥对。<br>以下命令将生成一个新的密钥对：<br><code>ssh-keygen</code><br>按 Enter 接受则默认文件位置和文件名：<br><code>Enter file in which to save the key (/home/yourusername/.ssh/id_rsa): 接下来，ssh-keygen 工具将要求您键入安全密码。无论您是否想要使用密码短语都取决于您，如果您选择使用密码短语，您将获得额外的安全保护。在大多数情况下，开发人员和系统管理员使用 SSH 而不使用密码，因为它们对完全自动化的流程很有用。如果您不想使用密码短语，请按 Enter </code>Enter passphrase (empty for no passphrase):</p>
+<li><p>生成新的 SSH 密钥对。<br>以下命令将生成一个新的密钥对：<br><code>ssh-keygen</code><br>按 Enter 接受则默认文件位置和文件名：<br><code>Enter file in which to save the key (/home/yourusername/.ssh/id_rsa):</code><br>接下来，ssh-keygen 工具将要求您键入安全密码。无论您是否想要使用密码短语都取决于您，如果您选择使用密码短语，您将获得额外的安全保护。在大多数情况下，开发人员和系统管理员使用 SSH 而不使用密码，因为它们对完全自动化的流程很有用。如果您不想使用密码短语，请按 Enter<br><code>Enter passphrase (empty for no passphrase):</code></p>
 </li>
 <li><p>要确认是否已经生成 SSH 密钥，您可以使用以下命令列出新的私钥和公钥：</p>
 <pre class="line-numbers language-none"><code class="language-none">ls ~/.ssh/id_*
 /home/yourusername/.ssh/id_rsa /home/yourusername/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>复制公钥<br>现在您已经生成了 SSH 密钥对，为了能够在没有密码的情况下登录到您的服务器，您需要将公钥复制到您要管理的服务器。<br>将公钥复制到服务器的最简单方法是使用名为的命令 ssh-copy-id 。在您的本地机器终端类型：<br><code>ssh-copy-id remote_username@server_ip_address</code><br>系统将提示您输入 remote_username 的密码：<br><code>remote_username@server_ip_address's password: 用户通过身份验证后，公钥将附加到远程用户 authorized_keys 文件，并且将关闭连接。 如果由于某种原因， ssh-copy-id 本地计算机上没有该实用程序，则可以使用以下命令复制公钥： </code>cat ~/.ssh/id_rsa.pub | ssh remote_username@server_ip_address “mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys”</p>
+<li><p>复制公钥<br>现在您已经生成了 SSH 密钥对，为了能够在没有密码的情况下登录到您的服务器，您需要将公钥复制到您要管理的服务器。<br>将公钥复制到服务器的最简单方法是使用名为的命令 ssh-copy-id 。在您的本地机器终端类型：<br><code>ssh-copy-id remote_username@server_ip_address</code><br>系统将提示您输入 remote_username 的密码：<br><code>remote_username@server_ip_address's password:</code><br>用户通过身份验证后，公钥将附加到远程用户 authorized_keys 文件，并且将关闭连接。<br>如果由于某种原因， ssh-copy-id 本地计算机上没有该实用程序，则可以使用以下命令复制公钥：<br><code>cat ~/.ssh/id_rsa.pub | ssh remote_username@server_ip_address "mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys"</code></p>
 </li>
 <li><p>使用 SSH 密钥登录服务器<br>完成上述步骤后，您应该能够登录到远程服务器而不会被提示输入密码。<br>尝试通过 SSH 登录到您的服务器：<br><code>ssh remote_username@server_ip_address</code><br>如果一切顺利，您将立即登录。</p>
 </li>
