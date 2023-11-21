@@ -15,6 +15,23 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>Hackademic.RTB1</title>
+    <url>/2023/11/21/Hackademic-RTB1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><blockquote>
+<p><strong>那么好的我们废话不多说——</strong></p>
+</blockquote>
+<p>靶机名称： Hackademic: RTB1<br>下载链接： <a href="https://download.vulnhub.com/hackademic/Hackademic.RTB1.zip">https://download.vulnhub.com/hackademic/Hackademic.RTB1.zip</a> </p>
+</body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>靶机解析</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>靶机解析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>owasp与sql注入与sqlmap</title>
     <url>/2023/11/14/owasp%E4%B8%8Esql%E6%B3%A8%E5%85%A5%E4%B8%8Esqlmap/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="owasp下载地址-https-sourceforge-net-projects-owaspbwa-files"><a href="#owasp下载地址-https-sourceforge-net-projects-owaspbwa-files" class="headerlink" title="owasp下载地址:https://sourceforge.net/projects/owaspbwa/files/"></a>owasp下载地址:<a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a></h1><h2 id="1-进入靶场"><a href="#1-进入靶场" class="headerlink" title="1.进入靶场"></a>1.进入靶场</h2><p>首先 我们下载owasp 打开后输入<strong>默认账号</strong>root 与 <strong>默认密码</strong>owaspbwa<br><img data-src="/2023/11/14/owasp%E4%B8%8Esql%E6%B3%A8%E5%85%A5%E4%B8%8Esqlmap/2.jpg"><br>随后会显示<strong>登录成功</strong> 输入指定ip进入网页<a href="http://192.168.246.132/">http://192.168.246.132</a><br>另开一个<strong>kali</strong> 随后进入网页<br><img data-src="/2023/11/14/owasp%E4%B8%8Esql%E6%B3%A8%E5%85%A5%E4%B8%8Esqlmap/1.jpg" alt="1.jpg"><br>这里选择<strong>Damn Vulnerable Web Application</strong> 也是我们今天要解析的靶机</p>
