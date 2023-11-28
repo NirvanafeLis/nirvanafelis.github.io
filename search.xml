@@ -15,6 +15,21 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>owasp文件包含漏洞</title>
+    <url>/2023/11/28/owasp%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 那么我们今天来讲远程包含</p>
+<p><a href="https://flowus.cn/ed90f715-7c68-491c-9697-0ce43d5e4a50">https://flowus.cn/ed90f715-7c68-491c-9697-0ce43d5e4a50</a></p>
+</body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>靶机解析</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>靶机解析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每周靶机之WALLABY&#39;S-NIGHTMARE</title>
     <url>/2023/11/24/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BWALLABY%E2%80%99S-NIGHTMARE/</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>最近加入了学校的网安工作室 每周会给点作业 小项目需要写writeup<br>总之这是今天的靶机 </p>
@@ -54,9 +69,27 @@ cat flag.txt //查看flag.txt中的内容<span aria-hidden="true" class="line-nu
       </tags>
   </entry>
   <entry>
-    <title>owasp上传漏洞与uploads-lab-master</title>
-    <url>/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%B8%8Euploads-lab-master/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 搞笑的是最近事有点多 这篇要拖不少时间才能整了 暂时搁置</p>
+    <title>owasp上传漏洞</title>
+    <url>/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 搞笑的是最近事有点多 这篇要拖不少时间才能整了 暂时搁置 这里是草稿</p>
+<p>我们先从<strong>一句话木马</strong>说起</p>
+<h1 id="1-一句话木马"><a href="#1-一句话木马" class="headerlink" title="1.一句话木马"></a>1.一句话木马</h1><p><code>&lt;?php @eval($_POST['123']);?&gt;</code></p>
+<p>这便是最简单的一句话木马。</p>
+<p>这段php代码被分为以下几个部分：</p>
+<p>**@**表示后面即使执行错了，也不会报错。</p>
+<p>**eval()**函数表示将括号里的内容当作代码执行。</p>
+<p>**$_POST[‘123’]**表示从页面中获得123这个参数值。</p>
+<p>也就是说，该页面只要收到了<strong>123</strong>这个密码，就会按照eval()的逻辑去运行。</p>
+<p>只要了解了该文件的路径，便可以对该机器（利用菜刀或蚁剑）为所欲为了。</p>
+<p>一句话木马还有很多变种：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?php @assert($_REQUEST[123]); ?&gt; // GET	数据从url提交
+                                     POST	数据采用隐蔽方式提交
+                                     REQUEST	即支持GET方式、又支持POST方式
+....以下略<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="2-渗透过程"><a href="#2-渗透过程" class="headerlink" title="2.渗透过程"></a>2.渗透过程</h1><p>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a></p>
+<h2 id="低等级（Security-low）"><a href="#低等级（Security-low）" class="headerlink" title="低等级（Security=low）"></a>低等级（Security=low）</h2><p>我们先通过右下角的<strong>view source</strong>按钮来观察网页代码 寻找规律</p>
+<p><img data-src="/./owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/1.png" alt="1"></p>
 </body></html>]]></content>
       <categories>
         <category>学习</category>
