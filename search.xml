@@ -89,7 +89,7 @@ cat flag.txt //查看flag.txt中的内容<span aria-hidden="true" class="line-nu
 
 <h1 id="2-渗透过程"><a href="#2-渗透过程" class="headerlink" title="2.渗透过程"></a>2.渗透过程</h1><p>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a></p>
 <h2 id="低等级（Security-low）"><a href="#低等级（Security-low）" class="headerlink" title="低等级（Security=low）"></a>低等级（Security=low）</h2><p>我们先通过右下角的<strong>view source</strong>按钮来观察网页代码 寻找规律</p>
-<p><img data-src="/./owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/1.png" alt="1"></p>
+<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/1.png" alt="1"></p>
 </body></html>]]></content>
       <categories>
         <category>学习</category>
