@@ -3,9 +3,14 @@
   <entry>
     <title>要置顶的公告</title>
     <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"><br>2023/11/08 更新:<br>期中考试考完了有点没活了 慢慢整吧<br>2023/11/18 更新:<br>今天是18岁生日 嘻嘻<br>整了篇新日志</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"><br>2023/11/18 更新:<br>今天是18岁生日 嘻嘻<br>整了篇新日志</p>
+<p>2023/11/29 更新:</p>
+<p>临近双考 更新频率可能降低 见谅</p>
+<p>话说一周三篇其实好像也有点赶 管他呢</p>
 <p><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p>
-<p>ps:<br>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong></p>
+<p>ps: </p>
+<p>typora的单格换行是<strong>shift+enter</strong> 双格换行才是<strong>enter</strong> 请注意</p>
+<p>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong></p>
 <p>无渲染跳转方式: 在文章前加入</p>
 <pre class="line-numbers language-none"><code class="language-none">---
 layout: false 
@@ -174,30 +179,7 @@ cat flag.txt //查看flag.txt中的内容<span aria-hidden="true" class="line-nu
 <h1 id="2-渗透过程"><a href="#2-渗透过程" class="headerlink" title="2.渗透过程"></a>2.渗透过程</h1><p>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/ </a></p>
 <h2 id="低等级（Security-low）"><a href="#低等级（Security-low）" class="headerlink" title="低等级（Security=low）"></a>低等级（Security=low）</h2><p>我们先通过右下角的<strong>view source</strong>按钮来观察网页代码 寻找规律<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/1.png" alt="1"><br>可以看到该网站并没有对上传的文件类型与大小做较为明显的防备<br>漏洞很大<br>那么我们创建一个1.php 在其中加上代码<code>&lt;?php @eval($_POST['123']);?&gt;</code><br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/2.jpg" alt="2"><br>随后登陆网站 上传 完事<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/3.jpg" alt="3"><br>至于kali下载蚁剑的方式：<a href="https://blog.csdn.net/liver100day/article/details/120222378">参考资料</a><br>我们打开蚁剑 按照网页所给提示 文件被上传在了<br><a href="http://192.168.246.132/dvwa/hackable/uploads/1.php">http://192.168.246.132/dvwa/hackable/uploads/1.php</a> 处<br>在<strong>url地址</strong>中填入前者 在<strong>连接密码</strong>中填入123<br>先<strong>测试链接</strong> 然后按保存<br>测试链接显示成功其实就已经完事了<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/4.jpg" alt="4"><br>随后研究蚁剑 你便会发现它的功能全备 非常厉害</p>
 <h2 id="中等级-（Security-medium）"><a href="#中等级-（Security-medium）" class="headerlink" title="中等级 （Security=medium）"></a>中等级 （Security=medium）</h2><p>我们先通过<strong>DVWA Security</strong>将安全度调整至medium<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/5.jpg" alt="5"><br>然后继续进入上传漏洞网页 <strong>view source</strong><br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/6.jpg" alt="6"><br>可以看到这次的上传对<strong>上传的文件类型</strong>与<strong>上传的文件大小</strong>做了限制<br>文件类型限制为<strong>jpeg</strong>文件 大小限制在了<strong>100000byte</strong>以内（1KB=1024B byte=B=字节)<br>文件大小由于使用一句话木马 因此可以轻松解决<br>文件类型的问题则可以使用多种方法来解析</p>
-<h3 id="1-利用burpsuite"><a href="#1-利用burpsuite" class="headerlink" title="1)利用burpsuite"></a>1)利用burpsuite</h3><p><strong>关于burpsuite的配置</strong></p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/7.jpg" alt="7"></p>
-<p>↑<strong>proxy-proxy setting中设置本地地址与端口</strong></p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/8.jpg" alt="8"></p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/9.jpg" alt="9"></p>
-<p>配置firefox中的<strong>设置-proxy settings</strong> 注意ip与端口要与前者保持一致</p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/10.jpg" alt="10"></p>
-<p>进入上传漏洞的网页 按这个按钮就能开始监听</p>
-<p>先分析一下刚才得到的条件：</p>
-<p>文件类型<strong>仅限jpeg</strong></p>
-<p>那我们便将<strong>一句话木马.php</strong>文件的后缀更改为<strong>jpeg</strong>交给前端 通过<strong>burpsuite</strong>更改后缀来修改成<strong>php</strong>文件类型</p>
-<p>那么开始实践</p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/11.jpg" alt="11"></p>
-<p>将<strong>1.php</strong>复制一份备份 其中一份更名为<strong>1.jpeg</strong></p>
-<p>开启<strong>burpsuite</strong>的监听 将<strong>1.jpeg</strong>上传至网站 等待拦截结果</p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/12.jpg" alt="12"></p>
-<p>网站一直处于加载中 且<strong>burpsuite</strong>显示拦截结果 说明成功拦截</p>
-<p>我们将<code>filename=“1.jpeg”</code>更改为<code>filename=“1.php”</code></p>
-<p>随后点击<code>forward</code>放行</p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/14.jpg" alt="14"></p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/15.jpg" alt="15"></p>
-<p>可以看到上传成功 我们继续在蚁剑里测试</p>
-<p><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/16.jpg" alt="16"></p>
-<p>好的 链接也成功了 这说明目标已完成</p>
+<h3 id="1-利用burpsuite"><a href="#1-利用burpsuite" class="headerlink" title="1)利用burpsuite"></a>1)利用burpsuite</h3><p><strong>关于burpsuite的配置</strong><br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/7.jpg" alt="7"><br>↑<strong>proxy-proxy setting中设置本地地址与端口</strong><br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/8.jpg" alt="8"><br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/9.jpg" alt="9"><br>配置firefox中的<strong>设置-proxy settings</strong> 注意ip与端口要与前者保持一致<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/10.jpg" alt="10"><br>进入上传漏洞的网页 按这个按钮就能开始监听<br>先分析一下刚才得到的条件：<br>文件类型<strong>仅限jpeg</strong><br>那我们便将<strong>一句话木马.php</strong>文件的后缀更改为<strong>jpeg</strong>交给前端 通过<strong>burpsuite</strong>更改后缀来修改成<strong>php</strong>文件类型<br>那么开始实践<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/11.jpg" alt="11"><br>将<strong>1.php</strong>复制一份备份 其中一份更名为<strong>1.jpeg</strong><br>开启<strong>burpsuite</strong>的监听 将<strong>1.jpeg</strong>上传至网站 等待拦截结果<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/12.jpg" alt="12"><br>网站一直处于加载中 且<strong>burpsuite</strong>显示拦截结果 说明成功拦截<br>我们将<code>filename=“1.jpeg”</code>更改为<code>filename=“1.php”</code><br>随后点击<code>forward</code>放行<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/14.jpg" alt="14"><br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/15.jpg" alt="15"><br>可以看到上传成功 我们继续在蚁剑里测试<br><img data-src="/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/16.jpg" alt="16"><br>好的 链接也成功了 这说明目标已完成</p>
 </body></html>]]></content>
       <categories>
         <category>学习</category>
