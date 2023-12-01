@@ -14,6 +14,28 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>owasp命令执行漏洞</title>
+    <url>/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 好的那么今天我们来讲命令执行漏洞<br>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a><br>注:如遇dvwa无法更改难度 多半为cookie所致 请随以下教程删除网站的缓存：<a href="https://support.mozilla.org/zh-CN/kb/Deleting%20cookies">请点这里</a><br><strong>命令执行漏洞</strong> 一般指的是网站中有程序可以运行命令行指令<br>但忘记过滤 <strong>&amp;&amp; &amp; | || ;</strong> 等字符 使得恶意代码可以被允许运行的漏洞</p>
+<span id="more"></span>
+
+<blockquote>
+<p>WINDOWS系统支持的管道符<br>“|”：直接执行后面的语句<br>例如：<code>ping www.baidu.com|whoami</code><br>“||”：如果前面执行的语句执行出错，则执行后面的语句<br>例如：<code>ping www.baidu.com||whoami</code><br>“&amp;”：如果前面的语句为假则直接执行后面的语句，前面的语句可真可假<br>例如：<code>ping www.baidu.com&amp;whoami或者ping www.baidu.com&amp;whoami</code><br>“&amp;&amp;”：如果前面的语句为真先执行第一个命令后执行第二个命令；为假则直接出错，也不执行后面的语句<br>例如：<code>ping www.baidu.com&amp;&amp;whoami ping www.baidu.com&amp;&amp;whoami</code><br>LINUX系统支持的管道符<br>“；”执行完前面的命令执行后面的<br>“|”：显示后面语句的执行结果<br>“||”：当前面的语句执行出错时，执行后面的语句<br>“&amp;”：如果前面的语句为假，则直接指向后面的语句，前面的语句可真可假<br>“&amp;&amp;”：如果前面的语句为假则直接出错，也不执行后面的语句<br>————————————————<br>版权声明：本文为CSDN博主「H3rmesk1t」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/LYJ20010728/article/details/117349106">https://blog.csdn.net/LYJ20010728/article/details/117349106</a></p>
+</blockquote>
+<p>169.254.x.x 受限地址 微软自己买下来的一段地址 一般是检测系统是否为windows的</p>
+<h1 id="实操部分"><a href="#实操部分" class="headerlink" title="实操部分"></a>实操部分</h1><h2 id="1）低等级"><a href="#1）低等级" class="headerlink" title="1）低等级"></a>1）低等级</h2><p><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/1.jpg" alt="1"><br>查看网站源码 发现没有做过多限制<br>直接进行漏洞利用<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/2.jpg" alt="2.jpg"></p>
+<h2 id="2-中级别"><a href="#2-中级别" class="headerlink" title="2).中级别"></a>2).中级别</h2><p>首先查看源码<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/3.jpg" alt="3.jpg"><br>可以看出它限制了 <strong>&amp;&amp;</strong> 与 <strong>;</strong> 会将它们替换为空格<br>那就很方便 使用**|**与其他的字符来绕过即可<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/4.jpg" alt="4.jpg"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2></body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>靶机解析</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>靶机解析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>owasp文件包含漏洞</title>
     <url>/2023/11/28/owasp%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 那么我们今天来讲包含<br>老师给了关于<strong>文件上传和文件包含</strong>的笔记 那我就誊在这里 再把实践部分传过来<br>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a><br>注:如遇dvwa无法更改难度 多半为cookie所致 请随以下教程删除网站的缓存：<a href="https://support.mozilla.org/zh-CN/kb/Deleting%20cookies">请点这里</a></p>
@@ -141,6 +163,7 @@ cat flag.txt //查看flag.txt中的内容<span aria-hidden="true" class="line-nu
     <title>owasp上传漏洞</title>
     <url>/2023/11/24/owasp%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a><br>注:如遇dvwa无法更改难度 多半为cookie所致 请随以下教程删除网站的缓存：<a href="https://support.mozilla.org/zh-CN/kb/Deleting%20cookies">请点这里</a></p>
+<p>文件上传是 Web 应用的必备功能之一，比如上传头像显示个性化、上传附件共享文件、上传脚本更新网站。如果服务器配置不当或者没有进行足够的过滤，Web 用户就可以上传任意文件，包括恶意脚本文件、exe 程序等，这就造成了文件上传漏洞。</p>
 <span id="more"></span>
 <p>我们先从<strong>一句话木马</strong>说起</p>
 <h1 id="1-一句话木马"><a href="#1-一句话木马" class="headerlink" title="1.一句话木马"></a>1.一句话木马</h1><p><code>&lt;?php @eval($_POST['123']);?&gt;</code><br>这便是最简单的一句话木马。<br>这段php代码被分为以下几个部分：<br>**@**表示后面即使执行错了，也不会报错。<br>**eval()**函数表示将括号里的内容当作代码执行。<br><strong>$_POST[‘123’]<strong>表示从页面中获得123这个参数值。<br>也就是说，该页面只要收到了</strong>123</strong>这个密码，就会按照eval()的逻辑去运行。<br>只要了解了该文件的路径，便可以对该机器（利用菜刀或蚁剑）为所欲为了。<br>一句话木马还有很多变种： </p>
