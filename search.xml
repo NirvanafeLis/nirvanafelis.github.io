@@ -14,6 +14,103 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>每周靶机之Tommyboy1dot0</title>
+    <url>/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 总之这是今天的靶机</p>
+<span id="more"></span>
+
+<h1 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h1><p>攻击机：kali（192.168.246.128）<br>• <strong>工具：</strong><br>nmap（端口扫描）<br>dirbuster（目录爆破）<br>crunch（密码表生成）<br>fcrackzip （压缩包爆破）<br>wpscan （扫描/爆破wordpress）</p>
+<p>• <strong>知识点：</strong><br>   1、信息泄露<br>   2、md5解密<br>   3、命令执行</p>
+<h1 id="获取过程"><a href="#获取过程" class="headerlink" title="获取过程"></a>获取过程</h1><h2 id="flag1"><a href="#flag1" class="headerlink" title="flag1"></a>flag1</h2><p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/1.jpg" alt="1"><br>国际惯例 先arp-scan 发现同网段的设备<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/2.jpg" alt="2"><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/6.jpg" alt="6"></p>
+<blockquote>
+<p><strong>-sC ：根据端口识别的服务，调用默认脚本 。</strong></p>
+</blockquote>
+<p>我们借用nmap的-sC附加项 发现80端口存在四个<strong>防止爬虫进入的目录</strong></p>
+<blockquote>
+<h2 id="什么是robots-txt"><a href="#什么是robots-txt" class="headerlink" title="什么是robots.txt"></a>什么是robots.txt</h2><p>robots.txt是网站管理者写给爬虫的一封信，里面描述了网站管理者不希望爬虫做的事，比如：</p>
+<ul>
+<li>不要访问某个文件、文件夹</li>
+<li>禁止某些爬虫的访问</li>
+<li>限制爬虫访问网站的频率</li>
+</ul>
+<p>一个自觉且善意的爬虫，应该在抓取网页之前，先阅读robots.txt，了解并执行网站管理者制定的爬虫规则。</p>
+</blockquote>
+<p>依次进入 发现flag-numero-uno.txt目录下存在第一个flag信息<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/7.jpg" alt="7"><br>按他的描述 <strong>存在五个flag碎片</strong> 我们需要集齐它们来获取最终的宝藏</p>
+<h2 id="flag2"><a href="#flag2" class="headerlink" title="flag2"></a>flag2</h2><p>firefox访问80端口<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/3.jpg" alt="3"><br>f12发现隐藏注释<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/4.jpg" alt="4"><br>翻译大意为<strong>线索在这段youtube视频之中</strong><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/5.jpg" alt="5"><br>访问查看 全文就一句 <strong>“hey prehistoricforest”</strong><br>我们尝试 **/prehistoricforest/**目录<br>访问发现是个公司博客<br>我们查看其中的文章与评论获取线索<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/8.jpg" alt="8"><br>发现了flag2的线索：thisisthesecondflagyayyou.txt<br>往目录中输入查看<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/9.jpg" alt="9"><br>成功获取第二个flag</p>
+<h2 id="flag3"><a href="#flag3" class="headerlink" title="flag3"></a>flag3</h2><p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/10.jpg" alt="10"><br>博客的前两篇相互关联<br>一篇是加密的 无法访问<br>而另一篇则是在询问该加密博客的密码<br>我们查看该博客来寻找线索<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/11.jpg" alt="11"><br>提示提到我们要删去目录中的 <strong>prehistoricforest</strong> 换上 <strong>richard</strong><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/12.jpg" alt="12"><br>发现了一张图片 我们保存下来<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/13.jpg" alt="13"><br>使用<strong>strings</strong>工具查看是否存在图片隐写<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/14.jpg" alt="14"><br>可以看出其中潜藏了一段md5码<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/15.jpg" alt="15"><br>解密结果为<strong>spanky</strong><br>看来spanky就是加密博客的密码<br>我们输入 访问<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/16.jpg" alt="16"><br>博客大致翻译如上<br>那么我们知道了<br>1.ftp服务器不咋稳定 每15分钟会开机关机循环<br>2.ftp有个名为<strong>nickburns</strong>的账户 密码很好猜<br>3.ftp在一个不寻常的端口上运行<br>我们ftp尝试链接<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/17.jpg" alt="17"><br>ps：这里省略了等待+nmap扫描端口后发现65534的过程<br>总之我们发现了一个名为readme.txt的文件<br>获取后开启<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/18.jpg" alt="18"><br>内容大意如下<br>按照他的意思 我们访问NickIzL33t目录<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/19.jpg" alt="19"><br>网站说只有他和史蒂夫乔布斯(苹果公司创始人)可以看到其中的内容<br>那看来是需要以iphone的身份来进入<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/20.jpg" alt="20"><br>我们去firefox的插件商城下个更改身份的插件(关键词<strong>User Agent Switcher</strong>)<br>安装完更改身份 刷新网页<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/21.jpg" alt="21"><br>他说我通过了第一个考验 但真正的内容需要我输入准确的.html目录<br>那就使用目录爆破工具<strong>dirbuster</strong>来扫描<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/22.jpg" alt="22"><br>ps:需要在<strong>options-advance options</strong>中将<strong>user agent(请求头)<strong>改为iphone 把</strong>file extension</strong>改为html<br>线程能拉多大拉多大 是为了加速出结果</p>
+<blockquote>
+<p>示意图:</p>
+<p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/24.png" alt="24"></p>
+<p>待解决的问题：dirbuster报错20次会自动停止需要手动继续开始 目前没有找到解决方法</p>
+</blockquote>
+<p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/23.jpg" alt="23"><br>得到结果fallon1.html 我们访问<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/24.jpg" alt="24"><br>获得 <strong>一个提示 flag3与pw备份</strong><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/25.jpg" alt="25"></p>
+<h2 id="flag4"><a href="#flag4" class="headerlink" title="flag4"></a>flag4</h2><p><strong>pw备份</strong>是个压缩包 我们暂且保存下来<br>发现需要密码<br>那我们看看提示有没有提供什么有用的</p>
+<p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/26.jpg" alt="26"><br>他告诉了我们密码的组成成分 而我们可以<strong>利用这点生成一个密码表</strong><br>通过搜索了解Tommy Boy上映于1995年<br>也就是说 密码为<code>bev[一个大写字符][两个数字][两个小写字符][一个符号]1995</code> 一共十三个字符<br>我们利用<strong>crunch</strong>工具生成密码表</p>
+<blockquote>
+<p>crunch使用指南</p>
+<pre class="line-numbers language-none"><code class="language-none">crunch &lt;min-len&gt;  &lt;max-len&gt;  [&lt;charset string&gt;] [options]
+-t     指定密码输出的格式
+-o     将密码保存到指定文件
+
+特殊字符，通常与-t配合使用
+%      代表数字
+^      代表特殊符号
+@      代表小写字符
+,      代表大写字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p>这里按我们所需要的密码来输入命令</p>
+<p><code>crunch 13 13 -t bev,%%@@^1995 -o password.txt</code><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/27.jpg" alt="27"><br>生成完毕了<br>我们再利用<strong>fcrackzip</strong>工具来爆破压缩包</p>
+<p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/28.jpg" alt="28"><br>先安装一下</p>
+<blockquote>
+<pre class="line-numbers language-none"><code class="language-none">fcrackzip -v -D -u -p [密码文件] [zip文件]
+-v 更详细
+-D 使用字典
+-u 使用unzip清除错误密码
+-p 密码文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p>输入<code>fcrackzip -v -D -u -p password.txt t0msp4ssw0rdz.zip</code></p>
+<p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/29.jpg" alt="29"><br>得到结果<strong>pw == bevH00tr$1995</strong><br>解压获得<strong>passwords.txt</strong><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/30.jpg" alt="30"><br>查看 发现四个密码 其中俩不完整<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/31.jpg" alt="31"><br><strong>bigtommysenior</strong>的密码提示：密码为<strong>fatguyinalittlecoat</strong>后面加了点数字 但是他忘了是啥 提示在公司博客中<br><strong>bigtom</strong>(他连账号都不是很确定)的密码提示：和皇后乐队的一首有名歌曲有联系<br>既然公司博客的类型是<strong>wordpress</strong> 那我们就需要用到<strong>wpscan</strong>工具了</p>
+<blockquote>
+<p>WPScan是Kali Linux默认自带的一款漏洞扫描工具，它采用Ruby编写，能够扫描WordPress网站中的多种安全漏洞，其中包括WordPress本身的漏洞、插件漏洞和主题漏洞。最新版本WPScan的数据库中包含超过18000种插件漏洞和2600种主题漏洞，并且支持最新版本的WordPress。值得注意的是，它不仅能够扫描类似robots.txt这样的敏感文件，而且还能够检测当前已启用的插件和其他功能.</p>
+<pre class="line-numbers language-常用选项" data-language="常用选项"><code class="language-常用选项">&gt;--update  更新到最新版本
+&gt;--url   | -u &lt;target url&gt;  要扫描的`WordPress`站点.
+&gt;--force | -f   不检查网站运行的是不是`WordPress`
+&gt;--enumerate | -e [option(s)]  枚举
+&gt;u 枚举用户名，默认从1-10
+&gt;u[10-20] 枚举用户名，配置从10-20
+&gt;--username | -U &lt;username指定爆破的用户名
+&gt;--wordlist | -w &lt;wordlist指定密码字典<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p>我们输入指令<code>wpscan --url "http://192.168.246.136/prehistoricforest/" -e u   </code><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/32.jpg" alt="32"><br>发现存在用户tom<br>那就指定爆破用户tom的密码<br><code>wpscan --url http://192![33](/33.jpg).168.246.136/prehistoricforest/ -P /usr/share/wordlists/rockyou.txt -U tom</code><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/33.jpg" alt="33"><br>结果得出tom的密码为<strong>tomtom1</strong><br>我们利用这套账号密码登录公司wordpress博客的后台<br><img data-src="/34.jpg" alt="34"><br>里面有个未发布的文章 内容是之前提到的<strong>fatguyinalittlecoat</strong>后的数字<br>于是我们得出<br><strong>bigtommysenior</strong>的密码为<strong>fatguyinalittlecoat1938!!</strong></p>
+<blockquote>
+<p>坑：可能有点先入为主了 我试了好几遍fatguyinalittlecoat1938</p>
+</blockquote>
+<p>我们用这套账号密码登入该靶机的ssh服务</p>
+<p><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/35.jpg" alt="35"><br>首先是获得了flag4 </p>
+<h2 id="flag5"><a href="#flag5" class="headerlink" title="flag5"></a>flag5</h2><p>根目录下的LOOT.ZIP有密码 暂且不管他<br>获得flag4的同时 它留下了提示:flag5位于服务器的**/.5.txt**中<br>但该文件需要root权限</p>
+<p>那我们根据<strong>Linux的http网站的根目录一般都是/var/www/html</strong>来看看有没有之前破解过程中服务器中的<strong>NickIzL33t</strong></p>
+<p>最终省略寻找过程 我们发现/<strong>/var/thatsg0nnaleaveamark/NickIzL33t/P4TCH_4D4MS</strong>下有一个开放权限的<strong>uploads</strong>文件夹<br>我们利用 <strong>文件上传漏洞</strong> 在其中创建一个文件<br><!--?php system($_GET['123']);?--><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/36.jpg" alt="36"></p>
+<p>创建完毕 在firefox中利用木马<br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/37.jpg" alt="37"><br>他给出了第五个flag 并叫我们<strong>将五个flag结合起来 作为密码解压LOOT.ZIP</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">flag1：B34rcl4ws
+flag2：Z4l1nsky
+flag3：TinyHead
+flag4：EditButton
+flag5：Buttcrack
+结合起来就是B34rcl4wsZ4l1nskyTinyHeadEditButtonButtcrack<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>解压LOOT.ZIP 获得THE-END.txt</strong><br><img data-src="/2023/12/01/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BTommyboy1dot0/38.jpg" alt="38"><br>过关！</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总过程4 5小时 是我目前做过过程最繁琐的靶机<br>配合了多个工具 需要对多个漏洞有充分了解才能解开<br>经过这次打靶认识了不少新玩意 同时也认识到了一些不足<br>希望可以活用到下一次</p>
+</body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>靶机解析</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>靶机解析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>owasp命令执行漏洞</title>
     <url>/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 好的那么今天我们来讲命令执行漏洞<br>owasp下载地址:<br><a href="https://sourceforge.net/projects/owaspbwa/files/">https://sourceforge.net/projects/owaspbwa/files/</a><br>注:如遇dvwa无法更改难度 多半为cookie所致 请随以下教程删除网站的缓存：<a href="https://support.mozilla.org/zh-CN/kb/Deleting%20cookies">请点这里</a><br><strong>命令执行漏洞</strong> 一般指的是网站中有程序可以运行命令行指令<br>但忘记过滤 <strong>&amp;&amp; &amp; | || ;</strong> 等字符 使得恶意代码可以被允许运行的漏洞</p>
@@ -24,7 +121,7 @@ layout: false
 </blockquote>
 <p>169.254.x.x 受限地址 微软自己买下来的一段地址 一般是检测系统是否为windows的</p>
 <h1 id="实操部分"><a href="#实操部分" class="headerlink" title="实操部分"></a>实操部分</h1><h2 id="1）低等级"><a href="#1）低等级" class="headerlink" title="1）低等级"></a>1）低等级</h2><p><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/1.jpg" alt="1"><br>查看网站源码 发现没有做过多限制<br>直接进行漏洞利用<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/2.jpg" alt="2.jpg"></p>
-<h2 id="2-中级别"><a href="#2-中级别" class="headerlink" title="2).中级别"></a>2).中级别</h2><p>首先查看源码<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/3.jpg" alt="3.jpg"><br>可以看出它限制了 <strong>&amp;&amp;</strong> 与 <strong>;</strong> 会将它们替换为空格<br>那就很方便 使用**|**与其他的字符来绕过即可<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/4.jpg" alt="4.jpg"></p>
+<h2 id="2-中级别"><a href="#2-中级别" class="headerlink" title="2).中级别"></a>2).中级别</h2><p>首先查看源码<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/3.jpg" alt="3.jpg"><br>可以看出它限制了 <strong>&amp;&amp;</strong> 与 <strong>;</strong> 会将它们替换为空格<br>那就很方便 使用 <strong>|</strong> 与其他的字符来绕过即可<br><img data-src="/2023/12/01/owasp%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/4.jpg" alt="4.jpg"></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2></body></html>]]></content>
       <categories>
         <category>学习</category>
