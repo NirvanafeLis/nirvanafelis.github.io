@@ -14,6 +14,56 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>potato解析</title>
+    <url>/2023/12/10/potato%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h1><p>攻击机：kali（192.168.246.128）<br>靶机：potato（192.168.246.137）</p>
+<h2 id="使用工具-指令"><a href="#使用工具-指令" class="headerlink" title="使用工具&amp;指令:"></a>使用工具&amp;指令:</h2><p>nmap （端口扫描）<br>hydra （服务端密码爆破）<br>sreachsploit （漏洞检索）<br>ssh （远程登录服务）<br>find （寻找文件）<br>scp （linux之间远程传输文件）</p>
+<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><p>国际惯例</p>
+<pre class="line-numbers language-none"><code class="language-none">arp-scan -l //发现同网段设备
+nmap -A -p- “ip地址” //扫描指定ip开放的端口 并套用默认脚本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/1.jpg" alt="1"><br>扫描发现该ip开放了80端口与7120端口 其中7120端口对应ssh服务<br>我们使用firefox访问该ip<br><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/2.jpg" alt="2"><br>没有发现什么特殊的东西 f12也没有隐藏注释<br>只能将我们的注意转到ssh服务中<br>但ssh需要<strong>账号与密码</strong> 而我们目前没有<br>按照该靶机名称与网页中的土豆图片 我们推测账户名为<strong>potato</strong> 进行一次密码爆破来测试</p>
+<pre class="line-numbers language-none"><code class="language-none">hydra -l “账号名” -P “密码字典文件” -V -t 4 服务://ip地址：端口
+// 密码字典位于/usr/share/wordlists/rockyou.txt.gz 中 请自行解压
+gzip -d /usr/share/wordlists/rockyou.txt.gz		#-d 将压缩文件解压
+// -V 显示具体过程
+// -t 1-64 决定线程 数字越大爆破速度越快 但占用更大<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/3.jpg" alt="3"><br><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/4.jpg" alt="4"><br>结果出来了 账号 <strong>potato</strong> 的密码为 <strong>letmein</strong><br>我们赶紧来登录一下吧</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh 用户名@ip地址 -p 端口 //由于该端口不是默认的22 所以需要额外注释 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/5.jpg" alt="5"><br>进入后发现/root文件夹中有我们想要的文件 但当前权限不够<br>于是需要<strong>提权</strong><br>我们使用<strong>sreachsploit</strong>  来搜索<strong>该版本ubuntu的提权漏洞</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">sreachsploit “搜索关键词”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/6.jpg" alt="6"><br>有了 文件名是<strong>37292.c</strong><br>不知道该文件在哪里 我们<strong>使用find命令</strong>寻找该文件</p>
+<pre class="line-numbers language-none"><code class="language-none">find [路径] [匹配条件]
+参数说明:
+路径 是要查找的目录路径，可以是一个目录或文件名，也可以是多个路径，多个路径之间用空格分隔，如果未指定路径，则默认为当前目录。
+expression 是可选参数，用于指定查找的条件，可以是文件名、文件类型、文件大小等等。
+匹配条件 中可使用的选项有二三十个之多，以下列出最常用的部份：
+-name pattern：按文件名查找，支持使用通配符 * 和 ?。
+-type type：按文件类型查找，可以是 f（普通文件）、d（目录）、l（符号链接）等。
+-size [+-]size[cwbkMG]：按文件大小查找，支持使用 + 或 - 表示大于或小于指定大小，单位可以是 c（字节）、w（字数）、b（块数）、k（KB）、M（MB）或 G（GB）。
+-mtime days：按修改时间查找，支持使用 + 或 - 表示在指定天数前或后，days 是一个整数表示天数。
+-user username：按文件所有者查找。
+-group groupname：按文件所属组查找。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>随后<strong>使用scp命令</strong>将文件传输到靶机中</p>
+<pre class="line-numbers language-none"><code class="language-none">scp [可选参数] [文件源] [传输目标] 
+// -p 指定端口
+// 传输目标格式为 用户名@ip:/目标文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/7.jpg" alt="7"><br>随后执行提权漏洞</p>
+<pre class="line-numbers language-none"><code class="language-none">gcc 37292.c -o exp  //对刚刚下载的提权脚本进行编译
+chmod +x exp //给提权脚本赋予执行权限 
+./exp //运行提权脚本，运行后即可提权至root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/8.jpg" alt="8"><br><strong>阅读/root下的/proof.txt</strong><br>明显是一串<strong>md5加密</strong>后的产物 我们拿去解密网站解密 获得flag<br><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/9.jpg" alt="9"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>比较小体量的靶机 主要集中在一些标准的<strong>密码爆破</strong> <strong>漏洞提权</strong> 过程中<br>那么我们下次见！</p>
+</body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>靶机解析</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>靶机解析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>xss跨站点脚本攻击</title>
     <url>/2023/12/05/xss%E8%B7%A8%E7%AB%99%E7%82%B9%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 总之这是今天的笔记</p>
