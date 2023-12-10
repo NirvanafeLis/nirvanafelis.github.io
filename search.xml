@@ -18,7 +18,9 @@ layout: false
     <url>/2023/12/10/potato%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h1><p>攻击机：kali（192.168.246.128）<br>靶机：potato（192.168.246.137）</p>
 <h2 id="使用工具-指令"><a href="#使用工具-指令" class="headerlink" title="使用工具&amp;指令:"></a>使用工具&amp;指令:</h2><p>nmap （端口扫描）<br>hydra （服务端密码爆破）<br>sreachsploit （漏洞检索）<br>ssh （远程登录服务）<br>find （寻找文件）<br>scp （linux之间远程传输文件）</p>
-<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><p>国际惯例</p>
+<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><span id="more"></span>
+
+<p>国际惯例</p>
 <pre class="line-numbers language-none"><code class="language-none">arp-scan -l //发现同网段设备
 nmap -A -p- “ip地址” //扫描指定ip开放的端口 并套用默认脚本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/1.jpg" alt="1"><br>扫描发现该ip开放了80端口与7120端口 其中7120端口对应ssh服务<br>我们使用firefox访问该ip<br><img data-src="/2023/12/10/potato%E8%A7%A3%E6%9E%90/2.jpg" alt="2"><br>没有发现什么特殊的东西 f12也没有隐藏注释<br>只能将我们的注意转到ssh服务中<br>但ssh需要<strong>账号与密码</strong> 而我们目前没有<br>按照该靶机名称与网页中的土豆图片 我们推测账户名为<strong>potato</strong> 进行一次密码爆破来测试</p>
