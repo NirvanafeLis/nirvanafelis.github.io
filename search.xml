@@ -14,6 +14,16 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>读书笔记-如何阅读一本书</title>
+    <url>/2023/12/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body></body></html>]]></content>
+  </entry>
+  <entry>
+    <title>DC-4解析</title>
+    <url>/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body></body></html>]]></content>
+  </entry>
+  <entry>
     <title>DC-2解析</title>
     <url>/2023/12/22/DC-2%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>这个是学校作业<br>下载地址:<a href="https://www.vulnhub.com/entry/dc-2,311/">https://www.vulnhub.com/entry/dc-2,311/</a></p>
@@ -136,20 +146,6 @@ LIMIT 子句：可选项。用于限定被修改的行数。<span aria-hidden="t
       <tags>
         <tag>学习</tag>
         <tag>靶机解析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c语言学习第二篇</title>
-    <url>/2023/12/18/c%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E7%AF%87/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p> 这里暂时没有内容</p>
-</body></html>]]></content>
-      <categories>
-        <category>学习</category>
-        <category>c语言</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>c语言</tag>
       </tags>
   </entry>
   <entry>
