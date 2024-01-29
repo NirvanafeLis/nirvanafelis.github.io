@@ -18,6 +18,25 @@ layout: false
       </tags>
   </entry>
   <entry>
+    <title>维修时间</title>
+    <url>/2024/01/28/%E2%80%9C%E7%BB%B4%E4%BF%AE%E6%97%B6%E9%97%B4%E2%80%9D/</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a><strong>前情提要</strong></h1><p>网络不知道为啥寄了</p>
+<p>speedtest变成了随机数生成器 5mb 200mb 400mb里上下蹦跳</p>
+<p>首先怀疑的是<strong>墙内内嵌的网线老化导致网速不行</strong></p>
+<p>然后拿了一根<strong>40m长</strong>的网线直连了</p>
+<p>结果还是不行</p>
+<p>dns也没毛病</p>
+<p>结果是<strong>msi center</strong>限制了我的网速</p>
+<p><a href="https://blog.csdn.net/qq_37296622/article/details/123959244#">相同的案例</a><br>这里建议少下流氓软件 健康生活每一天</p>
+</body></html>]]></content>
+      <categories>
+        <category>日常牢骚</category>
+      </categories>
+      <tags>
+        <tag>日常牢骚</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>小小修整</title>
     <url>/2024/01/15/%E5%B0%8F%E5%B0%8F%E4%BF%AE%E6%95%B4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="首先是-新年快乐"><a href="#首先是-新年快乐" class="headerlink" title="首先是 新年快乐"></a>首先是 新年快乐</h1><p>这几天去南京旅游了 主要是为了放松<br>因此没更新<br>现在回来了<br>接下来要干的事：<br><strong>把笔记本改造成自己的便捷平台<br>通过按照月份分类来整理有些过多的文章<br>作业 看书 多学 老生常谈</strong></p>
@@ -1724,12 +1743,16 @@ set PASS_FILE /path/to/passwords.txt<span aria-hidden="true" class="line-numbers
   <entry>
     <title>读书笔记-如何阅读一本书</title>
     <url>/2023/12/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>经<a href="https://truthleader.github.io/"><del>我们伟大而全能的唯一至高真理教教主</del></a>推荐而读<br>本书下载地址：<a href="https://zh.z-library.se/book/5423134/5e4d46/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html">点击这里</a></p>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>经<a href="https://truthleader.github.io/"><del>我们伟大而全能的唯一至高真理教教主</del></a>推荐而读<br>本书下载地址：<a href="https://zh.z-library.se/book/5423134/5e4d46/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html">点击这里</a></p>
 <hr>
-<p>ps:之前没做过这种东西 所以姑且先开一篇试试水<br>这玩意多半得长期更新 边摸边写<br><strong>本书通读进度:5%左右 未完成</strong> </p>
+<p>ps:之前没做过这种东西 所以姑且先开一篇试试水<br>这玩意多半得长期更新 边摸边写</p>
 <h2 id="总之为啥要看呢？"><a href="#总之为啥要看呢？" class="headerlink" title="总之为啥要看呢？"></a>总之为啥要看呢？</h2><p>1.提升看书的效率（用更少的时间来阅读更多的内容）云云<br>2.很好奇是怎么个”如何阅读”</p>
 <h2 id="我目前看出来个啥"><a href="#我目前看出来个啥" class="headerlink" title="我目前看出来个啥"></a>我目前看出来个啥</h2><span id="more"></span>
 <p>1.有的时候 <strong>理解（understand）</strong>东西并不需要<strong>知道（know）</strong>这件事相关的所有事物。太多的资讯与太少的资讯都会成为理解力的阻碍。</p>
+<p>2.阅读并不是完全被动(类似于被打了一拳，或得到一项遗产，或法院的判决)的行为。反倒更像是棒球比赛中的捕手——读者需要去尽可能接收作者所投出来的“球”，把自己的技巧与作者的技巧融合起来，达到共同的终点。读者想“接住”多少意念完全看他在阅读时多么主动，以及他投⼊不同⼼思来阅读的技巧如何。</p>
+<ol start="3">
+<li></li>
+</ol>
 </body></html>]]></content>
       <categories>
         <category>读书笔记</category>
