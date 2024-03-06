@@ -20,7 +20,7 @@ layout: false
   <entry>
     <title>ctf实战相关1</title>
     <url>/2024/03/06/ctf%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B31/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>本次主题为**[ACTF2020 新生赛]BackupFile<strong>与</strong>[极客大挑战 2019]BuyFlag**</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>本次主题为**[ACTF2020 新生赛]BackupFile** 与 <strong>[极客大挑战 2019]BuyFlag</strong></p>
 <h2 id="使用平台"><a href="#使用平台" class="headerlink" title="使用平台"></a>使用平台</h2><p>chrome<br><a href="https://buuoj.cn/">buuctf</a><br>firefox(搭载hackbar)</p>
 <h2 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h2><p>备份文件的存在<br>cookie查看/修改<br>php数据类型</p>
 <h2 id="flag获取过程"><a href="#flag获取过程" class="headerlink" title="flag获取过程"></a>flag获取过程</h2><span id="more"></span>
