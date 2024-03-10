@@ -20,10 +20,12 @@ layout: false
   <entry>
     <title>靶机解析-gigachad</title>
     <url>/2024/03/09/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90-gigachad/</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这周的靶机</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>这周的靶机</p>
 <h1 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h1><p>攻击机：kali<br>靶机：gigachad</p>
 <h2 id="相关知识-工具"><a href="#相关知识-工具" class="headerlink" title="相关知识-工具"></a>相关知识-工具</h2><p>linux单次登录/更改ip设置<br>提权技巧<br>searchsploit</p>
-<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><p>首先 我们打开两个机子<br>发现同网段扫不到靶机 检查了vmware的设置依旧没有问题<br>那就去靶机那里看看网络设置<br>需要账号密码登录 但我们可以通过更改启动选项来登录<br><img data-src="/2024/03/09/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90-gigachad/2.jpg" alt="1"><br>在开机的这个页面按下e键 进入编辑模式<br>用方向键翻到Linux那行 再按右键一直到该行的末尾 将<code>ro quiet</code>改为<code>rw single init=/bin/bash</code></p>
+<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><p>首先 我们打开两个机子</p>
+<span id="more"></span>
+<p>发现同网段扫不到靶机 检查了vmware的设置依旧没有问题<br>那就去靶机那里看看网络设置<br>需要账号密码登录 但我们可以通过更改启动选项来登录<br><img data-src="/2024/03/09/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90-gigachad/2.jpg" alt="1"><br>在开机的这个页面按下e键 进入编辑模式<br>用方向键翻到Linux那行 再按右键一直到该行的末尾 将<code>ro quiet</code>改为<code>rw single init=/bin/bash</code></p>
 <blockquote>
 <p>rw 代表read write，读写模式。<br>signie init= 代表启动系统后自动运行的程序。<br>/bin/bash 是系统shell的位置。</p>
 </blockquote>
