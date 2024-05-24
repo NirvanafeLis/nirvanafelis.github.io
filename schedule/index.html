@@ -1,6 +1,4 @@
 <html lang="zh-CN"><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>每日感想随笔</title>
@@ -11,7 +9,6 @@
             margin: 0;
             padding: 0;
         }
-
         .container {
             width: 80%;
             max-width: 800px;
@@ -20,17 +17,14 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
         form {
             display: flex;
             flex-direction: column;
         }
-
         textarea {
             width: 100%;
             height: 100px;
@@ -40,7 +34,6 @@
             border-radius: 4px;
             font-size: 16px;
         }
-
         button {
             align-self: flex-end;
             padding: 10px 20px;
@@ -50,37 +43,30 @@
             border-radius: 4px;
             cursor: pointer;
         }
-
         button:hover {
             background-color: #218838;
         }
-
         #thoughtsContainer {
             margin-top: 20px;
         }
-
         .thought {
             padding: 10px;
             border-bottom: 1px solid #ddd;
             position: relative;
         }
-
         .thought time {
             display: block;
             color: #888;
             font-size: 14px;
         }
-
         .thought p {
             margin: 5px 0 0 0;
             font-size: 16px;
         }
-
         .thought .username {
             font-weight: bold;
             color: #555;
         }
-
         .thought .edit, .thought .delete {
             position: absolute;
             top: 10px;
@@ -90,11 +76,9 @@
             color: #007bff;
             cursor: pointer;
         }
-
         .thought .edit {
             right: 60px;
         }
-
         #refreshUsername, #helpButton {
             display: inline-block;
             padding: 5px 10px;
@@ -105,11 +89,9 @@
             cursor: pointer;
             margin-right: 5px;
         }
-
         #refreshUsername:hover, #helpButton:hover {
             background-color: #0056b3;
         }
-
         #backButton {
             display: inline-block;
             margin-bottom: 20px;
@@ -121,7 +103,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-
         #backButton:hover {
             background-color: #5a6268;
         }
@@ -129,13 +110,13 @@
 </head>
 <body>
     <div class="container">
-        <a href="your_blog_url" id="backButton">返回博客</a>
-        <h1>每日感想随笔</h1>
+        <a href="https://www.maonie.top/" id="backButton">返回博客</a>
+        <h1>嗯</h1>
         <form id="thoughtForm">
-            <textarea id="thoughtInput" placeholder="写下你的感想..."></textarea>
+            <textarea id="thoughtInput" placeholder="写下..."></textarea>
             <div style="display: flex; justify-content: flex-end;">
-                <button id="helpButton">这是什么？</button>
-                <button id="refreshUsername">刷新用户名</button>
+                <button id="helpButton" type="button">这是什么？</button>
+                <button id="refreshUsername" type="button">刷新用户名</button>
                 <button type="submit">提交</button>
             </div>
         </form>
@@ -143,28 +124,27 @@
             <!-- 感想会显示在这里 -->
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, updateDoc, doc, serverTimestamp, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDzgcvL1dWsa2sndO-d-mHNb_DrPv5dAGU",
+            authDomain: "something-nice-22902.firebaseapp.com",
+            projectId: "something-nice-22902",
+            storageBucket: "something-nice-22902.appspot.com",
+            messagingSenderId: "63473511528",
+            appId: "1:63473511528:web:d7325089ec281342c41fdd",
+            measurementId: "G-Q09WRGG7V4"
+        };
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDzgcvL1dWsa2sndO-d-mHNb_DrPv5dAGU",
-    authDomain: "something-nice-22902.firebaseapp.com",
-    projectId: "something-nice-22902",
-    storageBucket: "something-nice-22902.appspot.com",
-    messagingSenderId: "63473511528",
-    appId: "1:63473511528:web:9b3c3ddb542ff3b2c41fdd",
-    measurementId: "G-H2P30WJEWZ"
-  };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
         // 用户管理
         function generateUsername() {
             return 'user_' + Math.random().toString(36).substr(2, 8);
@@ -186,22 +166,21 @@
         }
 
         // 读取并显示感想
-        function loadThoughts() {
-            const thoughtsRef = ref(db, 'thoughts');
-            onValue(thoughtsRef, (snapshot) => {
-                const thoughtsContainer = document.getElementById('thoughtsContainer');
-                thoughtsContainer.innerHTML = '';
-                snapshot.forEach((childSnapshot) => {
-                    const thought = childSnapshot.val();
-                    thoughtsContainer.prepend(createThoughtHTML(childSnapshot.key, thought));
-                });
+        async function loadThoughts() {
+            const thoughtsContainer = $('#thoughtsContainer');
+            thoughtsContainer.html('');
+            const q = query(collection(db, 'thoughts'), orderBy('timestamp', 'desc'));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                const thought = doc.data();
+                thoughtsContainer.append(createThoughtHTML(doc.id, thought));
             });
         }
 
         function createThoughtHTML(id, thought) {
             return `
                 <div class="thought" data-id="${id}">
-                    <time>${thought.date}</time>
+                    <time>${new Date(thought.timestamp.toDate()).toLocaleString()}</time>
                     <p>${thought.text}</p>
                     <span class="username">${thought.username}</span>
                     <button class="edit">编辑</button>
@@ -210,69 +189,78 @@
             `;
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        $(document).ready(function() {
             loadThoughts();
 
-            document.getElementById('thoughtForm').addEventListener('submit', function(e) {
+            $('#thoughtForm').submit(function(e) {
                 e.preventDefault();
                 addThought();
             });
 
-            document.getElementById('refreshUsername').addEventListener('click', function() {
+            $('#refreshUsername').click(function() {
                 refreshUsername();
             });
 
-            document.getElementById('helpButton').addEventListener('click', function() {
+            $('#helpButton').click(function() {
                 window.location.href = 'index2.html';
             });
 
-            document.getElementById('thoughtsContainer').addEventListener('click', function(e) {
-                if (e.target.classList.contains('edit')) {
-                    editThought(e.target.closest('.thought').dataset.id);
-                }
-                if (e.target.classList.contains('delete')) {
-                    deleteThought(e.target.closest('.thought').dataset.id);
-                }
+            $('#thoughtsContainer').on('click', '.edit', function() {
+                const id = $(this).closest('.thought').data('id');
+                editThought(id);
+            });
+
+            $('#thoughtsContainer').on('click', '.delete', function() {
+                const id = $(this).closest('.thought').data('id');
+                deleteThought(id);
             });
         });
 
-        function addThought() {
-            const thoughtInput = document.getElementById('thoughtInput').value;
+        async function addThought() {
+            const thoughtInput = $('#thoughtInput').val();
             if (thoughtInput.trim() === "") {
                 alert("请输入感想内容！");
                 return;
             }
 
-            const currentDate = new Date();
-            const formattedDate = currentDate.toLocaleString();
             const username = getUsername();
 
             const thought = {
                 text: thoughtInput,
-                date: formattedDate,
+                timestamp: serverTimestamp(),
                 username: username
             };
 
-            const thoughtsRef = ref(db, 'thoughts');
-            push(thoughtsRef, thought);
-            document.getElementById('thoughtInput').value = '';
-        }
-
-        function editThought(id) {
-            const thoughtDiv = document.querySelector(`.thought[data-id="${id}"]`);
-            const thoughtText = thoughtDiv.querySelector('p').innerText;
-            const newThoughtText = prompt("编辑你的感想：", thoughtText);
-
-            if (newThoughtText !== null) {
-                const thoughtRef = ref(db, `thoughts/${id}`);
-                update(thoughtRef, { text: newThoughtText });
+            try {
+                await addDoc(collection(db, 'thoughts'), thought);
+                $('#thoughtInput').val('');
+                loadThoughts();
+            } catch (error) {
+                console.error("写入数据失败: ", error);
             }
         }
 
-        function deleteThought(id) {
-            if (confirm("确定要删除这条感想吗？")) {
-                const thoughtRef = ref(db, `thoughts/${id}`);
-                remove(thoughtRef);
+        async function editThought(id) {
+            const thoughtDiv = $(`.thought[data-id="${id}"]`);
+            const thoughtText = thoughtDiv.find('p').text();
+            const newThoughtText = prompt("编辑你的感想：", thoughtText);
+
+            if (newThoughtText !== null) {
+                try {
+                    await updateDoc(doc(db, 'thoughts', id), { text: newThoughtText });
+                    loadThoughts();
+                } catch (error) {
+                    console.error("更新数据失败: ", error);
+                }
+            }
+        }
+
+        async function deleteThought(id) {
+            try {
+                await deleteDoc(doc(db, 'thoughts', id));
+                loadThoughts();
+            } catch (error) {
+                console.error("删除数据失败: ", error);
             }
         }
     </script>
