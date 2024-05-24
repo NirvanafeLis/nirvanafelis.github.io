@@ -1,132 +1,281 @@
 <html lang="zh-CN"><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+
+
     <meta charset="UTF-8">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/medium.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/small.png">
-    <title>日程 | maonie's Blog</title>
-    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日感想随笔</title>
     <style>
-        body{
-            margin:0;background-color:#fafafa;font:14px 'Helvetica Neue',Helvetica,Arial,sans-serif;
-            
-            }
-        h2{margin:0;font-size:12px}
-        a{color:#000;text-decoration:none}
-        input{outline:0}
-        button{margin:0;padding:0;border:0;background:0;font-size:100%;vertical-align:baseline;font-family:inherit;font-weight:inherit;color:inherit;outline:0}
-        ul{padding:0;margin:0;list-style:none}
-        .page-top{width:100%;height:40px;background-color:#8da7b8}
-        .page-content{width:50%;margin:0 auto}
-        .page-content h2{line-height:40px;font-size:18px;color:#fff}
-        .main{max-width:770px;max-hight:100%;margin:0 auto;box-sizing:border-box}
-        .task-input{width:99%;height:30px;outline:0;border:1px solid #ccc;border-radius: 10px;}
-        .task-count{display:flex;margin:10px 0}
-        .task-count li{padding-left:10px;flex:1;color:#dd4b39}
-        .task-count li:nth-child(1){padding:5px 0 0 10px}
-        .action{text-align:center;display:flex}
-        .action a{margin:0 10px;flex:1;padding:5px 0;color:#777}
-        .action a:nth-child(3){margin-right:0}
-        .active{border-bottom: 2px solid #629A9C}
-        .tasks{background-color:#fff}.no-task-tip{padding:10px 0 10px 10px;display:block;border-bottom:1px solid #ededed;color:#777}.big-title{color:#222}.todo-list{margin:0;padding:0;list-style:none}
-        .todo-list li{
-            position:relative;
-            font-size:16px;
-            border-left: 5px solid #629A9C;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-            margin-bottom: 16px;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-        .todo-list li:hover{background-color:#fafafa}
-        .todo-list li.editing{border-bottom:0;padding:0;}
-        .todo-list li.editing .edit{display:block;padding:13px 17px 12px 17px;margin:0 0 0 43px}
-        .todo-list li.editing .view{display:none}
-        .toggle{
-            text-align:center;
-            width:16px;
-            height:16px;
-            position:absolute;
-            top:2px;
-            left: 15px;
-            bottom:0;
-            margin:auto 0;
-            cursor: pointer;
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .todo-list li label{
-            white-space:pre-line;
-            word-break:break-all;
-            padding:15px 60px 15px 15px;
-            margin-left:45px;
-            display:block;
-            line-height:1.2;
-            transition:color .4s
+
+        h1 {
+            text-align: center;
+            color: #333;
         }
-        .todo-list li.completed label{
-            color:#d9d9d9;
-            text-decoration:line-through
+
+        form {
+            display: flex;
+            flex-direction: column;
         }
-        .todo-list li .destroy{
-            display:none;
-            text-align:center;
-            width:16px;
-            height:16px;
-            position:absolute;
-            top:0;
-            right:15px;
-            bottom:10px;
-            margin:auto 0;
-            cursor: pointer;
-            font-size:28px;
-            color:#cc9a9a;
-            transition:color .2s ease-out
-        }
-        .todo-list li .destroy:hover{color:#af5b5e}
-        .todo-list li .destroy:after{content:'×'}
-        .todo-list li:hover .destroy{display:block}
-        .todo-list li .edit{display:none}
-        .todo-list li.editing:last-child{margin-bottom:-1px}
-        .fanhuizhuye {
-            display: inline-block;
-            position: absolute;
-            left: 20px;
-            top: 10px;
-            color: #fafafa;
-            font-weight: 400;
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             font-size: 16px;
         }
 
-        .note.info {
-            background-color: #eef7fa;
-            border-left-color: #428bca;
-            font-size: 1rem;
-            color: #969696;
-            /* font-family: 'Architects Daughter', cursive!important; */
+        button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
-        .note {
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #thoughtsContainer {
+            margin-top: 20px;
+        }
+
+        .thought {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
             position: relative;
-            padding: 15px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            border: initial;
-            border-left: 3px solid #eee;
-            background-color: #f9f9f9;
-            border-radius: 3px;
-            line-height: 20px;
-        }    
+        }
+
+        .thought time {
+            display: block;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .thought p {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+        }
+
+        .thought .username {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .thought .edit, .thought .delete {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .thought .edit {
+            right: 60px;
+        }
+
+        #refreshUsername, #helpButton {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        #refreshUsername:hover, #helpButton:hover {
+            background-color: #0056b3;
+        }
+
+        #backButton {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 5px 10px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #backButton:hover {
+            background-color: #5a6268;
+        }
     </style>
 </head>
 <body>
-    
-<div class="page-top">
-    <div class="page-content">
-        <a href="/" class="fanhuizhuye"> &lt; 返回主页</a>
-        <h2>任务计划列表</h2>
+    <div class="container">
+        <a href="your_blog_url" id="backButton">返回博客</a>
+        <h1>每日感想随笔</h1>
+        <form id="thoughtForm">
+            <textarea id="thoughtInput" placeholder="写下你的感想..."></textarea>
+            <div style="display: flex; justify-content: flex-end;">
+                <button id="helpButton">这是什么？</button>
+                <button id="refreshUsername">刷新用户名</button>
+                <button type="submit">提交</button>
+            </div>
+        </form>
+        <div id="thoughtsContainer">
+            <!-- 感想会显示在这里 -->
+        </div>
     </div>
-</div>
-<div class="main"><img data-src="https://ghchart.rshah.org/409ba5/NirvanafeLis" alt="" width="100%"> <div class="note info">
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-        这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设<br>
-        这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设<br>
-        这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设<br>
-        这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设这个页面正在等待建设<br>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDzgcvL1dWsa2sndO-d-mHNb_DrPv5dAGU",
+    authDomain: "something-nice-22902.firebaseapp.com",
+    projectId: "something-nice-22902",
+    storageBucket: "something-nice-22902.appspot.com",
+    messagingSenderId: "63473511528",
+    appId: "1:63473511528:web:9b3c3ddb542ff3b2c41fdd",
+    measurementId: "G-H2P30WJEWZ"
+  };
 
-    </div>
-</div><script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+        // 用户管理
+        function generateUsername() {
+            return 'user_' + Math.random().toString(36).substr(2, 8);
+        }
+
+        function getUsername() {
+            let username = localStorage.getItem('username');
+            if (!username) {
+                username = generateUsername();
+                localStorage.setItem('username', username);
+            }
+            return username;
+        }
+
+        function refreshUsername() {
+            const newUsername = generateUsername();
+            localStorage.setItem('username', newUsername);
+            alert('新用户名: ' + newUsername);
+        }
+
+        // 读取并显示感想
+        function loadThoughts() {
+            const thoughtsRef = ref(db, 'thoughts');
+            onValue(thoughtsRef, (snapshot) => {
+                const thoughtsContainer = document.getElementById('thoughtsContainer');
+                thoughtsContainer.innerHTML = '';
+                snapshot.forEach((childSnapshot) => {
+                    const thought = childSnapshot.val();
+                    thoughtsContainer.prepend(createThoughtHTML(childSnapshot.key, thought));
+                });
+            });
+        }
+
+        function createThoughtHTML(id, thought) {
+            return `
+                <div class="thought" data-id="${id}">
+                    <time>${thought.date}</time>
+                    <p>${thought.text}</p>
+                    <span class="username">${thought.username}</span>
+                    <button class="edit">编辑</button>
+                    <button class="delete">删除</button>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadThoughts();
+
+            document.getElementById('thoughtForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                addThought();
+            });
+
+            document.getElementById('refreshUsername').addEventListener('click', function() {
+                refreshUsername();
+            });
+
+            document.getElementById('helpButton').addEventListener('click', function() {
+                window.location.href = 'index2.html';
+            });
+
+            document.getElementById('thoughtsContainer').addEventListener('click', function(e) {
+                if (e.target.classList.contains('edit')) {
+                    editThought(e.target.closest('.thought').dataset.id);
+                }
+                if (e.target.classList.contains('delete')) {
+                    deleteThought(e.target.closest('.thought').dataset.id);
+                }
+            });
+        });
+
+        function addThought() {
+            const thoughtInput = document.getElementById('thoughtInput').value;
+            if (thoughtInput.trim() === "") {
+                alert("请输入感想内容！");
+                return;
+            }
+
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleString();
+            const username = getUsername();
+
+            const thought = {
+                text: thoughtInput,
+                date: formattedDate,
+                username: username
+            };
+
+            const thoughtsRef = ref(db, 'thoughts');
+            push(thoughtsRef, thought);
+            document.getElementById('thoughtInput').value = '';
+        }
+
+        function editThought(id) {
+            const thoughtDiv = document.querySelector(`.thought[data-id="${id}"]`);
+            const thoughtText = thoughtDiv.querySelector('p').innerText;
+            const newThoughtText = prompt("编辑你的感想：", thoughtText);
+
+            if (newThoughtText !== null) {
+                const thoughtRef = ref(db, `thoughts/${id}`);
+                update(thoughtRef, { text: newThoughtText });
+            }
+        }
+
+        function deleteThought(id) {
+            if (confirm("确定要删除这条感想吗？")) {
+                const thoughtRef = ref(db, `thoughts/${id}`);
+                remove(thoughtRef);
+            }
+        }
+    </script>
+
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
