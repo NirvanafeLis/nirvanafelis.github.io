@@ -167,27 +167,43 @@
 
         // 读取并显示感想
         async function loadThoughts() {
-            const thoughtsContainer = $('#thoughtsContainer');
-            thoughtsContainer.html('');
-            const q = query(collection(db, 'thoughts'), orderBy('timestamp', 'desc'));
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-                const thought = doc.data();
-                thoughtsContainer.append(createThoughtHTML(doc.id, thought));
-            });
-        }
+    const thoughtsContainer = $('#thoughtsContainer');
+    thoughtsContainer.html('');
+    const q = query(collection(db, 'thoughts'), orderBy('timestamp', 'desc'));
+    try {
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            const thought = doc.data();
+            console.log('Document data:', thought);
 
-        function createThoughtHTML(id, thought) {
-            return `
-                <div class="thought" data-id="${id}">
-                    <time>${new Date(thought.timestamp.toDate()).toLocaleString()}</time>
-                    <p>${thought.text}</p>
-                    <span class="username">${thought.username}</span>
-                    <button class="edit">编辑</button>
-                    <button class="delete">删除</button>
-                </div>
-            `;
-        }
+            // 检查 timestamp 类型并进行转换
+            if (thought.timestamp && typeof thought.timestamp.toDate === 'function') {
+                thought.timestamp = thought.timestamp.toDate();
+            } else {
+                // 如果没有timestamp，使用当前时间作为临时值
+                thought.timestamp = new Date();
+            }
+
+            thoughtsContainer.append(createThoughtHTML(doc.id, thought));
+        });
+    } catch (error) {
+        console.error("读取数据失败: ", error);
+    }
+}
+
+function createThoughtHTML(id, thought) {
+    return `
+        <div class="thought" data-id="${id}" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <span class="username" style="color: blue; font-weight: bold;">${thought.username}</span>
+            <time style="display: block; margin-top: 5px;">${new Date(thought.timestamp).toLocaleString()}</time>
+            <p style="margin-top: 5px;">${thought.text}</p>
+            <div style="margin-top: 10px;">
+                <button class="delete">删除</button>
+            </div>
+        </div>
+    `;
+}
+
 
         $(document).ready(function() {
             loadThoughts();
@@ -205,10 +221,6 @@
                 window.location.href = 'index2.html';
             });
 
-            $('#thoughtsContainer').on('click', '.edit', function() {
-                const id = $(this).closest('.thought').data('id');
-                editThought(id);
-            });
 
             $('#thoughtsContainer').on('click', '.delete', function() {
                 const id = $(this).closest('.thought').data('id');
@@ -240,20 +252,6 @@
             }
         }
 
-        async function editThought(id) {
-            const thoughtDiv = $(`.thought[data-id="${id}"]`);
-            const thoughtText = thoughtDiv.find('p').text();
-            const newThoughtText = prompt("编辑你的感想：", thoughtText);
-
-            if (newThoughtText !== null) {
-                try {
-                    await updateDoc(doc(db, 'thoughts', id), { text: newThoughtText });
-                    loadThoughts();
-                } catch (error) {
-                    console.error("更新数据失败: ", error);
-                }
-            }
-        }
 
         async function deleteThought(id) {
             try {
