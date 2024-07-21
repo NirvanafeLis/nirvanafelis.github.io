@@ -1,7 +1,4 @@
 <html lang="en"><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
-
-
-
     <link rel="icon" href="medium.png">
     <meta charset="UTF-8">
     <style>
@@ -61,15 +58,36 @@
             line-height:0%;
         }
     </style>
-    <title>title01</title>
+    <title>旅</title>
+    <script>
+        function generateRandomNumber() {
+            var randomNumber = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("result").innerText = randomNumber;
+        }
+    </script>
 </head>
 <body>
     <a href="javascript:history.back(-1)" class="back"><p align="left">&lt; 返回上一页哦</p> </a>
-    <div class="d"><h1>title01</h1></div>
+    <div class="d"><h1>旅</h1></div>
     <div class="d">
 <p class="u">
 如今已是我在此世存活的第十九个年头
 不知是否值得庆祝
+
+7月初 出门旅游了
+和同学共度了闲暇的美妙时光
+总体来说 还算愉快
+
+难以做出决定
+于是我掏出色子与安价
+至少心理上放松不少
+
+<button onclick="generateRandomNumber()">丢出色子</button>
+哪面朝上：<span id="result"></span>
+
+月初现出端倪的炎热也开始肆虐
+棒冰 空调与风扇
+
 </p>
 <br><br><br>
 <marquee behavior="alternate" bgcolor="grey">--end of file--</marquee>
