@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>猫涅的秘密结社</title>
+  <icon>https://www.maonie.top/icon.png</icon>
+  <subtitle>嗯..喵?</subtitle>
+  <link href="https://www.maonie.top/atom.xml" rel="self"/>
+  
+  <link href="https://www.maonie.top/"/>
+  <updated>2024-08-02T06:25:54.897Z</updated>
+  <id>https://www.maonie.top/</id>
+  
+  <author>
+    <name>nirvanafelis</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>求解</title>
+    <link href="https://www.maonie.top/2024/07/14/%E6%B1%82%E8%A7%A3/"/>
+    <id>https://www.maonie.top/2024/07/14/%E6%B1%82%E8%A7%A3/</id>
+    <published>2024-07-14T05:35:44.000Z</published>
+    <updated>2024-08-02T06:25:54.897Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;这里记录一下暑假两个月自学的笔记&quot;&gt;&lt;a href=&quot;#这里记录一下暑假两个月自学的笔记&quot; class=&quot;headerlink&quot; title=&quot;这里记录一下暑假两个月自学的笔记&quot;&gt;&lt;/a&gt;这里记录一下暑假两个月自学的笔记&lt;/h1&gt;&lt;p&gt;汇编语言-给电脑看的语言 虽然也是要被转化为0与1的 但层次更为粗糙 可读性更低&lt;br&gt;vscode的debugger&lt;br&gt;make clang debug50等用法&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>夺旗时间</title>
+    <link href="https://www.maonie.top/2024/06/08/%E5%A4%BA%E6%97%97%E6%97%B6%E9%97%B4/"/>
+    <id>https://www.maonie.top/2024/06/08/%E5%A4%BA%E6%97%97%E6%97%B6%E9%97%B4/</id>
+    <published>2024-06-08T05:22:16.000Z</published>
+    <updated>2024-06-12T06:26:07.323Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/CTF/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学学学</title>
+    <link href="https://www.maonie.top/2024/06/01/%E5%AD%A6%E5%AD%A6%E5%AD%A6/"/>
+    <id>https://www.maonie.top/2024/06/01/%E5%AD%A6%E5%AD%A6%E5%AD%A6/</id>
+    <published>2024-06-01T01:01:38.000Z</published>
+    <updated>2024-06-03T04:29:26.221Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常牢骚" scheme="https://www.maonie.top/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
+    
+    
+    <category term="告示" scheme="https://www.maonie.top/tags/%E5%91%8A%E7%A4%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>渗透测试相关</title>
+    <link href="https://www.maonie.top/2024/05/06/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+    <id>https://www.maonie.top/2024/05/06/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</id>
+    <published>2024-05-06T07:47:16.000Z</published>
+    <updated>2024-05-08T03:49:14.508Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;目前确定的说法之渗透测试的&lt;strong&gt;生命周期&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;渗透测试项目的生命周期可分为如下7个阶段：需求分析、信息收集、威胁建模、漏洞分析、漏洞利用、后渗透测试、撰写报告。&lt;br&gt;以下是PETS渗透测试项目生命周期的主要阶段：&lt;br&gt;1.	前期交互阶段：&lt;br&gt;•	与客户组织进行深入讨论，明确渗透测试的范围和目标。&lt;br&gt;•	确保客户组织了解并同意测试所涉及的内容，从而确保测试的顺利进行。&lt;br&gt;2.	情报搜集阶段：&lt;br&gt;•	使用各种方法和技术来收集目标系统的信息，包括操作系统、开放的端口、网络架构等。&lt;br&gt;•	通过社交媒体网络、Google Hacking技术、目标系统踩点等方式获取目标系统的详细信息。&lt;br&gt;3.	威胁建模阶段：&lt;br&gt;•	利用情报搜集阶段获取的信息，分析目标系统上可能存在的安全漏洞和弱点。&lt;br&gt;•	识别潜在的安全风险，并为后续的渗透攻击阶段制定策略。&lt;br&gt;4.	漏洞分析阶段：&lt;br&gt;•	综合前面阶段获取的信息，分析哪些攻击途径是可行的。&lt;br&gt;•	评估漏洞的严重程度和潜在影响，为攻击阶段提供决策依据。&lt;br&gt;5.	渗透攻击阶段：&lt;br&gt;•	根据前面的分析结果，对目标系统实施渗透攻击。&lt;br&gt;•	尝试利用已发现的漏洞，获取目标系统的权限或访问敏感数据。&lt;br&gt;6.	后渗透攻击阶段：&lt;br&gt;•	在成功渗透后，进一步探索目标系统，获取更多的信息和权限。&lt;br&gt;•	评估客户组织可能面临的最大业务风险，并提供相应的安全建议。&lt;br&gt;7.	报告阶段：&lt;br&gt;•	编写详细的渗透测试报告，记录测试过程和发现的问题。&lt;br&gt;•	从防御者的角度提出针对性的安全建议和改进措施，帮助客户组织加强安全防护。&lt;br&gt;请注意，每个阶段都至关重要，需要精心设计和执行。同时，与客户保持良好的沟通和合作也是确保测试成功的关键。在整个生命周期中，测试人员需要遵循安全准则和最佳实践，确保测试的合法性和道德性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;熟记即可&lt;br&gt;&lt;strong&gt;简述题&lt;/strong&gt; 列举常用渗透测试工具。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;信息收集类工具有nmap、fping、dnsmap等&lt;br&gt;漏洞分析类工具有sqlmap、nessus、awvs等&lt;br&gt;漏洞利用类工具有metasploit、burpsuite等&lt;br&gt;密码破解类工具有hydra、john、hashcat等&lt;br&gt;数据分析类工具有wireshark等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简述扫描技术的分类&lt;br&gt;扫描技术按照不同划分标准有不同的分类方式。如按照扫描技术分类可分为TCP扫描、UDP扫描，ICMP扫描、ARP扫描。其中TCP扫描又分为TCP CONNECT()扫描、TCP SYN扫描（这种方法较为常见）。ARP扫描效率较高，但不能跨网段，且工作在数据链路层，主要用于探测本地局域网中的主机存活情况。按照扫描所使用协议的工作层次，可分为二层扫描（ARP）、三层扫描（ICMP、IP）和四层扫描技术（TCP、UDP）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>协议/漏洞/网络</title>
+    <link href="https://www.maonie.top/2024/05/05/%E5%8D%8F%E8%AE%AE-%E6%BC%8F%E6%B4%9E-%E7%BD%91%E7%BB%9C/"/>
+    <id>https://www.maonie.top/2024/05/05/%E5%8D%8F%E8%AE%AE-%E6%BC%8F%E6%B4%9E-%E7%BD%91%E7%BB%9C/</id>
+    <published>2024-05-05T02:10:55.000Z</published>
+    <updated>2024-05-14T00:41:38.803Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;从头到尾再来一遍的感觉吧&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最新的知识点</title>
+    <link href="https://www.maonie.top/2024/04/28/%E6%9C%80%E6%96%B0%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>https://www.maonie.top/2024/04/28/%E6%9C%80%E6%96%B0%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</id>
+    <published>2024-04-28T02:48:04.000Z</published>
+    <updated>2024-05-06T04:55:03.174Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;考试可能会用到 谁又知道呢&lt;/p&gt;
+&lt;h1 id=&quot;一、osi模型&quot;&gt;&lt;a href=&quot;#一、osi模型&quot; class=&quot;headerlink&quot; title=&quot;一、osi模型&quot;&gt;&lt;/a&gt;一、osi模型&lt;/h1&gt;&lt;p&gt;维基百科定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; “OSI模型，即开放式通信系统互联参考模型（Open System Interconnection Reference Model），是国际标准化组织（ISO）提出的一个试图使各种计算机在世界范围内互连为网络的标准框架，简称OSI。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;定义了网络互连的七层模型（物理层、数据链路层、网络层、传输层、会话层、表示层、应用层）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据分析相关</title>
+    <link href="https://www.maonie.top/2024/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3/"/>
+    <id>https://www.maonie.top/2024/04/27/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9B%B8%E5%85%B3/</id>
+    <published>2024-04-27T11:36:28.000Z</published>
+    <updated>2024-04-27T12:37:30.974Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;数据分析是干啥的&quot;&gt;&lt;a href=&quot;#数据分析是干啥的&quot; class=&quot;headerlink&quot; title=&quot;数据分析是干啥的&quot;&gt;&lt;/a&gt;数据分析是干啥的&lt;/h2&gt;&lt;p&gt;-整合一堆杂乱无章的数据 把背后的信息提炼出来 使数据的价值最大化&lt;br&gt;–分析用户的消费行为 指定相应的方案 调整促销时间 力度 计算用户活跃度和产品的回购力度&lt;br&gt;–分析广告的点击率 决定广告的投放时间 制定广告方案 决定投放等等&lt;/p&gt;
+&lt;p&gt;例：&lt;br&gt;1.保险公司从大量的赔付申请数据中判断哪些存在骗保可能&lt;br&gt;2.支付宝通过用户消费记录和行为自动调整花呗额度&lt;br&gt;3.短视频通过用户的点击和观看行为给用户推送合适的视频&lt;/p&gt;
+&lt;h2 id=&quot;我为啥要学数据分析&quot;&gt;&lt;a href=&quot;#我为啥要学数据分析&quot; class=&quot;headerlink&quot; title=&quot;我为啥要学数据分析&quot;&gt;&lt;/a&gt;我为啥要学数据分析&lt;/h2&gt;&lt;p&gt;&lt;del&gt;因为我现在就得用&lt;/del&gt;&lt;br&gt;可以用于某些岗位或竞赛&lt;br&gt;python数据科学的基础&lt;br&gt;机器学习课程的基础&lt;/p&gt;
+&lt;h2 id=&quot;数据分析的流程&quot;&gt;&lt;a href=&quot;#数据分析的流程&quot; class=&quot;headerlink&quot; title=&quot;数据分析的流程&quot;&gt;&lt;/a&gt;数据分析的流程&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zico2解析</title>
+    <link href="https://www.maonie.top/2024/03/28/zico2%E8%A7%A3%E6%9E%90/"/>
+    <id>https://www.maonie.top/2024/03/28/zico2%E8%A7%A3%E6%9E%90/</id>
+    <published>2024-03-28T02:30:05.000Z</published>
+    <updated>2024-03-28T05:19:50.895Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;p&gt;攻击机：kali&lt;br&gt;靶机：zico2&lt;/p&gt;
+&lt;h1 id=&quot;相关知识&quot;&gt;&lt;a href=&quot;#相关知识&quot; class=&quot;headerlink&quot; title=&quot;相关知识&quot;&gt;&lt;/a&gt;相关知识&lt;/h1&gt;&lt;p&gt;Poc Exp 和payload 的关系&lt;br&gt;dirb （网站目录扫描）&lt;br&gt;文件包含漏洞&lt;br&gt;mysql相关（虽然是图形化页面）&lt;br&gt;一句话木马+蚁剑&lt;br&gt;zip提权&lt;/p&gt;
+&lt;h1 id=&quot;具体过程&quot;&gt;&lt;a href=&quot;#具体过程&quot; class=&quot;headerlink&quot; title=&quot;具体过程&quot;&gt;&lt;/a&gt;具体过程&lt;/h1&gt;&lt;p&gt;先把俩机子开开</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OverTheWire-bandit解析</title>
+    <link href="https://www.maonie.top/2024/03/21/OverTheWire-bandit%E8%A7%A3%E6%9E%90/"/>
+    <id>https://www.maonie.top/2024/03/21/OverTheWire-bandit%E8%A7%A3%E6%9E%90/</id>
+    <published>2024-03-21T08:50:52.000Z</published>
+    <updated>2024-03-22T04:29:53.790Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;友情提示&quot;&gt;&lt;a href=&quot;#友情提示&quot; class=&quot;headerlink&quot; title=&quot;友情提示&quot;&gt;&lt;/a&gt;友情提示&lt;/h1&gt;&lt;p&gt;理论来说 这个网页的网站说了不允许剧透或是writeup&lt;br&gt;但这大多是为了方便我自身复习留下的资料&lt;br&gt;因此我不会直接在文中提供flag 只会写出方法与代码&lt;/p&gt;
+&lt;h1 id=&quot;环境介绍&quot;&gt;&lt;a href=&quot;#环境介绍&quot; class=&quot;headerlink&quot; title=&quot;环境介绍&quot;&gt;&lt;/a&gt;环境介绍&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://overthewire.org/wargames/bandit/bandit0.html&quot;&gt;网页链接&lt;/a&gt;&lt;br&gt;该网页类似一个在线靶场 需要你登录它所提供的账号密码登录其ssh服务进行一场小游戏&lt;br&gt;我使用了MobaXterm来登陆&amp;#x2F;输入指令&lt;/p&gt;
+&lt;h1 id=&quot;具体过程&quot;&gt;&lt;a href=&quot;#具体过程&quot; class=&quot;headerlink&quot; title=&quot;具体过程&quot;&gt;&lt;/a&gt;具体过程&lt;/h1&gt;&lt;h2 id=&quot;level-0-准备&quot;&gt;&lt;a href=&quot;#level-0-准备&quot; class=&quot;headerlink&quot; title=&quot;level 0&amp;#x2F;准备&quot;&gt;&lt;/a&gt;level 0&amp;#x2F;准备&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;页面描述为指示你链接ssh服务 并给予了对应ip 端口 账号 密码&lt;br&gt;一旦登录成功 便可进入level0→level1的页面&lt;br&gt;关于登录 我们先打开MobaXterm 点击左上角的 &lt;strong&gt;Session&lt;/strong&gt; 选择ssh&lt;br&gt;输入ip地址&lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;与端口2220&lt;br&gt;&lt;img data-src=&quot;/2024/03/21/OverTheWire-bandit%E8%A7%A3%E6%9E%90/1.jpg&quot; alt=&quot;1&quot;&gt;&lt;br&gt;确认后左边的User sessions便会多出一个连接 右键 Edit session 会进入相同的页面&lt;br&gt;&lt;img data-src=&quot;/2024/03/21/OverTheWire-bandit%E8%A7%A3%E6%9E%90/2.jpg&quot; alt=&quot;2&quot;&gt;&lt;br&gt;先点击① 会出来账号管理器 点击②来新建一个 输入bandit0与bandit0&lt;br&gt;保存好后在登陆前勾选左边的 &lt;code&gt;Specify username&lt;/code&gt; 选择对应账号名即可快速登陆&lt;br&gt;注：使用MobaXterm的该功能必须设定一个高级密码 请不要忽视它跳出的窗口&lt;br&gt;每道题里的flag相当于下一题的账号密码&lt;br&gt;也就是说下道题的结论是 账号 &lt;strong&gt;bandit(题号)&lt;/strong&gt; 与 密码 &lt;strong&gt;flag值&lt;/strong&gt;&lt;br&gt;这些即为前提 接下来正式入手&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="linux" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/linux/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="linux" scheme="https://www.maonie.top/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTF实战相关2</title>
+    <link href="https://www.maonie.top/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/"/>
+    <id>https://www.maonie.top/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/</id>
+    <published>2024-03-12T10:08:17.000Z</published>
+    <updated>2024-03-12T10:09:45.548Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;CTF实战相关2&quot;&gt;&lt;a href=&quot;#CTF实战相关2&quot; class=&quot;headerlink&quot; title=&quot;CTF实战相关2&quot;&gt;&lt;/a&gt;CTF实战相关2&lt;/h1&gt;&lt;p&gt;以web类的CTF作为范本的话&lt;br&gt;应该做的&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.检查网页元素  寻找相关提示&lt;br&gt;2.通过网络查看http标头(header)&lt;br&gt;3.burp扫描&amp;#x2F;hackbar投送信息&amp;#x2F;更改cookie&lt;br&gt;4.php相关知识&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;还有标头会传达的 可更改的两个信息 X-Forwarded-For 与 Referer&lt;br&gt;简单来说&lt;br&gt;X-Forwarded-For表示访问该网址的ip 例如127.0.0.1即为本地访问&lt;br&gt;Referer代表了你是从哪个网页来——例如&lt;code&gt;http://www.google.com&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;例题&quot;&gt;&lt;a href=&quot;#例题&quot; class=&quot;headerlink&quot; title=&quot;例题&quot;&gt;&lt;/a&gt;例题&lt;/h2&gt;&lt;p&gt;（注：这里图片只附上结果 主要是不想再开环境了）&lt;br&gt;使用了谷歌浏览器的f12功能 burpsuite 与 firefox的hackbar插件&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/CTF/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>靶机解析-gigachad</title>
+    <link href="https://www.maonie.top/2024/03/09/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90-gigachad/"/>
+    <id>https://www.maonie.top/2024/03/09/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90-gigachad/</id>
+    <published>2024-03-09T05:55:38.000Z</published>
+    <updated>2024-03-10T07:26:46.478Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这周的靶机&lt;/p&gt;
+&lt;h1 id=&quot;环境设置&quot;&gt;&lt;a href=&quot;#环境设置&quot; class=&quot;headerlink&quot; title=&quot;环境设置&quot;&gt;&lt;/a&gt;环境设置&lt;/h1&gt;&lt;p&gt;攻击机：kali&lt;br&gt;靶机：gigachad&lt;/p&gt;
+&lt;h2 id=&quot;相关知识-工具&quot;&gt;&lt;a href=&quot;#相关知识-工具&quot; class=&quot;headerlink&quot; title=&quot;相关知识-工具&quot;&gt;&lt;/a&gt;相关知识-工具&lt;/h2&gt;&lt;p&gt;linux单次登录&amp;#x2F;更改ip设置&lt;br&gt;提权技巧&lt;br&gt;searchsploit&lt;/p&gt;
+&lt;h1 id=&quot;具体过程&quot;&gt;&lt;a href=&quot;#具体过程&quot; class=&quot;headerlink&quot; title=&quot;具体过程&quot;&gt;&lt;/a&gt;具体过程&lt;/h1&gt;&lt;p&gt;首先 我们打开两个机子&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ctf实战相关1</title>
+    <link href="https://www.maonie.top/2024/03/06/ctf%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B31/"/>
+    <id>https://www.maonie.top/2024/03/06/ctf%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B31/</id>
+    <published>2024-03-06T09:59:32.000Z</published>
+    <updated>2024-03-06T12:51:21.599Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本次主题为 &lt;strong&gt;[ACTF2020 新生赛]BackupFile&lt;/strong&gt; 与 &lt;strong&gt;[极客大挑战 2019]BuyFlag&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;使用平台&quot;&gt;&lt;a href=&quot;#使用平台&quot; class=&quot;headerlink&quot; title=&quot;使用平台&quot;&gt;&lt;/a&gt;使用平台&lt;/h2&gt;&lt;p&gt;chrome&lt;br&gt;&lt;a href=&quot;https://buuoj.cn/&quot;&gt;buuctf&lt;/a&gt;&lt;br&gt;firefox(搭载hackbar)&lt;/p&gt;
+&lt;h2 id=&quot;相关知识&quot;&gt;&lt;a href=&quot;#相关知识&quot; class=&quot;headerlink&quot; title=&quot;相关知识&quot;&gt;&lt;/a&gt;相关知识&lt;/h2&gt;&lt;p&gt;备份文件的存在&lt;br&gt;cookie查看&amp;#x2F;修改&lt;br&gt;php数据类型&lt;/p&gt;
+&lt;h2 id=&quot;flag获取过程&quot;&gt;&lt;a href=&quot;#flag获取过程&quot; class=&quot;headerlink&quot; title=&quot;flag获取过程&quot;&gt;&lt;/a&gt;flag获取过程&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/CTF/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>复习time</title>
+    <link href="https://www.maonie.top/2024/02/27/%E5%A4%8D%E4%B9%A0time/"/>
+    <id>https://www.maonie.top/2024/02/27/%E5%A4%8D%E4%B9%A0time/</id>
+    <published>2024-02-27T10:25:52.000Z</published>
+    <updated>2024-02-27T11:29:03.067Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;高三了进行一个前端（html-css-javascript）的复习&quot;&gt;&lt;a href=&quot;#高三了进行一个前端（html-css-javascript）的复习&quot; class=&quot;headerlink&quot; title=&quot;高三了进行一个前端（html+css+javascript）的复习&quot;&gt;&lt;/a&gt;高三了进行一个前端（html+css+javascript）的复习&lt;/h1&gt;&lt;h2 id=&quot;html&quot;&gt;&lt;a href=&quot;#html&quot; class=&quot;headerlink&quot; title=&quot;html&quot;&gt;&lt;/a&gt;html&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;“超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。&lt;br&gt;您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;基础构造&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-markup&quot; data-language=&quot;markup&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&lt;span class=&quot;token doctype&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;token doctype-tag&quot;&gt;doctype&lt;/span&gt; &lt;span class=&quot;token name&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;head&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    	&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;html&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;元素名用尖括号包裹&lt;br&gt; 以&lt;code&gt;&amp;lt;元素名&amp;gt;元素内容&amp;lt;/元素名&amp;gt;&lt;/code&gt;或&lt;code&gt;&amp;lt;元素名 /&amp;gt;&lt;/code&gt;作为一部分组成的代码&lt;br&gt;注释形式为&lt;code&gt;&amp;lt;!--这是一个注释，注释在浏览器中不会显示--&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;css&quot;&gt;&lt;a href=&quot;#css&quot; class=&quot;headerlink&quot; title=&quot;css&quot;&gt;&lt;/a&gt;css&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;“&lt;strong&gt;CSS&lt;/strong&gt; (Cascading Style Sheets，层叠样式表），是一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言，&lt;strong&gt;CSS&lt;/strong&gt; 文件扩展名为 &lt;strong&gt;.css&lt;/strong&gt;。&lt;br&gt;通过使用 &lt;strong&gt;CSS&lt;/strong&gt; 我们可以大大提升网页开发的工作效率！”&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开学季</title>
+    <link href="https://www.maonie.top/2024/02/25/%E5%BC%80%E5%AD%A6%E5%AD%A3/"/>
+    <id>https://www.maonie.top/2024/02/25/%E5%BC%80%E5%AD%A6%E5%AD%A3/</id>
+    <published>2024-02-25T00:44:51.000Z</published>
+    <updated>2024-02-25T00:47:54.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常牢骚" scheme="https://www.maonie.top/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
+    
+    
+    <category term="日常牢骚" scheme="https://www.maonie.top/tags/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>维修时间</title>
+    <link href="https://www.maonie.top/2024/01/28/%E2%80%9C%E7%BB%B4%E4%BF%AE%E6%97%B6%E9%97%B4%E2%80%9D/"/>
+    <id>https://www.maonie.top/2024/01/28/%E2%80%9C%E7%BB%B4%E4%BF%AE%E6%97%B6%E9%97%B4%E2%80%9D/</id>
+    <published>2024-01-28T09:37:14.000Z</published>
+    <updated>2024-01-29T12:27:20.345Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常牢骚" scheme="https://www.maonie.top/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
+    
+    
+    <category term="日常牢骚" scheme="https://www.maonie.top/tags/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小小修整</title>
+    <link href="https://www.maonie.top/2024/01/15/%E5%B0%8F%E5%B0%8F%E4%BF%AE%E6%95%B4/"/>
+    <id>https://www.maonie.top/2024/01/15/%E5%B0%8F%E5%B0%8F%E4%BF%AE%E6%95%B4/</id>
+    <published>2024-01-15T05:32:17.000Z</published>
+    <updated>2024-01-15T05:44:41.257Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常牢骚" scheme="https://www.maonie.top/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
+    
+    
+    <category term="告示" scheme="https://www.maonie.top/tags/%E5%91%8A%E7%A4%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学校实训-笔记</title>
+    <link href="https://www.maonie.top/2024/01/08/%E5%AD%A6%E6%A0%A1%E5%AE%9E%E8%AE%AD-%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.maonie.top/2024/01/08/%E5%AD%A6%E6%A0%A1%E5%AE%9E%E8%AE%AD-%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-01-08T05:35:57.000Z</published>
+    <updated>2024-01-09T04:49:30.614Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;学校寒假放了点作业出来&lt;br&gt;做个笔记&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每周靶机之Beelzebub</title>
+    <link href="https://www.maonie.top/2023/12/31/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BBeelzebub/"/>
+    <id>https://www.maonie.top/2023/12/31/%E6%AF%8F%E5%91%A8%E9%9D%B6%E6%9C%BA%E4%B9%8BBeelzebub/</id>
+    <published>2023-12-31T05:49:29.000Z</published>
+    <updated>2024-01-01T07:13:40.032Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这个是工作室的靶机&lt;/p&gt;
+&lt;h1 id=&quot;环境设置&quot;&gt;&lt;a href=&quot;#环境设置&quot; class=&quot;headerlink&quot; title=&quot;环境设置&quot;&gt;&lt;/a&gt;环境设置&lt;/h1&gt;&lt;p&gt;攻击机：kali&lt;br&gt;靶机：beelzebub&lt;/p&gt;
+&lt;h2 id=&quot;知识点和工具&quot;&gt;&lt;a href=&quot;#知识点和工具&quot; class=&quot;headerlink&quot; title=&quot;知识点和工具&quot;&gt;&lt;/a&gt;知识点和工具&lt;/h2&gt;&lt;p&gt;wpscan (wordpress环境专用的工具 用于爆破用户名或密码)&lt;br&gt;dirsearch (目录扫描)&lt;br&gt;md5加密&lt;br&gt;目录扫描&lt;/p&gt;
+&lt;h1 id=&quot;具体过程&quot;&gt;&lt;a href=&quot;#具体过程&quot; class=&quot;headerlink&quot; title=&quot;具体过程&quot;&gt;&lt;/a&gt;具体过程&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读书笔记-如何阅读一本书</title>
+    <link href="https://www.maonie.top/2023/12/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/"/>
+    <id>https://www.maonie.top/2023/12/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</id>
+    <published>2023-12-29T01:32:30.000Z</published>
+    <updated>2024-01-24T09:27:41.456Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;经&lt;a href=&quot;https://truthleader.github.io/&quot;&gt;&lt;del&gt;我们伟大而全能的唯一至高真理教教主&lt;/del&gt;&lt;/a&gt;推荐而读&lt;br&gt;本书下载地址：&lt;a href=&quot;https://zh.z-library.se/book/5423134/5e4d46/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html&quot;&gt;点击这里&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;ps:之前没做过这种东西 所以姑且先开一篇试试水&lt;br&gt;这玩意多半得长期更新 边摸边写&lt;/p&gt;
+&lt;h2 id=&quot;总之为啥要看呢？&quot;&gt;&lt;a href=&quot;#总之为啥要看呢？&quot; class=&quot;headerlink&quot; title=&quot;总之为啥要看呢？&quot;&gt;&lt;/a&gt;总之为啥要看呢？&lt;/h2&gt;&lt;p&gt;1.提升看书的效率（用更少的时间来阅读更多的内容）云云&lt;br&gt;2.很好奇是怎么个”如何阅读”&lt;/p&gt;
+&lt;h2 id=&quot;我目前看出来个啥&quot;&gt;&lt;a href=&quot;#我目前看出来个啥&quot; class=&quot;headerlink&quot; title=&quot;我目前看出来个啥&quot;&gt;&lt;/a&gt;我目前看出来个啥&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="读书笔记" scheme="https://www.maonie.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="读书笔记" scheme="https://www.maonie.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DC-4解析</title>
+    <link href="https://www.maonie.top/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/"/>
+    <id>https://www.maonie.top/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/</id>
+    <published>2023-12-29T00:52:35.000Z</published>
+    <updated>2024-03-28T04:18:34.193Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这个是学校作业哦&lt;br&gt;下载地址：&lt;a href=&quot;https://www.vulnhub.com/entry/dc-4,313/&quot;&gt;https://www.vulnhub.com/entry/dc-4,313/&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;p&gt;攻击机：kali&lt;br&gt;靶机：DC-4&lt;br&gt;网络链接均为Nat模式&lt;/p&gt;
+&lt;h2 id=&quot;相关知识与工具&quot;&gt;&lt;a href=&quot;#相关知识与工具&quot; class=&quot;headerlink&quot; title=&quot;相关知识与工具&quot;&gt;&lt;/a&gt;相关知识与工具&lt;/h2&gt;&lt;p&gt;burpsuite （爆破 监听 数据包更改）&lt;br&gt;hydra（爆破用工具）&lt;br&gt;teehee提权&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="靶机解析" scheme="https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+</feed>
