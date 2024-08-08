@@ -6,7 +6,7 @@
   <link href="https://www.maonie.top/atom.xml" rel="self"/>
   
   <link href="https://www.maonie.top/"/>
-  <updated>2024-08-07T03:38:25.525Z</updated>
+  <updated>2024-08-08T03:25:55.579Z</updated>
   <id>https://www.maonie.top/</id>
   
   <author>
@@ -21,19 +21,19 @@
     <link href="https://www.maonie.top/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/"/>
     <id>https://www.maonie.top/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/</id>
     <published>2024-08-05T04:10:49.000Z</published>
-    <updated>2024-08-07T03:38:25.525Z</updated>
+    <updated>2024-08-08T03:25:55.579Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类"><a href="#既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类" class="headerlink" title="既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类"></a>既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类</h1><p>关键基本都在ipa pro的使用<br>以及反编程后的信息搜集</p><pre class="line-numbers language-none"><code class="language-none">~目前来说有用的记录~shift+f12 查看字符串 ctrl+X 查询该字符串对应内存的相关调用f5 查看伪c代码代码中的变量直接选中后双击就可查看具体内容ipa pro的环境目录内最好是纯英文 不然会出各种各样的bug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="测试题-BUUCTF-easyre1"><a href="#测试题-BUUCTF-easyre1" class="headerlink" title="测试题 BUUCTF-easyre1"></a>测试题 BUUCTF-easyre1</h2><span id="more"></span><p>将题目提供的exe以ipa pro打开<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/1.jpg" alt="1"><br>ipa pro会自动判断我们提供软件的类型并提供选择 这里直接点击ok<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/2.jpg" alt="2"><br>软件内有很多不同的视窗 我们来主要分析他生成的视窗化代码<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/3.jpg" alt="3"><br>很明显这段就是flag 输入后便能完成题目</p><p>目前先更到这里 后面主要讲解ipa pro 的各项功能和视窗的不同 然后再来两个例题</p></body></html>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类"><a href="#既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类" class="headerlink" title="既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类"></a>既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类</h1><p>关键基本都在ida pro的使用<br>以及反编程后的信息搜集</p><pre class="line-numbers language-none"><code class="language-none">~目前来说有用的记录~shift+f12 查看字符串 ctrl+X 查询该字符串对应内存的相关调用f5 查看伪c代码代码中的变量直接选中后双击就可查看具体内容ida pro的环境目录内最好是纯英文 不然会出各种各样的bug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="测试题-BUUCTF-easyre1"><a href="#测试题-BUUCTF-easyre1" class="headerlink" title="测试题 BUUCTF-easyre1"></a>测试题 BUUCTF-easyre1</h2><span id="more"></span><p>将题目提供的exe以ida pro打开<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/1.jpg" alt="1"><br>ida pro会自动判断我们提供软件的类型并提供选择 这里直接点击ok<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/2.jpg" alt="2"><br>软件内有很多不同的视窗 我们来主要分析他生成的视窗化代码<br><img data-src="/2024/08/05/%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E9%80%86%E5%90%91-CTF%E4%B9%8Breverse/3.jpg" alt="3"><br>很明显这段就是flag 输入后便能完成题目</p><p>目前先更到这里 后面主要讲解ida pro 的各项功能和视窗的不同 然后再来两个例题</p></body></html>]]></content>
     
     
-    <summary type="html">&lt;h1 id=&quot;既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类&quot;&gt;&lt;a href=&quot;#既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类&quot; class=&quot;headerlink&quot; title=&quot;既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类&quot;&gt;&lt;/a&gt;既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类&lt;/h1&gt;&lt;p&gt;关键基本都在ipa pro的使用&lt;br&gt;以及反编程后的信息搜集&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类&quot;&gt;&lt;a href=&quot;#既然把cs50的c语言翻了个底-我们来学习反编译-然后引导到CTF的reverse大类&quot; class=&quot;headerlink&quot; title=&quot;既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类&quot;&gt;&lt;/a&gt;既然把cs50的c语言翻了个底 我们来学习反编译 然后引导到CTF的reverse大类&lt;/h1&gt;&lt;p&gt;关键基本都在ida pro的使用&lt;br&gt;以及反编程后的信息搜集&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;~目前来说有用的记录~
 shift+f12 查看字符串 
 ctrl+X 查询该字符串对应内存的相关调用
 f5 查看伪c代码
 代码中的变量直接选中后双击就可查看具体内容
 
-ipa pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+ida pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;测试题-BUUCTF-easyre1&quot;&gt;&lt;a href=&quot;#测试题-BUUCTF-easyre1&quot; class=&quot;headerlink&quot; title=&quot;测试题 BUUCTF-easyre1&quot;&gt;&lt;/a&gt;测试题 BUUCTF-easyre1&lt;/h2&gt;</summary>
     
