@@ -6,7 +6,7 @@
   <link href="https://www.maonie.top/atom.xml" rel="self"/>
   
   <link href="https://www.maonie.top/"/>
-  <updated>2024-08-14T16:19:16.800Z</updated>
+  <updated>2024-08-16T03:01:21.542Z</updated>
   <id>https://www.maonie.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BaseCTF高校联合新生赛2024</title>
+    <link href="https://www.maonie.top/2024/08/16/BaseCTF%E9%AB%98%E6%A0%A1%E8%81%94%E5%90%88%E6%96%B0%E7%94%9F%E8%B5%9B2024/"/>
+    <id>https://www.maonie.top/2024/08/16/BaseCTF%E9%AB%98%E6%A0%A1%E8%81%94%E5%90%88%E6%96%B0%E7%94%9F%E8%B5%9B2024/</id>
+    <published>2024-08-15T23:12:08.000Z</published>
+    <updated>2024-08-16T03:01:21.542Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>因为整个赛段还没完成 所以这里只会根据已经结束的week展示相应的writeup 禁止偷鸡哦<br>现在第一周还没过呢<br>已经收到Kengwang的礼物啦</p><span id="more"></span><h2 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h2><hr><blockquote><p>We are just another visitor in a transient world.</p></blockquote></body></html>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;因为整个赛段还没完成 所以这里只会根据已经结束的week展示相应的writeup 禁止偷鸡哦&lt;br&gt;现在第一周还没过呢&lt;br&gt;已经收到Kengwang的礼物啦&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CTF" scheme="https://www.maonie.top/categories/CTF/"/>
+    
+    
+    <category term="CTF" scheme="https://www.maonie.top/tags/CTF/"/>
+    
+  </entry>
   
   <entry>
     <title>逆逆逆逆逆向-CTF之reverse</title>
@@ -535,31 +556,6 @@ ida pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;sp
     <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="靶机解析" scheme="https://www.maonie.top/tags/%E9%9D%B6%E6%9C%BA%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读书笔记-如何阅读一本书</title>
-    <link href="https://www.maonie.top/2023/12/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/"/>
-    <id>https://www.maonie.top/2023/12/29/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</id>
-    <published>2023-12-29T01:32:30.000Z</published>
-    <updated>2024-01-24T09:27:41.456Z</updated>
-    
-    <content type="html"><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>经<a href="https://truthleader.github.io/"><del>我们伟大而全能的唯一至高真理教教主</del></a>推荐而读<br>本书下载地址：<a href="https://zh.z-library.se/book/5423134/5e4d46/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html">点击这里</a></p><hr><p>ps:之前没做过这种东西 所以姑且先开一篇试试水<br>这玩意多半得长期更新 边摸边写</p><h2 id="总之为啥要看呢？"><a href="#总之为啥要看呢？" class="headerlink" title="总之为啥要看呢？"></a>总之为啥要看呢？</h2><p>1.提升看书的效率（用更少的时间来阅读更多的内容）云云<br>2.很好奇是怎么个”如何阅读”</p><h2 id="我目前看出来个啥"><a href="#我目前看出来个啥" class="headerlink" title="我目前看出来个啥"></a>我目前看出来个啥</h2><span id="more"></span><p>1.有的时候 <strong>理解（understand）</strong>东西并不需要<strong>知道（know）</strong>这件事相关的所有事物。太多的资讯与太少的资讯都会成为理解力的阻碍。</p><p>2.阅读并不是完全被动(类似于被打了一拳，或得到一项遗产，或法院的判决)的行为。反倒更像是棒球比赛中的捕手——读者需要去尽可能接收作者所投出来的“球”，把自己的技巧与作者的技巧融合起来，达到共同的终点。读者想“接住”多少意念完全看他在阅读时多么主动，以及他投⼊不同⼼思来阅读的技巧如何。</p><ol start="3"><li></li></ol></body></html>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;经&lt;a href=&quot;https://truthleader.github.io/&quot;&gt;&lt;del&gt;我们伟大而全能的唯一至高真理教教主&lt;/del&gt;&lt;/a&gt;推荐而读&lt;br&gt;本书下载地址：&lt;a href=&quot;https://zh.z-library.se/book/5423134/5e4d46/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html&quot;&gt;点击这里&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;ps:之前没做过这种东西 所以姑且先开一篇试试水&lt;br&gt;这玩意多半得长期更新 边摸边写&lt;/p&gt;
-&lt;h2 id=&quot;总之为啥要看呢？&quot;&gt;&lt;a href=&quot;#总之为啥要看呢？&quot; class=&quot;headerlink&quot; title=&quot;总之为啥要看呢？&quot;&gt;&lt;/a&gt;总之为啥要看呢？&lt;/h2&gt;&lt;p&gt;1.提升看书的效率（用更少的时间来阅读更多的内容）云云&lt;br&gt;2.很好奇是怎么个”如何阅读”&lt;/p&gt;
-&lt;h2 id=&quot;我目前看出来个啥&quot;&gt;&lt;a href=&quot;#我目前看出来个啥&quot; class=&quot;headerlink&quot; title=&quot;我目前看出来个啥&quot;&gt;&lt;/a&gt;我目前看出来个啥&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="读书笔记" scheme="https://www.maonie.top/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="读书笔记" scheme="https://www.maonie.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
