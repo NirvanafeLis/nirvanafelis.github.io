@@ -4,15 +4,40 @@
     <title>你好</title>
     <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p>
+<h2 id="稍作声明"><a href="#稍作声明" class="headerlink" title="稍作声明"></a>稍作声明</h2><p>欢迎 这里是我的个人网页 博客 或者你认为的东西<br>学习相关的资料若有参考会表明具体出处 </p>
 </body></html>]]></content>
       <tags>
         <tag>告示</tag>
       </tags>
   </entry>
   <entry>
+    <title>神奇脚本在哪里-CTF之Pwn</title>
+    <url>/2024/08/26/%E7%A5%9E%E5%A5%87%E8%84%9A%E6%9C%AC%E5%9C%A8%E5%93%AA%E9%87%8C-CTF%E4%B9%8BPwn/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>ps:最近刚开学 很忙 会很慢的更</p>
+<h2 id="最近接触到了Pwn-那就来顺带讲讲Pwn吧"><a href="#最近接触到了Pwn-那就来顺带讲讲Pwn吧" class="headerlink" title="最近接触到了Pwn 那就来顺带讲讲Pwn吧"></a>最近接触到了Pwn 那就来顺带讲讲Pwn吧</h2><p>基于我对pwn的理解 pwn的过程分别为下:<br>1.题目在大部分情况下会提供一个文件和相应环境<br>2.所提供文件的内容对应了环境所指向的靶机 该靶机所运行的便是该文件<br>3.尝试通过nc 或python的pwn脚本来爆破出flag内容</p>
+<span id="more"></span>
+
+<h2 id="（在做了的）例题"><a href="#（在做了的）例题" class="headerlink" title="（在做了的）例题"></a>（在做了的）例题</h2><h2 id="BUUCTF-test-your-nc"><a href="#BUUCTF-test-your-nc" class="headerlink" title="[BUUCTF]test-your-nc"></a>[BUUCTF]test-your-nc</h2><p>这个题目标题就已经揭示了大部分的主要内容-用nc链接靶机i/p获取flag</p>
+<p><img data-src="/2024/08/26/%E7%A5%9E%E5%A5%87%E8%84%9A%E6%9C%AC%E5%9C%A8%E5%93%AA%E9%87%8C-CTF%E4%B9%8BPwn/1.jpg" alt="1"></p>
+<p><img data-src="/2024/08/26/%E7%A5%9E%E5%A5%87%E8%84%9A%E6%9C%AC%E5%9C%A8%E5%93%AA%E9%87%8C-CTF%E4%B9%8BPwn/2.jpg" alt="2"></p>
+<h2 id="后面的等我持续更新中（逃"><a href="#后面的等我持续更新中（逃" class="headerlink" title="后面的等我持续更新中（逃"></a>后面的等我持续更新中（逃</h2><h2 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h2><hr>
+<blockquote>
+<p>We are just another visitor in a transient world.</p>
+</blockquote>
+</body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BaseCTF高校联合新生赛2024</title>
     <url>/2024/08/16/BaseCTF%E9%AB%98%E6%A0%A1%E8%81%94%E5%90%88%E6%96%B0%E7%94%9F%E8%B5%9B2024/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>已经收到Kengwang的礼物啦<br><del>鉴于某些不可明说的原因 第二周开始就放官方writeup 并作为自主练习 不主动参赛了</del>&gt;</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>已经收到Kengwang的礼物啦<br><del>鉴于某些不可明说的原因 第二周开始就放官方writeup 并作为自主练习 不主动参赛了</del><br>目前更新到了第一周的writeup</p>
 <span id="more"></span>
 
 <h1 id="第一周-我们的writeup"><a href="#第一周-我们的writeup" class="headerlink" title="第一周-我们的writeup"></a>第一周-我们的writeup</h1><p><strong>这里是队伍0penness在BaseCTF 高校联合新生赛中对于题目的相关解答&amp;writeup</strong><br>爱来自<a href="https://www.maonie.top/">猫涅</a>&amp;<a href="https://truthleader.github.io/">真理教教主</a></p>
