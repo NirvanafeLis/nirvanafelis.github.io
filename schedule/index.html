@@ -1,267 +1,81 @@
-<html lang="zh-CN"><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+<html lang="en"><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+    <link rel="icon" href="medium.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我在干啥</title>
     <style>
+                @font-face {
+            font-family: "dianzhen";
+            src:url("凤凰点阵体 12px.ttf");
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: "dianzhen";
+            background-color: black;
+            height: 100vh;
             margin: 0;
-            padding: 0;
         }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        form {
+
+        .d {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* 文本水平居中 */
+            color: aliceblue;
+            white-space: pre;
         }
-        textarea {
+        .b {
+            color: rgb(72, 72, 221);
+            font-size: 22px;
+        }
+        
+        .back{
+            color: chartreuse;
+            font-size: 20px;
+        }
+        footer {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
             width: 100%;
-            height: 100px;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+            height: 50px;
         }
-        button {
-            align-self: flex-end;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .u{
+            font-size: 23px;
         }
-        button:hover {
-            background-color: #218838;
+        a{
+            color: rgb(231, 243, 120);
+            font-size: 22px;
         }
-        #thoughtsContainer {
-            margin-top: 20px;
+        a:hover{
+            color: rgb(79, 238, 211);
+            font-size: 22px;
         }
-        .thought {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            position: relative;
-        }
-        .thought time {
-            display: block;
-            color: #888;
+        marquee{
             font-size: 14px;
         }
-        .thought p {
-            margin: 5px 0 0 0;
-            font-size: 16px;
-        }
-        .thought .username {
-            font-weight: bold;
-            color: #555;
-        }
-        .thought .edit, .thought .delete {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: #007bff;
-            cursor: pointer;
-        }
-        .thought .edit {
-            right: 60px;
-        }
-        #refreshUsername, #helpButton {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-        #refreshUsername:hover, #helpButton:hover {
-            background-color: #0056b3;
-        }
-        #backButton {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 5px 10px;
-            background-color: #6c757d;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        #backButton:hover {
-            background-color: #5a6268;
+        h1{
+            color: rgb(90, 60, 201);
+            font-size: 45px;
+            line-height:0%;
         }
     </style>
+    <title>我有一言..</title>
 </head>
 <body>
-    <div class="container">
-        <a href="https://www.maonie.top/" id="backButton">返回博客</a>
-        <h1>嗯</h1>
-        <form id="thoughtForm">
-            <textarea id="thoughtInput" placeholder="写下...（若无法加载请开代理）"></textarea>
-            <div style="display: flex; justify-content: flex-end;">
-                <button id="helpButton" type="button">这是什么？</button>
-                <button id="refreshUsername" type="button">刷新用户名</button>
-                <button type="submit">提交</button>
-            </div>
-        </form>
-        <div id="thoughtsContainer">
-            <!-- 感想会显示在这里 -->
+    <a href="javascript:history.back(-1)" class="back"><p align="left">&lt; 返回上一页哦</p> </a>
+    <div class="d"><h1>WORK IN PROGRESS....</h1></div>
+    <div class="d">
+<p class="u">
+因为日常思念过于复杂冗长 并不能全都统一成文
+我准备再开个页面记录小段的只言片语
+这个页面风格和上面的重复了会略显单调 得想想
+总之先等着吧
+</p>
+<br><br><br>
+<marquee bgcolor="grey">--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--猫涅 2024/5/24--</marquee>
+
+
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs, deleteDoc, updateDoc, doc, serverTimestamp, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
-        
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDzgcvL1dWsa2sndO-d-mHNb_DrPv5dAGU",
-            authDomain: "something-nice-22902.firebaseapp.com",
-            projectId: "something-nice-22902",
-            storageBucket: "something-nice-22902.appspot.com",
-            messagingSenderId: "63473511528",
-            appId: "1:63473511528:web:d7325089ec281342c41fdd",
-            measurementId: "G-Q09WRGG7V4"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // 用户管理
-        function generateUsername() {
-            return 'user_' + Math.random().toString(36).substr(2, 8);
-        }
-
-        function getUsername() {
-            let username = localStorage.getItem('username');
-            if (!username) {
-                username = generateUsername();
-                localStorage.setItem('username', username);
-            }
-            return username;
-        }
-
-        function refreshUsername() {
-            const newUsername = generateUsername();
-            localStorage.setItem('username', newUsername);
-            alert('新用户名: ' + newUsername);
-        }
-
-        // 读取并显示感想
-        async function loadThoughts() {
-    const thoughtsContainer = $('#thoughtsContainer');
-    thoughtsContainer.html('');
-    const q = query(collection(db, 'thoughts'), orderBy('timestamp', 'desc'));
-    try {
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            const thought = doc.data();
-            console.log('Document data:', thought);
-
-            // 检查 timestamp 类型并进行转换
-            if (thought.timestamp && typeof thought.timestamp.toDate === 'function') {
-                thought.timestamp = thought.timestamp.toDate();
-            } else {
-                // 如果没有timestamp，使用当前时间作为临时值
-                thought.timestamp = new Date();
-            }
-
-            thoughtsContainer.append(createThoughtHTML(doc.id, thought));
-        });
-    } catch (error) {
-        console.error("读取数据失败: ", error);
-    }
-}
-
-function createThoughtHTML(id, thought) {
-    return `
-        <div class="thought" data-id="${id}" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
-            <span class="username" style="color: blue; font-weight: bold;">${thought.username}</span>
-            <time style="display: block; margin-top: 5px;">${new Date(thought.timestamp).toLocaleString()}</time>
-            <p style="margin-top: 5px;">${thought.text}</p>
-            <div style="margin-top: 10px;">
-                <button class="delete">删除</button>
-            </div>
-        </div>
-    `;
-}
-
-
-        $(document).ready(function() {
-            loadThoughts();
-
-            $('#thoughtForm').submit(function(e) {
-                e.preventDefault();
-                addThought();
-            });
-
-            $('#refreshUsername').click(function() {
-                refreshUsername();
-            });
-
-            $('#helpButton').click(function() {
-                window.location.href = 'index2.html';
-            });
-
-
-            $('#thoughtsContainer').on('click', '.delete', function() {
-                const id = $(this).closest('.thought').data('id');
-                deleteThought(id);
-            });
-        });
-
-        async function addThought() {
-            const thoughtInput = $('#thoughtInput').val();
-            if (thoughtInput.trim() === "") {
-                alert("请输入感想内容！");
-                return;
-            }
-
-            const username = getUsername();
-
-            const thought = {
-                text: thoughtInput,
-                timestamp: serverTimestamp(),
-                username: username
-            };
-
-            try {
-                await addDoc(collection(db, 'thoughts'), thought);
-                $('#thoughtInput').val('');
-                loadThoughts();
-            } catch (error) {
-                console.error("写入数据失败: ", error);
-            }
-        }
-
-
-        async function deleteThought(id) {
-            try {
-                await deleteDoc(doc(db, 'thoughts', id));
-                loadThoughts();
-            } catch (error) {
-                console.error("删除数据失败: ", error);
-            }
-        }
-    </script>
-
+    <footer>
+    </footer>
 
 <script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
