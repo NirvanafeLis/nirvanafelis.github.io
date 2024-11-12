@@ -6,7 +6,7 @@
   <link href="https://www.maonie.top/atom.xml" rel="self"/>
   
   <link href="https://www.maonie.top/"/>
-  <updated>2024-11-08T14:56:57.985Z</updated>
+  <updated>2024-11-12T22:29:03.573Z</updated>
   <id>https://www.maonie.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>glibc更新记录</title>
+    <link href="https://www.maonie.top/2024/11/12/glibc%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/"/>
+    <id>https://www.maonie.top/2024/11/12/glibc%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/</id>
+    <published>2024-11-12T12:06:22.000Z</published>
+    <updated>2024-11-12T22:29:03.573Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>最近因为各种各样的原因操弄上了校园官方渠道的服务器 分到了配置linux系统的工作<br>为了完成我的任务 我需要安装更新版本的glibc<br>期间发生了大大小小的问题还把服务器搞炸了 总之记录一下防止后边踩坑吧<br>以后再有linux系统选择相关的 铁定首选ubuntu 我心累了</p><span id="more"></span><h2 id="万恶之源"><a href="#万恶之源" class="headerlink" title="万恶之源"></a>万恶之源</h2><p>服务器系统的选择上来说——环境是一个基本光秃秃啥都没装的CentOS Linux release 7.9.2009 (Core)<br>yum确实可以事先安装大部分玩意 但 GLIBC 库是系统的基础组件 我无法于当前的系统版本直接通过yum更新glibc<br>既然apt(Ubuntu才有的安装方式) yum rpm都不行 就只能尝试最拖最难搞的源码安装了</p><h2 id="好比套娃的安装方式"><a href="#好比套娃的安装方式" class="headerlink" title="好比套娃的安装方式"></a>好比套娃的安装方式</h2><p>在网上找了一会 看到了个相对来说靠谱 版本对劲的安装指南<br>依据<a href="https://blog.csdn.net/carefree2005/article/details/117559312">该教程</a>的说法</p><h3 id="至于安装glibc的2-31版本有以下的要求-麻烦"><a href="#至于安装glibc的2-31版本有以下的要求-麻烦" class="headerlink" title="至于安装glibc的2.31版本有以下的要求&amp;麻烦"></a>至于安装glibc的2.31版本有以下的要求&amp;麻烦</h3><ol><li>安装glibc时中断/配置不全或者因为各种各样的原因都极易导致服务器崩溃</li><li>glibc所需要的组件多且版本要求高 基本也同样是没法用yum一站式解决的 需要源码安装</li><li>具体需求（可能不对 可以去实际操作的时候查看目录下的install文件）<br>  需要python版本2.7.6以上 3.4以上（python2 3同时需要）<br>  gcc版本4.7以上<br>  make版本3.79以上<br>  bison（有个叫m4的依赖）版本2.7以上</li><li>源码安装运行./configure时 务必谨慎配置–prefix项（决定安装目录） 并且搞懂每个版本的相同软件在系统中的位置</li><li>yum依靠python运行 若更新python时覆盖了原版本 会十分麻烦 重装相同版本也难以恢复 需要通过卸载所有python 以rpm覆盖的方式恢复yum的使用 还有yum的指定python运行路径由文件 /usr/libexec/urlgrabber-ext-down 与 /usr/bin/yum 决定<br>  <img data-src="/2024/11/12/glibc%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/1.jpg" alt="1"><br>  如果yum出现了各种各样的问题 记得先检查这两个文件的第一行</li><li>源码安装时有些软件会强制你在文件夹下新建build文件夹再执行configure 这里建议先手创建好文件夹再../configure 先下手为强</li><li>源码安装gcc非常非常慢 建议做好等待半小时-一小时（基于你make时候指定的-j参数 后面会说）的准备</li><li>更新glibc似乎会导致不少命令暂时失效  如果你是通过ssh等命令连接的服务器 务必不要退出 不然会导致服务器爆炸可以<a href="https://blog.csdn.net/qq_35345103/article/details/99679506">参考这玩意里的代码</a>试图恢复</li><li>如果还是一不小心给yum python整炸了 <a href="https://www.cnblogs.com/gcgc/p/15922141.html">参考教程</a>可以做到恢复功能 记得注意版本区别</li></ol><h2 id="具体的安装过程"><a href="#具体的安装过程" class="headerlink" title="具体的安装过程"></a>具体的安装过程</h2><p>因为早就过去了所以复现图片啥的就不贴咯<br>先用yum安装一些没必要源码安装的东西<br>yum update -y<br>yum install bison make wget unzip等等</p><p>至于又臭又长的源码安装全过程</p><ol><li>用wget下载软件的源tar包</li><li>解压后阅读install文件/去网络搜索所需依赖</li><li>创建build文件夹后在其中运行configure文件 成功的话会提示创建了makefile 报错了就要去检查哪里有问题</li><li>make后输入make install安装似乎就完成了 记得检查安装目录是否安装成功</li></ol><p>gcc python2 3 glibc都需要用如上的方式来安装 期间会遇到各种各样的问题 因为每个软件的源码安装会有不同的需求</p><h2 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h2><hr><div style="text-align: center;">奠  某个服务器的第一条命（虽然挺快就重置了） 奠<br>死因:glibc没配置好导致错误的软连接 输入什么都回显Segmentation fault 变相的系统崩溃</div><blockquote><p>We are just another visitor in a transient world.</p></blockquote></body></html>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;最近因为各种各样的原因操弄上了校园官方渠道的服务器 分到了配置linux系统的工作&lt;br&gt;为了完成我的任务 我需要安装更新版本的glibc&lt;br&gt;期间发生了大大小小的问题还把服务器搞炸了 总之记录一下防止后边踩坑吧&lt;br&gt;以后再有linux系统选择相关的 铁定首选ubuntu 我心累了&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="linux" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/linux/"/>
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="linux" scheme="https://www.maonie.top/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Vulhub在线靶场记录</title>
@@ -514,33 +539,6 @@ ida pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;sp
     <updated>2024-02-25T00:47:54.452Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>开学了<br>离大考只剩两 三个月了<br>照常会把课程内容记录下来</p></body></html>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日常牢骚" scheme="https://www.maonie.top/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
-    
-    
-    <category term="日常牢骚" scheme="https://www.maonie.top/tags/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>维修时间</title>
-    <link href="https://www.maonie.top/2024/01/28/%E2%80%9C%E7%BB%B4%E4%BF%AE%E6%97%B6%E9%97%B4%E2%80%9D/"/>
-    <id>https://www.maonie.top/2024/01/28/%E2%80%9C%E7%BB%B4%E4%BF%AE%E6%97%B6%E9%97%B4%E2%80%9D/</id>
-    <published>2024-01-28T09:37:14.000Z</published>
-    <updated>2024-01-29T12:27:20.345Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a><strong>前情提要</strong></h1><p>网络不知道为啥寄了<br>speedtest变成了随机数生成器 5mb 200mb 400mb里上下蹦跳<br>首先怀疑的是<strong>墙内内嵌的网线老化导致网速不行</strong><br>然后拿了一根<strong>40m长</strong>的网线直连了<br>结果还是不行<br>dns也没毛病<br>结果是<strong>msi center</strong>限制了我的网速<br><a href="https://blog.csdn.net/qq_37296622/article/details/123959244#">相同的案例</a><br>教训是 少下捆绑 硬件相关的软件 尤其是在更新时注意是否有“新功能” </p></body></html>]]></content>
     
     
       
