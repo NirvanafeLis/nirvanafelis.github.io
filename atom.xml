@@ -6,7 +6,7 @@
   <link href="https://www.maonie.top/atom.xml" rel="self"/>
   
   <link href="https://www.maonie.top/"/>
-  <updated>2024-11-12T22:29:03.573Z</updated>
+  <updated>2024-11-23T04:45:16.963Z</updated>
   <id>https://www.maonie.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网页小修时间</title>
+    <link href="https://www.maonie.top/2024/11/23/%E7%BD%91%E9%A1%B5%E5%B0%8F%E4%BF%AE%E6%97%B6%E9%97%B4/"/>
+    <id>https://www.maonie.top/2024/11/23/%E7%BD%91%E9%A1%B5%E5%B0%8F%E4%BF%AE%E6%97%B6%E9%97%B4/</id>
+    <published>2024-11-23T03:46:50.000Z</published>
+    <updated>2024-11-23T04:45:16.963Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h2 id="这篇文章单纯是为了推进-督促我搞这个博客的进度的"><a href="#这篇文章单纯是为了推进-督促我搞这个博客的进度的" class="headerlink" title="这篇文章单纯是为了推进/督促我搞这个博客的进度的"></a>这篇文章单纯是为了推进/督促我搞这个博客的进度的</h2><p>已经干的</p><ul><li>404自定义页面</li></ul><p>要干的</p><ul><li>新页面的功能构思/页面设计</li><li>jsplayer/或者别的什么 播放音乐</li><li>搜索引擎支持/rss逻辑更新</li><li>自我介绍update</li><li>不必多说的写更多文章</li></ul><p>反正有空了都能来搞 先推上日程</p></body></html>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="前端" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://www.maonie.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>glibc更新记录</title>
@@ -528,33 +557,6 @@ ida pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;sp
     
     
     <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开学季</title>
-    <link href="https://www.maonie.top/2024/02/25/%E5%BC%80%E5%AD%A6%E5%AD%A3/"/>
-    <id>https://www.maonie.top/2024/02/25/%E5%BC%80%E5%AD%A6%E5%AD%A3/</id>
-    <published>2024-02-25T00:44:51.000Z</published>
-    <updated>2024-02-25T00:47:54.452Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>开学了<br>离大考只剩两 三个月了<br>照常会把课程内容记录下来</p></body></html>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日常牢骚" scheme="https://www.maonie.top/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
-    
-    
-    <category term="日常牢骚" scheme="https://www.maonie.top/tags/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/"/>
     
   </entry>
   
