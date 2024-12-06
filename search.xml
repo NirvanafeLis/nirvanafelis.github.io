@@ -5,10 +5,69 @@
     <url>/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新朋友初次见面-老朋友好久不见-这里是猫涅"><a href="#新朋友初次见面-老朋友好久不见-这里是猫涅" class="headerlink" title="新朋友初次见面 老朋友好久不见 这里是猫涅"></a>新朋友初次见面 老朋友好久不见 这里是猫涅</h1><p><img data-src="/2023/08/05/%E8%A6%81%E7%BD%AE%E9%A1%B6%E7%9A%84%E5%85%AC%E5%91%8A/medium.png" alt="icon"></p>
 <h2 id="稍作声明"><a href="#稍作声明" class="headerlink" title="稍作声明"></a>稍作声明</h2><p>欢迎 这里是我的个人网页 博客 或者你认为的东西<br>学习相关的资料若有参考会表明具体出处 </p>
-<p>上次更新还是 <strong>2024/11/13</strong> 哦…<br>因为大学电脑环境原因 更新频率会有所降低 见谅</p>
+<p>上次更新还是 <strong>2024/12/6</strong> 哦…<br>因为大学电脑环境原因 更新频率会有所降低 见谅</p>
 </body></html>]]></content>
       <tags>
         <tag>告示</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>qq机器人配置二三事</title>
+    <url>/2024/12/04/qq%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%85%8D%E7%BD%AE%E4%BA%8C%E4%B8%89%E4%BA%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><p>看别人整的qq机器人挺有意思 所以自已搭一个玩玩<br>使用了napcat+nonebot的方式</p>
+<p>记录基础安装/配置/踩坑过程 配件安装之后有事也会写在这里</p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>服务器是2核2G 一年份的阿里云服务器  用了学生优惠<br>一开始用的系统镜像是阿里云的Alibaba Cloud Linux 结果有些配置和官方的冲突了 遂作罢 改用Ubuntu</p>
+<p>napcat和nonebot的安装没什么好说的 按照帮助文件运行命令即可<br>python有些全局安装由于安全考虑会不让你装 复制并输入回显中的强制安装选项即可</p>
+<p>整个流程总结来说:<br>创建nonebot-启动napcat-在napcat上登陆想要实现机器人功能的qq-运行nonebot-ws反代配置成功-nonebot连接上napcat-nonebot开始监听napcat传输到的消息-nonebot根据自己的插件/配置做出反应-成功</p>
+<p>创建nonebot时注意是空格选择 enter确认 最好安装自带的<strong>echo</strong>功能 方便测试</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>要让这俩真正联动起效的话 得在napcat中设置反向ws<br>配置有两种方式:<br>1.留意启动日志里的形如 <code>[WebUi] WebUi Local Panel Url: http://127.0.0.1:6099/webui?token=xxxx</code> 的token信息<br>随后访问该网址（注意环境是否开放公网并自主修改ip）进入图形化页面<br>直接复制整个网址应该会自动传参 不用输入token<br>如果因为各种原因错过了token 可以在<code>webui.json</code>里找到 输入即可<img data-src="/2024/12/04/qq%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%85%8D%E7%BD%AE%E4%BA%8C%E4%B8%89%E4%BA%8B/2.jpg" alt="2"><br>网络配置-右上角添加配置<br><img data-src="/2024/12/04/qq%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%85%8D%E7%BD%AE%E4%BA%8C%E4%B8%89%E4%BA%8B/3.jpg" alt="3"></p>
+<pre class="line-numbers language-none"><code class="language-none">名称-不和别的重复就行 随意
+类型-选最后一个 WebSocket客户端/
+启用打开
+url-默认为ws://127.0.0.1:8080/onebot/v11/ws 可能会因为nonebot的配置而变更
+Token-自定义的验证用密码 设置后需要在nonebot的.env文件中配置相同字段 这里建议配置 因为能有效防止403报错的问题出现
+//在.env中的配置格式- ONEBOT_ACCESS_TOKEN=[相同密码]
+剩下的都是可选项 知道是什么的情况下再改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.直接通过修改安装目录中的<code>./config/onebot11_xxxx.json</code>文件来配置</p>
+<pre class="line-numbers language-none"><code class="language-none">{
+  "network": {
+   // WS客户端组/反向WS 可以配置多个 这里演示为一个
+    "websocketClients": [
+      {
+        "name": "WsClient",// 名字不能重复 唯一标识
+        "enable": false,//启用状态
+        "url": "ws://localhost:8082",// 上报地址
+        "messagePostFormat": "array",// 消息上报格式 string/array
+        "reportSelfMessage": false,// 是否上报自身消息
+        "reconnectInterval": 5000,// 重连间隔
+        "token": "",// 鉴权密钥
+        "debug": false,// raw数据上报
+        "heartInterval": 30000// 心跳周期
+      }
+    ]
+   },
+  "musicSignUrl": "",
+  "enableLocalFile2Url": false,
+  "parseMultMsg": false
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>首先是改名和状态改为启用<br>url改为<code>ws://127.0.0.1:8080/onebot/v11/ws</code><br>这里的 <code>8080</code> 是 NoneBot 输出的端口号，<code>/onebot/v11/ws</code> 是 NoneBot onebot 适配器默认的路径<br><img data-src="/2024/12/04/qq%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%85%8D%E7%BD%AE%E4%BA%8C%E4%B8%89%E4%BA%8B/1.jpg" alt="1"><br>一般来说跳出这后三行 提示ws反代已成功连接 就没啥问题了<br>假如重复报403 那就是TOKEN的问题 需要另外设置 方法如上</p>
+<p>测试的时候可以使用自带的echo功能 在群聊或者私聊输入（群聊里还需要@机器人） /echo [想让机器人说的话] 若成功回复则为成功<br>接下来去nonebot商店里找点插件自己安装吧</p>
+<h2 id="插件（先摸了）"><a href="#插件（先摸了）" class="headerlink" title="插件（先摸了）"></a>插件（先摸了）</h2><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾/引用"></a>结尾/引用</h1><blockquote>
+<p>We are just another visitor in a transient world</p>
+</blockquote>
+<p><a href="https://napneko.pages.dev/">napcat安装文档</a><br><a href="https://nonebot.dev/">nonebot安装文档</a></p>
+</body></html>]]></content>
+      <categories>
+        <category>学习</category>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
