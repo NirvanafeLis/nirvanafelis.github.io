@@ -6,7 +6,7 @@
   <link href="https://www.maonie.top/atom.xml" rel="self"/>
   
   <link href="https://www.maonie.top/"/>
-  <updated>2024-12-06T01:18:46.336Z</updated>
+  <updated>2025-01-12T04:25:48.012Z</updated>
   <id>https://www.maonie.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新新的年</title>
+    <link href="https://www.maonie.top/2025/01/03/%E6%96%B0%E6%96%B0%E7%9A%84%E5%B9%B4/"/>
+    <id>https://www.maonie.top/2025/01/03/%E6%96%B0%E6%96%B0%E7%9A%84%E5%B9%B4/</id>
+    <published>2025-01-03T07:32:12.000Z</published>
+    <updated>2025-01-12T04:25:48.012Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><p>新年到了 第一学期结束了 <del>高数也挂了</del><br>还有很多没做的事呢 先继续冲刺了</p></body></html>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="告示" scheme="https://www.maonie.top/categories/%E5%91%8A%E7%A4%BA/"/>
+    
+    
+    <category term="告示" scheme="https://www.maonie.top/tags/%E5%91%8A%E7%A4%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>qq机器人配置二三事</title>
@@ -510,36 +537,6 @@ ida pro的环境目录内最好是纯英文 不然会出各种各样的bug&lt;sp
     <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="linux" scheme="https://www.maonie.top/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CTF实战相关2</title>
-    <link href="https://www.maonie.top/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/"/>
-    <id>https://www.maonie.top/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/</id>
-    <published>2024-03-12T10:08:17.000Z</published>
-    <updated>2024-03-12T10:09:45.548Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><html><head></head><body><h1 id="CTF实战相关2"><a href="#CTF实战相关2" class="headerlink" title="CTF实战相关2"></a>CTF实战相关2</h1><p>以web类的CTF作为范本的话<br>应该做的</p><blockquote><p>1.检查网页元素  寻找相关提示<br>2.通过网络查看http标头(header)<br>3.burp扫描/hackbar投送信息/更改cookie<br>4.php相关知识</p></blockquote><p>还有标头会传达的 可更改的两个信息 X-Forwarded-For 与 Referer<br>简单来说<br>X-Forwarded-For表示访问该网址的ip 例如127.0.0.1即为本地访问<br>Referer代表了你是从哪个网页来——例如<code>http://www.google.com</code></p><h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>（注：这里图片只附上结果 主要是不想再开环境了）<br>使用了谷歌浏览器的f12功能 burpsuite 与 firefox的hackbar插件</p><span id="more"></span><h4 id="1-BugKu-Web-计算器"><a href="#1-BugKu-Web-计算器" class="headerlink" title="1.BugKu-Web-计算器"></a>1.BugKu-Web-计算器</h4><p>检查html元素 发现页面中的答题框只允许输一个数字 无法正确回答<br>更改input框中限制的文字上限 成功作答 获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/1.jpg" alt="1"></p><h4 id="2-攻防世界-Web新手区-disabled-button"><a href="#2-攻防世界-Web新手区-disabled-button" class="headerlink" title="2.攻防世界-Web新手区- disabled_button"></a>2.攻防世界-Web新手区- disabled_button</h4><p>检查html元素 发现页面中显示“一个不能按的按钮”  多半按下后才能显示flag<br>删去按钮属性框中的<code>disabled</code> 按下按钮 获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/2.jpg" alt="2"></p><h4 id="3-BugKu-Web-头等舱"><a href="#3-BugKu-Web-头等舱" class="headerlink" title="3.BugKu-Web-头等舱"></a>3.BugKu-Web-头等舱</h4><p>检查页面 f12发现无标注隐藏元素 根据题目名“头等舱” 通过f12-网络<br>f5刷新后从网络标头中找到flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/3.jpg" alt="3"></p><h4 id="4-攻防世界-Web-baby-web"><a href="#4-攻防世界-Web-baby-web" class="headerlink" title="4.攻防世界-Web-baby_web"></a>4.攻防世界-Web-baby_web</h4><p>检查页面 发现无隐藏元素 根据作者提示<code>想想主页面是什么</code>访问目录index.php<br>然而index.php也无任何隐藏<br>最终 通过f12-网络 f5刷新后从该页面的网络标头中找到flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/4.jpg" alt="4"></p><h4 id="5-（BUUCTF）极客大挑战-2019-Havefun"><a href="#5-（BUUCTF）极客大挑战-2019-Havefun" class="headerlink" title="5.（BUUCTF）极客大挑战-2019-Havefun"></a>5.（BUUCTF）极客大挑战-2019-Havefun</h4><p>检查页面 元素中有标注代码 该页面GET方式接收cat参数<br>当cat=dog时会发生什么 于是传参 获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/5.jpg" alt="5"></p><h4 id="6-攻防世界-Web新手区-get-post"><a href="#6-攻防世界-Web新手区-get-post" class="headerlink" title="6.攻防世界-Web新手区-get_post"></a>6.攻防世界-Web新手区-get_post</h4><p>检查页面 要求你通过GET方式提交a=1<br>提交后又叫你通过POST方式提交b=2<br>照做即可 获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/6.jpg" alt="6"></p><h4 id="7-BugKu-Web-程序员本地网站"><a href="#7-BugKu-Web-程序员本地网站" class="headerlink" title="7.BugKu-Web-程序员本地网站"></a>7.BugKu-Web-程序员本地网站</h4><p>检查页面 页面显示<code>请以本地ip访问</code><br>使用burpsuite监听该网页 并将X-Forwarded-For标头改为127.0.0.1<br>获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/7.jpg" alt="7"></p><h4 id="8-BugKu-Web-你从哪里来"><a href="#8-BugKu-Web-你从哪里来" class="headerlink" title="8.BugKu-Web-你从哪里来"></a>8.BugKu-Web-你从哪里来</h4><p>检查页面 页面显示<code>are you from google？</code><br>判定与referer标头有关 通过burpsuite监听页面<br>将referer标头改为<code>http://www.google.com</code><br>获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/8.jpg" alt="8"></p><h4 id="9-攻防世界-Web新手区-xff-referrer"><a href="#9-攻防世界-Web新手区-xff-referrer" class="headerlink" title="9.攻防世界-Web新手区-xff_referrer"></a>9.攻防世界-Web新手区-xff_referrer</h4><p>检查页面 页面显示<code>ip必须为123.123.123</code><br>使用burpsuite监听该网页 并将X-Forwarded-For标头改为123.123.123.123<br>页面变为“必须来自<code>https://www.google.com</code>”<br>通过burpsuite监听页面 将referer标头改为<code>http://www.google.com</code><br>获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/9.jpg" alt="9"></p><h4 id="10-攻防世界-Web新手区-cookie"><a href="#10-攻防世界-Web新手区-cookie" class="headerlink" title="10.攻防世界-Web新手区-cookie"></a>10.攻防世界-Web新手区-cookie</h4><p>检查页面 页面显示“你知道什么是cookie吗？”<br>f12-网络 查看页面cookie 发现信息<code>look here=cookie.php</code><br>于是访问cookie.php 发现信息 <strong>see the http response</strong><br>查看标头 获得flag<br><img data-src="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/10.jpg" alt="10"></p></body></html>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;CTF实战相关2&quot;&gt;&lt;a href=&quot;#CTF实战相关2&quot; class=&quot;headerlink&quot; title=&quot;CTF实战相关2&quot;&gt;&lt;/a&gt;CTF实战相关2&lt;/h1&gt;&lt;p&gt;以web类的CTF作为范本的话&lt;br&gt;应该做的&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.检查网页元素  寻找相关提示&lt;br&gt;2.通过网络查看http标头(header)&lt;br&gt;3.burp扫描&amp;#x2F;hackbar投送信息&amp;#x2F;更改cookie&lt;br&gt;4.php相关知识&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;还有标头会传达的 可更改的两个信息 X-Forwarded-For 与 Referer&lt;br&gt;简单来说&lt;br&gt;X-Forwarded-For表示访问该网址的ip 例如127.0.0.1即为本地访问&lt;br&gt;Referer代表了你是从哪个网页来——例如&lt;code&gt;http://www.google.com&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;例题&quot;&gt;&lt;a href=&quot;#例题&quot; class=&quot;headerlink&quot; title=&quot;例题&quot;&gt;&lt;/a&gt;例题&lt;/h2&gt;&lt;p&gt;（注：这里图片只附上结果 主要是不想再开环境了）&lt;br&gt;使用了谷歌浏览器的f12功能 burpsuite 与 firefox的hackbar插件&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="学习" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="CTF" scheme="https://www.maonie.top/categories/%E5%AD%A6%E4%B9%A0/CTF/"/>
-    
-    
-    <category term="学习" scheme="https://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="CTF" scheme="https://www.maonie.top/tags/CTF/"/>
     
   </entry>
   
