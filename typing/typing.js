@@ -13,8 +13,7 @@
     this.opts = opts || {};
     this.source = opts.source;
     this.output = opts.output;
-    // this.delay = opts.delay || 120;
-    this.delay = opts.delay || 60;
+    this.delay = opts.delay || 30;
     this.chain = {
       parent: null,
       dom: this.output,
@@ -92,7 +91,15 @@
         ele.dom.appendChild(dom);
         curr.parent = ele;
         curr.dom = dom;
-        this.play(curr.val.length ? curr : curr.parent);
+
+        // 检查是否为换行标签 <br>
+        if (curr.dom.nodeName.toLowerCase() === 'br') {
+          setTimeout(function() {
+            that.play(curr.val.length ? curr : curr.parent);
+          }, 100); // 换行时停顿 500 毫秒
+        } else {
+          that.play(curr.val.length ? curr : curr.parent);
+        }
       }
     },
 
