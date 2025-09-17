@@ -28,7 +28,7 @@ function drawStr() {
 
     //增设文字样式及颜色
     matrixCtx.font = "600 " + fontSize + "px 微软雅黑";
-    matrixCtx.fillStyle = "#FFB6C1";
+    matrixCtx.fillStyle = "#00ff00";
 
     for (var i = 0; i < cols; i++) {
         //x坐标
