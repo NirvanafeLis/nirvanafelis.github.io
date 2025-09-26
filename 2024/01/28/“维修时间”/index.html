@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>维修时间 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前情提要网络不知道为啥寄了speedtest变成了随机数生成器 5mb 200mb 400mb里上下蹦跳首先怀疑的是墙内内嵌的网线老化导致网速不行然后拿了一根40m长的网线直连了结果还是不行dns也没毛病结果是msi center限制了我的网速相同的案例教训是 少下捆绑 硬件相关的软件 尤其是在更新时注意是否有“新功能”">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>维修时间 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前情提要网络不知道为啥寄了speedtest变成了随机数生成器 5mb 200mb 400mb里上下蹦跳首先怀疑的是墙内内嵌的网线老化导致网速不行然后拿了一根40m长的网线直连了结果还是不行dns也没毛病结果是msi center限制了我的网速相同的案例教训是 少下捆绑 硬件相关的软件 尤其是在更新时注意是否有“新功能”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="维修时间">
 <meta property="og:url" content="http://www.maonie.top/2024/01/28/%E2%80%9C%E7%BB%B4%E4%BF%AE%E6%97%B6%E9%97%B4%E2%80%9D/index.html">
@@ -99,7 +99,25 @@
 
       const theme = saveToLocal.get('theme')
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 22
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
         
       
       const asideStatus = saveToLocal.get('aside-status')
@@ -153,7 +171,7 @@
     toc: true,
     rightside: false,
   },
-  autoDarkmode: false
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '维修时间',
   isHighlightShrink: false,

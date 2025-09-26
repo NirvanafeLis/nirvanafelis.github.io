@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>三款steam付费番茄钟软件测评 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="对于steam上的仨沉浸式环境番茄钟 gogh:虚拟形象与专注&#x2F;Spirit City:Lofi Sessions&#x2F;Chill Pulse 心流小筑 的测评（修建中 没写完呢）">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>三款steam付费番茄钟软件测评 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对于steam上的仨沉浸式环境番茄钟 gogh:虚拟形象与专注&#x2F;Spirit City:Lofi Sessions&#x2F;Chill Pulse 心流小筑 的测评（修建中 没写完呢）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三款steam付费番茄钟软件测评">
 <meta property="og:url" content="http://www.maonie.top/2025/09/24/%E4%B8%89%E6%AC%BEsteam%E7%95%AA%E8%8C%84%E9%92%9F%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%84/index.html">
@@ -99,7 +99,25 @@
 
       const theme = saveToLocal.get('theme')
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 22
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
         
       
       const asideStatus = saveToLocal.get('aside-status')
@@ -153,7 +171,7 @@
     toc: true,
     rightside: false,
   },
-  autoDarkmode: false
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '三款steam付费番茄钟软件测评',
   isHighlightShrink: false,

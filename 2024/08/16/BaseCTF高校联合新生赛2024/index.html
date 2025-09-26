@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>BaseCTF高校联合新生赛2024 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="已经收到Kengwang的礼物啦鉴于某些不可明说的原因 第二周开始就放官方writeup 并作为自主练习 不主动参赛了目前更新到了第一周的writeup 第一周-我们的writeup这里是队伍0penness在BaseCTF 高校联合新生赛中对于题目的相关解答&amp;writeup爱来自猫涅&amp;真理教教主 Misc[Week1] 你也喜欢圣物吗解压之后得到了一张图和压缩包压缩包有密码保护">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>BaseCTF高校联合新生赛2024 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="已经收到Kengwang的礼物啦鉴于某些不可明说的原因 第二周开始就放官方writeup 并作为自主练习 不主动参赛了目前更新到了第一周的writeup 第一周-我们的writeup这里是队伍0penness在BaseCTF 高校联合新生赛中对于题目的相关解答&amp;writeup爱来自猫涅&amp;真理教教主 Misc[Week1] 你也喜欢圣物吗解压之后得到了一张图和压缩包压缩包有密码保护">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BaseCTF高校联合新生赛2024">
 <meta property="og:url" content="http://www.maonie.top/2024/08/16/BaseCTF%E9%AB%98%E6%A0%A1%E8%81%94%E5%90%88%E6%96%B0%E7%94%9F%E8%B5%9B2024/index.html">
@@ -99,7 +99,25 @@
 
       const theme = saveToLocal.get('theme')
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 22
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
         
       
       const asideStatus = saveToLocal.get('aside-status')
@@ -153,7 +171,7 @@
     toc: true,
     rightside: false,
   },
-  autoDarkmode: false
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: 'BaseCTF高校联合新生赛2024',
   isHighlightShrink: false,

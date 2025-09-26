@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>小小修整 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="首先是 新年快乐这几天去南京旅游了 主要是为了放松因此没更新现在回来了接下来要干的事：把笔记本改造成自己的便捷平台通过按照月份分类来整理有些过多的文章作业 看书 多学 老生常谈">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>小小修整 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="首先是 新年快乐这几天去南京旅游了 主要是为了放松因此没更新现在回来了接下来要干的事：把笔记本改造成自己的便捷平台通过按照月份分类来整理有些过多的文章作业 看书 多学 老生常谈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小小修整">
 <meta property="og:url" content="http://www.maonie.top/2024/01/15/%E5%B0%8F%E5%B0%8F%E4%BF%AE%E6%95%B4/index.html">
@@ -99,7 +99,25 @@
 
       const theme = saveToLocal.get('theme')
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 22
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
         
       
       const asideStatus = saveToLocal.get('aside-status')
@@ -153,7 +171,7 @@
     toc: true,
     rightside: false,
   },
-  autoDarkmode: false
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '小小修整',
   isHighlightShrink: false,
