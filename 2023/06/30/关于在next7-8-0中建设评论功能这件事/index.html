@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于在next7.8.0中建设评论功能这件事 | 猫涅的秘密结社</title><meta name="author" content="nirvana_felis"><meta name="copyright" content="nirvana_felis"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="于是乎今天忙了一整天尝试在网页中建设评论功能next版本为7.8.0这些是我的尝试过程和失败的结果 最终使用了畅言云评完成了此功能的测试 但还仍需改进接下来是每个评论模块的分别介绍如果要看具体配置过程可以去找我在文章中留下的网址 本人小白一个 不是太懂 谢谢 valine与walinewaline由valine衍生而出  Valine 特性   快速 安全 Emoji 😉 无后端实现 MarkD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于在next7.8.0中建设评论功能这件事">
+<meta property="og:url" content="http://www.maonie.top/2023/06/30/%E5%85%B3%E4%BA%8E%E5%9C%A8next7-8-0%E4%B8%AD%E5%BB%BA%E8%AE%BE%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%99%E4%BB%B6%E4%BA%8B/index.html">
+<meta property="og:site_name" content="猫涅的秘密结社">
+<meta property="og:description" content="于是乎今天忙了一整天尝试在网页中建设评论功能next版本为7.8.0这些是我的尝试过程和失败的结果 最终使用了畅言云评完成了此功能的测试 但还仍需改进接下来是每个评论模块的分别介绍如果要看具体配置过程可以去找我在文章中留下的网址 本人小白一个 不是太懂 谢谢 valine与walinewaline由valine衍生而出  Valine 特性   快速 安全 Emoji 😉 无后端实现 MarkD">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.maonie.top/cover/1.jpg">
+<meta property="article:published_time" content="2023-06-30T11:26:56.000Z">
+<meta property="article:modified_time" content="2025-09-17T13:27:17.377Z">
+<meta property="article:author" content="nirvana_felis">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.maonie.top/cover/1.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "关于在next7.8.0中建设评论功能这件事",
+  "url": "http://www.maonie.top/2023/06/30/%E5%85%B3%E4%BA%8E%E5%9C%A8next7-8-0%E4%B8%AD%E5%BB%BA%E8%AE%BE%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%99%E4%BB%B6%E4%BA%8B/",
+  "image": "http://www.maonie.top/cover/1.jpg",
+  "datePublished": "2023-06-30T11:26:56.000Z",
+  "dateModified": "2025-09-17T13:27:17.377Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "nirvana_felis",
+      "url": "http://www.maonie.top"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.maonie.top/2023/06/30/%E5%85%B3%E4%BA%8E%E5%9C%A8next7-8-0%E4%B8%AD%E5%BB%BA%E8%AE%BE%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%99%E4%BB%B6%E4%BA%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const hour = new Date().getHours()
+          const isNight = hour <= 6 || hour >= 22
+          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else theme === 'light' ? activateLightMode() : activateDarkMode()
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;84942c2dc16e4c38b669324fc8d1991d&quot;}"></script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于在next7.8.0中建设评论功能这件事',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"></head><body><div id="web_bg" style="background-image: url(/img/1.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">60</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments"></i><span> 说说</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fa-brands fa-steam"></i><span> steam</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/cover/1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">猫涅的秘密结社</span></a><a class="nav-page-title" href="/"><span class="site-name">关于在next7.8.0中建设评论功能这件事</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments"></i><span> 说说</span></a></li><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fa-brands fa-steam"></i><span> steam</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">关于在next7.8.0中建设评论功能这件事</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-30T11:26:56.000Z" title="发表于 2023-06-30 19:26:56">2023-06-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-17T13:27:17.377Z" title="更新于 2025-09-17 21:27:17">2025-09-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/">日常牢骚</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">631</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img gist" style="background-image: url(/cover/1.jpg)"></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;该文章自创建已过&quot;,&quot;messageNext&quot;:&quot;天 内容可能会过时 麻烦注意辨别&quot;,&quot;postUpdate&quot;:&quot;2025-09-17 21:27:17&quot;}" hidden></div><p>于是乎今天忙了一整天尝试在网页中建设评论功能<br>next版本为7.8.0<br>这些是我的尝试过程和失败的结果 最终使用了畅言云评完成了此功能的测试 但还仍需改进<br>接下来是每个评论模块的分别介绍<br><strong>如果要看具体配置过程可以去找我在文章中留下的网址 本人小白一个 不是太懂 谢谢</strong></p>
+<h2 id="valine与waline"><a href="#valine与waline" class="headerlink" title="valine与waline"></a>valine与waline</h2><p>waline由valine衍生而出</p>
+<blockquote>
+<p>Valine 特性</p>
+</blockquote>
+<ul>
+<li>快速</li>
+<li>安全</li>
+<li>Emoji 😉</li>
+<li>无后端实现</li>
+<li>MarkDown 全语法支持</li>
+<li>轻量易用(~15kb gzipped)</li>
+<li>文章阅读量统计 v1.2.0+</li>
+</ul>
+<blockquote>
+<p>Waline 与 Valine 最大的不同就是增加了服务端中间层，解决 Valine 暴露出来的安全问题。同时基于服务端的特性，提供了<strong>邮件通知</strong>、<strong>微信通知</strong>、<strong>评论后台管理</strong>、LeanCloud, MySQL, MongoDB, SQLite, PostgreSQL <strong>多存储服务支持</strong>等诸多特性。 —-<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/295264916">摘自知乎</a></p>
+</blockquote>
+<p>我两个都试过了，valine方面参考了<a target="_blank" rel="noopener" href="https://valine.js.org/">valine官方页面</a> <a target="_blank" rel="noopener" href="https://blog.csdn.net/wugenqiang/article/details/105744843">此教程</a><br>waline方面则是参考了<a target="_blank" rel="noopener" href="https://waline.js.org/guide/deploy/vps.html">waline官方页面</a> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/535607671">这个教程</a></p>
+<p>首先是在尝试时踩的坑:<br>1.valine在部署时使用的leadcloud需使用国际版，否则将需要网站备案<br>2.next7.0+的版本不会内置valine的文件，需要自己下载valine.min.js并配置cdn<br>3.统计<strong>访问人数</strong>和<strong>访问总量</strong>的系统也是由valine支持,想要同时开启会报错</p>
+<p>valine这边在全都按照流程过了一遍确认无误后却发现网页没有评论系统出现<br>只得作罢<br>waline由于next主题中的config.yml没有自带选项 需要复制粘贴<br>在确认过复制到的地区没问题的情况下 hexo s持续爆warning<br>只得作罢×2</p>
+<p>害…过几天再试吧 都是泪啊</p>
+<h2 id="gitalk"><a href="#gitalk" class="headerlink" title="gitalk"></a>gitalk</h2><blockquote>
+<p>Gitalk 特性</p>
+</blockquote>
+<ul>
+<li>使用 GitHub 登录</li>
+<li>支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru]</li>
+<li>支持个人或组织</li>
+<li>无干扰模式（设置 distractionFreeMode 为 true 开启）</li>
+<li>快捷键提交评论 （cmd|ctrl + enter）</li>
+</ul>
+<p>是github官方的评论功能<br>参考了<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/02fc71f3633f">这个教程</a></p>
+<p>安装后本地配置显示<strong>network error</strong><br>hexo g hexo d后也是相同的问题<br>搜索后发现是由于github网络地区特殊无法获取端口导致</p>
+<p>但目前没有具体的解决方式</p>
+<h2 id="畅言云评"><a href="#畅言云评" class="headerlink" title="畅言云评"></a>畅言云评</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lcyaiym/article/details/76762074">参考了这个教程</a><br>安装很简单 注册很简单 配置也只要输入appid 和appkey<br>但是具体出来的效果不太行 等待后期优化吧</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post-share"><div class="social-share" data-image="/cover/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/07/01/%E6%8E%A8%E5%80%92%E9%87%8D%E6%9D%A5/" title="再来一次"><img class="cover" src="/cover/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">再来一次</div></div><div class="info-2"><div class="info-item-1">简单来说由于next旧版本与网上大部分教程无法对应于是我决心直接更新推倒重来网页恢复了最初始的样子好消息是背景保留了 </div></div></div></a><a class="pagination-related" href="/2023/06/29/%E7%9B%AE%E5%89%8D%E7%9A%84%E8%BF%9B%E5%B1%95/" title="目前的进展"><img class="cover" src="/cover/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">目前的进展</div></div><div class="info-2"><div class="info-item-1">参考https://asdfv1929.github.io/2018/01/25/crash-cheat/完成了标题特效目前想做的玩意：背景音乐播放live2d看板娘背景加上图片 亦或者动效把介绍页摸完完善尾注剩下就是这网站因为铺设在外网加载速度超级慢 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/03/12/CTF%E5%AE%9E%E6%88%98%E7%9B%B8%E5%85%B32/" title="CTF实战相关2"><img class="cover" src="/cover/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-12</div><div class="info-item-2">CTF实战相关2</div></div><div class="info-2"><div class="info-item-1">CTF实战相关2以web类的CTF作为范本的话应该做的  1.检查网页元素 寻找相关提示2.通过网络查看http标头(header)3.burp扫描&#x2F;hackbar投送信息&#x2F;更改cookie4.php相关知识  还有标头会传达的 可更改的两个信息 X-Forwarded-For 与 Referer简单来说X-Forwarded-For表示访问该网址的ip 例如127.0.0.1即为本地访问Referer代表了你是从哪个网页来——例如http://www.google.com 例题（注：这里图片只附上结果 主要是不想再开环境了）使用了谷歌浏览器的f12功能 burpsu...</div></div></div></a><a class="pagination-related" href="/2023/12/22/DC-2%E8%A7%A3%E6%9E%90/" title="DC-2解析"><img class="cover" src="/cover/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-22</div><div class="info-item-2">DC-2解析</div></div><div class="info-2"><div class="info-item-1">这个是学校作业下载地址:https://www.vulnhub.com/entry/dc-2,311/ 环境设置攻击机：kali靶机：DC-2网络链接均为Nat模式 相关知识与工具wpscan (WordPress爆破用)MSF console (漏洞检索&amp;调用)dirb (目录扫描)cewl (给url生成密码目录)绕过bash限制git 提权 具体过程国际惯例 arp-scan -l发现同网段设备 使用nmap扫描ip开放的端口我们访问网站 发现无法访问这里需要修改hosts文件 1vim /etc/hosts //编辑 随后另起一行 输入[靶机的ip地址] [dc-2]  ...</div></div></div></a><a class="pagination-related" href="/2023/08/01/C%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B31/" title="C语言相关1"><img class="cover" src="/cover/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-01</div><div class="info-item-2">C语言相关1</div></div><div class="info-2"><div class="info-item-1">所以 最近很闲 所以开始学c语言 准备步骤我使用了visual studio code配置c语言环境的方法来实现程序的调试和运行我所参考的教程 学习笔记啥的一.经典到不能再经典的hello world1234567#include &lt;stdio.h&gt;int main()&#123;/\* 我的第一个 C 程序 \*/printf(&quot;Hello, World! \n&quot;);return 0;&#125;  实例解析：  所有的 C 语言程序都需要包含 main() 函数。 代码从 main() 函数开始执行。 &#x2F;* … *&#x2F; 用于注释说明。...</div></div></div></a><a class="pagination-related" href="/2023/12/29/DC-4%E8%A7%A3%E6%9E%90/" title="DC-4解析"><img class="cover" src="/cover/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-29</div><div class="info-item-2">DC-4解析</div></div><div class="info-2"><div class="info-item-1">这个是学校作业哦下载地址：https://www.vulnhub.com/entry/dc-4,313/  环境配置攻击机：kali靶机：DC-4网络链接均为Nat模式 相关知识与工具burpsuite （爆破 监听 数据包更改）hydra（爆破用工具）teehee提权 具体过程照例arp-scan -l //发现同网段设备nmap -p- -A [指定的ip地址] //扫描开放的端口并套用脚本既然开放了80端口 那就访问看看是个登陆页面 说是admin信息系统登陆我们用burpsuite爆破密码试试调整firefox与burpsuite的proxy设定 我们开启监听 send to i...</div></div></div></a><a class="pagination-related" href="/2023/11/21/Hackademic-RTB1/" title="Hackademic.RTB1"><img class="cover" src="/cover/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-21</div><div class="info-item-2">Hackademic.RTB1</div></div><div class="info-2"><div class="info-item-1"> 那么好的我们废话不多说——  靶机名称： Hackademic: RTB1下载链接：https://download.vulnhub.com/hackademic/Hackademic.RTB1.zip 1.进入靶场首先我们下载好靶机 照常启动kali与靶机 2.解析过程1）靶机的发现老样子扫描同网段设备arp-scan -l↑发现靶机ip地址 使用nmap扫描存活端口nmap -p- &#39;目标ip&#39;ps:多半扫得很慢 不知道什么原因 请耐心等待2-5分钟结果出来是22端口和80端口我们这里直接通过firefox访问ip↑页面通过f12并没有看出什么端倪 但有很多超链接通...</div></div></div></a><a class="pagination-related" href="/2024/03/21/OverTheWire-bandit%E8%A7%A3%E6%9E%90/" title="OverTheWire-bandit解析"><img class="cover" src="/cover/1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-21</div><div class="info-item-2">OverTheWire-bandit解析</div></div><div class="info-2"><div class="info-item-1">友情提示理论来说 这个网页的网站说了不允许剧透或是writeup但这大多是为了方便我自身复习留下的资料因此我不会直接在文中提供flag 只会写出方法与代码 环境介绍网页链接该网页类似一个在线靶场 需要你登录它所提供的账号密码登录其ssh服务进行一场小游戏我使用了MobaXterm来登陆&#x2F;输入指令 具体过程level 0&#x2F;准备 The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.over...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">nirvana_felis</div><div class="author-info-description">正在思考明天中</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">60</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/NirvanafeLis"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://steamcommunity.com/id/nirvana_felis/" target="_blank" title="steam"><i class="fa-brands fa-steam" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/16318603" target="_blank" title="bilibili"><i class="fa-brands fa-bilibili" style="color: #6b9bbd;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">继续更新文章/整点小活... 左下角有纯音乐歌单 怕自动播放会打扰到人 改成了手动播放</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#valine%E4%B8%8Ewaline"><span class="toc-number">1.</span> <span class="toc-text">valine与waline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitalk"><span class="toc-number">2.</span> <span class="toc-text">gitalk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%85%E8%A8%80%E4%BA%91%E8%AF%84"><span class="toc-number">3.</span> <span class="toc-text">畅言云评</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84C++%E8%87%AA%E5%AD%A6%E7%9B%B8%E5%85%B3/" title="数据结构C++自学相关">数据结构C++自学相关</a><time datetime="2025-11-05T14:36:11.000Z" title="发表于 2025-11-05 22:36:11">2025-11-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/17/%E6%88%91%E6%AD%BB%E5%89%8D%E7%9A%84%E8%AE%B0%E5%BD%95/" title="我死前的记录">我死前的记录</a><time datetime="2025-10-17T00:25:05.000Z" title="发表于 2025-10-17 08:25:05">2025-10-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/29/NewStarCTF-2025/" title="NewStarCTF-2025">NewStarCTF-2025</a><time datetime="2025-09-29T11:45:40.000Z" title="发表于 2025-09-29 19:45:40">2025-09-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/24/%E4%B8%89%E6%AC%BEsteam%E7%95%AA%E8%8C%84%E9%92%9F%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%84/" title="三款steam付费番茄钟软件测评">三款steam付费番茄钟软件测评</a><time datetime="2025-09-24T07:39:52.000Z" title="发表于 2025-09-24 15:39:52">2025-09-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/22/%E5%A4%8F%E4%BB%A4%E8%90%A5-ai/" title="夏令营-ai">夏令营-ai</a><time datetime="2025-09-21T23:04:05.000Z" title="发表于 2025-09-22 07:04:05">2025-09-22</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By nirvana_felis</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div><div class="footer_custom_text">爱来自中国❤</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoooo-ssfj0tji7-nirvanafelis-projects.vercel.app/',
+      region: 'zh-CN',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoooo-ssfj0tji7-nirvanafelis-projects.vercel.app/',
+      region: 'zh-CN',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><meting-js class="no-destroy" id="14440083372" server="netease" type="playlist" fixed="true" order="random" volume="0.3" list-folded="false" list-max-height="36vh"> </meting-js><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://npm.elemecdn.com/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/aplayer/dist/APlayer.min.js"></script><script src="https://npm.elemecdn.com/meting/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
