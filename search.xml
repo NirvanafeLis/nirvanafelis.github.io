@@ -29,33 +29,6 @@
     
     
     <entry>
-      <title>某大赛wp复现</title>
-      <link href="/2025/11/25/%E6%9F%90%E5%A4%A7%E8%B5%9Bwp%E5%A4%8D%E7%8E%B0/"/>
-      <url>/2025/11/25/%E6%9F%90%E5%A4%A7%E8%B5%9Bwp%E5%A4%8D%E7%8E%B0/</url>
-      
-        <content type="html"><![CDATA[<p><strong>因为的确窝火所以就不列名字了 多少也算信息保护</strong><br>对比赛的愤怒&#x2F;吐槽在最底下的环节 ⚠<strong>血压飙升警告</strong>⚠</p><h1 id="复现流程"><a href="#复现流程" class="headerlink" title="复现流程"></a>复现流程</h1><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h2 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h2><h2 id="Game-趣味游戏"><a href="#Game-趣味游戏" class="headerlink" title="Game 趣味游戏"></a>Game 趣味游戏</h2><h2 id="CDF-电子取证"><a href="#CDF-电子取证" class="headerlink" title="CDF 电子取证"></a>CDF 电子取证</h2><h2 id="InfoSEC-数据安全"><a href="#InfoSEC-数据安全" class="headerlink" title="InfoSEC 数据安全"></a>InfoSEC 数据安全</h2><h1 id="发生了什么"><a href="#发生了什么" class="headerlink" title="发生了什么"></a>发生了什么</h1><p>第一幕——<strong>广发邀请函 发现来的人太多 遂在赛前一周突发反悔 设立所谓“初赛”门槛 要从参赛的180队中筛出80队进入“线下决赛”</strong><br>参赛者多数毫无准备 火车&#x2F;飞机票早已定下 如今需要承担经济损失 更有甚者由于事发突然无法参与线上初赛<br>虽主办方接受群中半小时谩骂后表示会报销损失 却早已失去公信力 在各位心中立下了<strong>草台班子</strong>的深刻印象<br>第二幕——<strong>线上初赛还能出事故</strong> 比赛于晚上7点-9点半 本已临近深夜 分为100道理论题+部分CTF实战题目<br>开赛半小时左右 网页开始出现不可逆的<strong>卡顿&#x2F;强制登退&#x2F;500 502报错</strong> 引得众人抱怨不断<br>官方顶着众人的火力 足足过了十分钟才回复——在修了 稍安勿躁<br>过了一会通过<strong>下架所有环境题+随后逐渐开放+限制一队只能开一个环境（一队四个web手只能对着一个题干瞪眼）<strong>的方式阻止了卡顿<br>同时众人的</strong>理论题进度</strong>更是被反复重置了<strong>四次</strong> 不少刚刚答完的直接开骂了<br>别忘了 时间还在走呢 在重压之下 时间被延长了一小时 到<strong>下午十点半</strong> 基本临近大部分学校的<strong>封宿时间</strong><br>第三幕——<strong>闲鱼买&#x2F;卖家恐成最大赢家</strong><br>比赛的最后十分钟 我们队的排名<strong>骤降了约20</strong>  排行榜Top 10更是出现了<strong>十分钟内答出数题 名次螺旋上升的斗宗强者</strong><br>官方交流群中更有人贴出了某平台<strong>明码标价30&#x2F;50rmb的赛事答案</strong>商品截图<br>下一天随后列出的晋级名单<strong>没有排名&#x2F;分数</strong> 是按照字母顺序排序的 实在令人疑惑<br>明明比赛时都在公开各赛道的比分 最后却搞这套 哪个部分不好公开了？<br>赛后有反馈邮箱 通过该渠道与比赛的技术人员进行了联系 他表示（以下发言摘自该技术人员的原话）:<br>1.我队的比分在<strong>不经处理</strong>（比赛方说会<strong>按照wp的情况扣分</strong>）的情况下位于<strong>第94名</strong><br>2.最后十分钟飙升的队伍已遭受<strong>禁赛+警告</strong>处理<br>3.同校进行分享flag的队伍 分享flag方<strong>禁赛处理</strong> 输入flag方对不正当手段答出的题目<strong>进行扣分（-70%）处理</strong> 有队伍排名惩罚后从<strong>第十名掉到了第六十名</strong> （也就是说不仅没有全部禁赛 而是对主观恶意的作弊者进行了晋级处理？？？）<br>4.我只负责技术支持 仲裁&#x2F;审批方面的活是<strong>主办方</strong>负责的 我这里无权干涉<br>我队在初赛中<strong>有人员缺失</strong> 且确实存在<strong>技不如人</strong>的情况 只得接受淘汰的结果 但却是憋屈至极 摸不着头脑的<strong>惜败</strong><br>说到底人也说累了 还是老实看看题吧</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> CTF </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CTF </tag>
-            
-            <tag> 编辑中 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>数据结构C++自学相关</title>
       <link href="//2025/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%87%AA%E5%AD%A6%E7%9B%B8%E5%85%B3/"/>
       <url>//2025/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%87%AA%E5%AD%A6%E7%9B%B8%E5%85%B3/</url>
