@@ -8,7 +8,7 @@
       <link href="/2026/01/11/%E7%A7%98%E5%AF%86%E7%BB%93%E7%A4%BE%E5%BC%80%E5%8F%91%E6%B1%87%E6%8A%A5/"/>
       <url>/2026/01/11/%E7%A7%98%E5%AF%86%E7%BB%93%E7%A4%BE%E5%BC%80%E5%8F%91%E6%B1%87%E6%8A%A5/</url>
       
-        <content type="html"><![CDATA[<div class="note blue modern icon-padding flat"><i class="note-icon fa fa-circle-info"></i><p>该文章还在更新中 更新进度大概为 <strong>5%</strong> 最新一次更新的日期为 <strong>2026&#x2F;1&#x2F;11</strong><br>如果那个日期是很久以前的 <del>那该文章大概是腰斩了 不用太过伤心</del></p></div><h1 id="neocities-org是什么"><a href="#neocities-org是什么" class="headerlink" title="neocities.org是什么"></a>neocities.org是什么</h1><p>静态网站托管用的网页<br>简单来说 注册完你就获得了自己的域名+一个专属自己的静态网站</p><h1 id="88×31动图"><a href="#88×31动图" class="headerlink" title="88×31动图"></a>88×31动图</h1><p>翻了不少博客都带怀旧风格的88*31动态按钮 点击之后就能访问博客 我觉得挺酷 但实在不会平面设计 仿了个简易版本<br><img src="2.gif" alt="2">←这个<br>目前在github上边用 挺有感觉的</p><h1 id="webTUI"><a href="#webTUI" class="headerlink" title="webTUI"></a>webTUI</h1><p>目前看下来 这个css库与我想要实现的网页效果差不多 但是前端没怎么特地练过 看来要利用ai+自学点网页设计了<a href="https://maonie.neocities.org/">https://maonie.neocities.org/</a><br>目前下来初具雏形 整体模仿了Webtui用于展示的博客例子</p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<div class="note blue modern icon-padding flat"><i class="note-icon fa fa-circle-info"></i><p>该文章还在更新中 更新进度大概为 <strong>？？？%</strong> 最新一次更新的日期为 <strong>2026&#x2F;1&#x2F;15</strong><br>如果那个日期是很久以前的 <del>那该文章大概是腰斩了 不用太过伤心</del></p></div><h1 id="neocities-org是什么"><a href="#neocities-org是什么" class="headerlink" title="neocities.org是什么"></a>neocities.org是什么</h1><p>静态网站托管用的网页<br>简单来说 注册完你就获得了自己的域名+一个专属自己的静态网站</p><h1 id="88×31动图"><a href="#88×31动图" class="headerlink" title="88×31动图"></a>88×31动图</h1><p>翻了不少博客都带怀旧风格的88*31动态按钮 点击之后就能访问博客 我觉得挺酷 但实在不会平面设计 仿了个简易版本</p><p><img src="2.gif" alt="2"><br>目前在github上边用 挺有感觉的</p><h1 id="webTUI"><a href="#webTUI" class="headerlink" title="webTUI"></a>webTUI</h1><p>目前看下来 这个css库与我想要实现的网页效果差不多 但是前端没怎么特地练过 看来要利用ai+自学点网页设计了     </p><p><a href="https://maonie.neocities.org/">https://maonie.neocities.org/</a><br>目前下来初具雏形 整体模仿了Webtui用于展示的博客例子</p><h1 id="呈现方式"><a href="#呈现方式" class="headerlink" title="呈现方式"></a>呈现方式</h1><p>一点对官方页面的参考+ai辅助 目前把首页写了出来<br>主页该怎么搞呢….<br>想做成类似该博客的读取md文件内容并浏览&#x2F;渲染 但可惜neocities不允许读取文件 遂放弃<br>若是所有内容都做在一个页面上 那就太多冗余了 再想想吧</p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]></content>
       
       
       
@@ -442,9 +442,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -496,9 +496,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -550,9 +550,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -762,9 +762,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -820,9 +820,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
