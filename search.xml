@@ -8,7 +8,7 @@
       <link href="/2026/01/11/%E7%A7%98%E5%AF%86%E7%BB%93%E7%A4%BE%E5%BC%80%E5%8F%91%E6%B1%87%E6%8A%A5/"/>
       <url>/2026/01/11/%E7%A7%98%E5%AF%86%E7%BB%93%E7%A4%BE%E5%BC%80%E5%8F%91%E6%B1%87%E6%8A%A5/</url>
       
-        <content type="html"><![CDATA[<div class="note blue modern icon-padding flat"><i class="note-icon fa fa-circle-info"></i><p>该文章还在更新中 更新进度大概为 <strong>？？？%</strong> 最新一次更新的日期为 <strong>2026&#x2F;1&#x2F;18</strong><br>如果那个日期是很久以前的 <del>那该文章大概是腰斩了 不用太过伤心</del></p></div><h1 id="neocities-org是什么"><a href="#neocities-org是什么" class="headerlink" title="neocities.org是什么"></a>neocities.org是什么</h1><p>静态网站托管用的网页<br>简单来说 注册完你就获得了自己的域名+一个专属自己的静态网站</p><h1 id="88×31动图"><a href="#88×31动图" class="headerlink" title="88×31动图"></a>88×31动图</h1><p>翻了不少博客都带怀旧风格的88*31动态按钮 点击之后就能访问博客 我觉得挺酷 但实在不会平面设计 仿了个简易版本</p><p><img src="2.gif" alt="2"><br>目前在github上边用 挺有感觉的</p><h1 id="webTUI"><a href="#webTUI" class="headerlink" title="webTUI"></a>webTUI</h1><p>目前看下来 这个css库与我想要实现的网页效果差不多 但是前端没怎么特地练过 看来要利用ai+自学点网页设计了     </p><p><a href="https://maonie.neocities.org/">https://maonie.neocities.org/</a><br>目前下来初具雏形 整体模仿了Webtui用于展示的博客例子</p><h1 id="呈现方式"><a href="#呈现方式" class="headerlink" title="呈现方式"></a>呈现方式</h1><p>一点对官方页面的参考+ai辅助 目前把首页写了出来<br>主页该怎么搞呢….<br>想做成类似该博客的读取md文件内容并浏览&#x2F;渲染 但可惜neocities不允许读取文件 遂放弃<br>若是所有内容都做在一个页面上 那就太多冗余了 再想想吧</p><p>目前放文章的仿终端搞完了 但这个不像是主页面 该想想<br>想想整个嵌套结构<br><img src="1.jpg" alt="1"></p><p>cv差不多用ai跑了个透彻 主页面的风格还有待决定…<br>多半是和介绍页面差不多的数字流动背景+内容吧<br>之前想的是套个模板——能替换主题 主题色随上海地铁线路变化</p><blockquote></blockquote><table><thead><tr><th>线路</th><th>标志色</th><th>RGB值</th><th>HEX色号</th><th>备注</th></tr></thead><tbody><tr><td>1号线</td><td>红色</td><td>(234, 27, 57)</td><td>#EA1B39</td><td>标准大红色</td></tr><tr><td>2号线</td><td>绿色</td><td>(139, 196, 63)</td><td>#8BC43F</td><td>淡绿色&#x2F;翠绿色</td></tr><tr><td>3号线</td><td>黄色</td><td>(251, 210, 8)</td><td>#FBD208</td><td>明黄色</td></tr><tr><td>4号线</td><td>紫色</td><td>(81, 45, 141)</td><td>#512D8D</td><td>深紫色</td></tr><tr><td>5号线</td><td>紫红色</td><td>(144, 86, 163)</td><td>#9056A3</td><td>紫红色系</td></tr><tr><td>6号线</td><td>品红色</td><td>(214, 24, 112)</td><td>#D61870</td><td>品红色</td></tr><tr><td>7号线</td><td>橙色</td><td>(244, 113, 33)</td><td>#F47121</td><td>橙色</td></tr><tr><td>8号线</td><td>蓝色</td><td>(0, 158, 219)</td><td>#009EDB</td><td>标准蓝色</td></tr><tr><td>9号线</td><td>天蓝色</td><td>(121, 201, 238)</td><td>#79C9EE</td><td>淡天蓝色</td></tr><tr><td>10号线</td><td>淡紫色</td><td>(189, 168, 211)</td><td>#BDA8D3</td><td>淡紫色</td></tr><tr><td>11号线</td><td>棕色</td><td>(127, 33, 49)</td><td>#7F2131</td><td>深棕色</td></tr><tr><td>12号线</td><td>深绿色</td><td>(1, 124, 103)</td><td>#017C67</td><td>深绿色</td></tr><tr><td>13号线</td><td>粉红色</td><td>(232, 149, 193)</td><td>#E895C1</td><td>粉红色</td></tr><tr><td>14号线</td><td>橄榄绿</td><td>(94, 92, 41)</td><td>#5E5C29</td><td>橄榄绿色</td></tr><tr><td>15号线</td><td>香槟金</td><td>(187, 167, 134)</td><td>#BBA786</td><td>香槟金色</td></tr><tr><td>16号线</td><td>水绿色</td><td>(142, 209, 192)</td><td>#8ED1C0</td><td>水绿色</td></tr><tr><td>17号线</td><td>浅棕色</td><td>(184, 121, 116)</td><td>#B87974</td><td>浅棕色</td></tr><tr><td>18号线</td><td>土黄色</td><td>(186, 160, 81)</td><td>#BAA051</td><td>土黄色</td></tr><tr><td>浦江线</td><td>灰色</td><td>(181, 181, 182)</td><td>#B5B5B6</td><td>中灰色</td></tr><tr><td>磁浮线</td><td>蓝绿色+肉橙色</td><td>(0, 139, 154) &#x2F; (245, 167, 78)</td><td>#008B9A &#x2F; #F5A74E</td><td>双色组合</td></tr></tbody></table><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<div class="note blue modern icon-padding flat"><i class="note-icon fa fa-circle-info"></i><p>该文章还在更新中 更新进度大概为 <strong>？？？%</strong> 最新一次更新的日期为 <strong>2026&#x2F;1&#x2F;18</strong><br>如果那个日期是很久以前的 <del>那该文章大概是腰斩了 不用太过伤心</del></p></div><h1 id="neocities-org是什么"><a href="#neocities-org是什么" class="headerlink" title="neocities.org是什么"></a>neocities.org是什么</h1><p>静态网站托管用的网页<br>简单来说 注册完你就获得了自己的域名+一个专属自己的静态网站</p><h1 id="88×31动图"><a href="#88×31动图" class="headerlink" title="88×31动图"></a>88×31动图</h1><p>翻了不少博客都带怀旧风格的88*31动态按钮 点击之后就能访问博客 我觉得挺酷 实在不会平面设计 仿了个简易版本</p><p><img src="2.gif" alt="2"><br>目前在github上边用 挺有感觉的</p><h1 id="webTUI"><a href="#webTUI" class="headerlink" title="webTUI"></a>webTUI</h1><p>目前看下来 这个css库与我想要实现的网页效果差不多 前端没怎么特地练过 看来要利用ai+自学点网页设计了<br><a href="https://maonie.neocities.org/">https://maonie.neocities.org/</a><br>初具雏形 整体模仿了Webtui用于展示的博客例子</p><h1 id="呈现方式"><a href="#呈现方式" class="headerlink" title="呈现方式"></a>呈现方式</h1><p>一点对官方页面的参考+ai辅助 把首页写了出来<br>主页该怎么搞呢….<br>想做成类似该博客的读取md文件内容并浏览&#x2F;渲染 可惜neocities不允许读取文件 遂放弃<br>若是所有内容都做在一个页面上 那就太多冗余了 再想想吧</p><p>放文章的仿终端搞完了 可风格不像是主页面….<br>想想整个嵌套结构<br><img src="1.jpg" alt="1"></p><p>cv差不多用ai跑了个透彻 主页面的风格还有待决定…<br>多半是和介绍页面差不多的数字流动背景+内容吧<br>之前想的是套个模板——能替换主题 主题色随上海地铁线路变化</p><table><thead><tr><th>线路</th><th>标志色</th><th>RGB值</th><th>HEX色号</th><th>备注</th></tr></thead><tbody><tr><td>1号线</td><td>红色</td><td>(234, 27, 57)</td><td>#EA1B39</td><td>标准大红色</td></tr><tr><td>2号线</td><td>绿色</td><td>(139, 196, 63)</td><td>#8BC43F</td><td>淡绿色&#x2F;翠绿色</td></tr><tr><td>3号线</td><td>黄色</td><td>(251, 210, 8)</td><td>#FBD208</td><td>明黄色</td></tr><tr><td>4号线</td><td>紫色</td><td>(81, 45, 141)</td><td>#512D8D</td><td>深紫色</td></tr><tr><td>5号线</td><td>紫红色</td><td>(144, 86, 163)</td><td>#9056A3</td><td>紫红色系</td></tr><tr><td>6号线</td><td>品红色</td><td>(214, 24, 112)</td><td>#D61870</td><td>品红色</td></tr><tr><td>7号线</td><td>橙色</td><td>(244, 113, 33)</td><td>#F47121</td><td>橙色</td></tr><tr><td>8号线</td><td>蓝色</td><td>(0, 158, 219)</td><td>#009EDB</td><td>标准蓝色</td></tr><tr><td>9号线</td><td>天蓝色</td><td>(121, 201, 238)</td><td>#79C9EE</td><td>淡天蓝色</td></tr><tr><td>10号线</td><td>淡紫色</td><td>(189, 168, 211)</td><td>#BDA8D3</td><td>淡紫色</td></tr><tr><td>11号线</td><td>棕色</td><td>(127, 33, 49)</td><td>#7F2131</td><td>深棕色</td></tr><tr><td>12号线</td><td>深绿色</td><td>(1, 124, 103)</td><td>#017C67</td><td>深绿色</td></tr><tr><td>13号线</td><td>粉红色</td><td>(232, 149, 193)</td><td>#E895C1</td><td>粉红色</td></tr><tr><td>14号线</td><td>橄榄绿</td><td>(94, 92, 41)</td><td>#5E5C29</td><td>橄榄绿色</td></tr><tr><td>15号线</td><td>香槟金</td><td>(187, 167, 134)</td><td>#BBA786</td><td>香槟金色</td></tr><tr><td>16号线</td><td>水绿色</td><td>(142, 209, 192)</td><td>#8ED1C0</td><td>水绿色</td></tr><tr><td>17号线</td><td>浅棕色</td><td>(184, 121, 116)</td><td>#B87974</td><td>浅棕色</td></tr><tr><td>18号线</td><td>土黄色</td><td>(186, 160, 81)</td><td>#BAA051</td><td>土黄色</td></tr><tr><td>浦江线</td><td>灰色</td><td>(181, 181, 182)</td><td>#B5B5B6</td><td>中灰色</td></tr><tr><td>磁浮线</td><td>蓝绿色+肉橙色</td><td>(0, 139, 154) &#x2F; (245, 167, 78)</td><td>#008B9A &#x2F; #F5A74E</td><td>双色组合</td></tr></tbody></table><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]></content>
       
       
       
@@ -442,9 +442,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -496,9 +496,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -550,9 +550,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -762,9 +762,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
@@ -820,9 +820,9 @@
       
         <tags>
             
-            <tag> CTF </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> CTF </tag>
             
         </tags>
       
