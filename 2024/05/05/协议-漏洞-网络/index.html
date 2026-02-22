@@ -231,7 +231,7 @@
 <li><strong>传输层：有了MAC地址和IP地址 我们还需要一个参数 表示这个数据包到底供哪个程序来使用 这个参数就叫’端口’ 实现端口到端口的通信</strong> 相关协议：TCP、UDP协议</li>
 <li>**会话层：负责建立和断开通信连接，以及数据的分割等传输相关的管理 （例：何时建立连接？何时断开连接？该保持多久的连接？）**相关协议：SSL、TLS协议</li>
 <li><strong>表示层：设备固有的数据格式与网络标准数据格式之间的转换 （接受不同的信息，例如文字流、图像、声音等）</strong></li>
-<li><strong>应用层：针对特定应用的协议 网络服务与最终用户的一个接口</strong> 相关协议：HTTP、FTP、DNS、DHCP等协议<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="1.png" alt="1"></li>
+<li><strong>应用层：针对特定应用的协议 网络服务与最终用户的一个接口</strong> 相关协议：HTTP、FTP、DNS、DHCP等协议<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/1.png" alt="1"></li>
 </ol>
 <h2 id="HTTP协议-端口号80-HTTPS协议-端口号443"><a href="#HTTP协议-端口号80-HTTPS协议-端口号443" class="headerlink" title="HTTP协议 端口号80 HTTPS协议 端口号443"></a>HTTP协议 端口号80 HTTPS协议 端口号443</h2><p><strong>Web交互的基本流程</strong><br>请求：客户端根据服务器地址把数据发送给服务器的过程叫请求。<br>响应：服务器将请求的处理结果发送给浏览器的过程叫响应。</p>
 <p><strong>什么是HTTP？</strong><br>概念：超文本传输协议。</p>
@@ -463,20 +463,20 @@
 <li>packet details面板</li>
 <li>packet bytes面板</li>
 </ul>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="12.png" alt="12"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/12.png" alt="12"></p>
 <p>这三个面板之间是相互关联的：</p>
 <p>如果希望在packet details面板中查看一个单独的数据包的具体内容，必须在packet list面板中单机选中那个数据包<br>选中该数据包之后，才可以通过在packet deatils面板中选择数据宝的某个字段进行分析，从而在packet bytes面板中查看相应字段的字节信息</p>
 <h2 id="packet-list"><a href="#packet-list" class="headerlink" title="packet list"></a>packet list</h2><p>packet list面板：以表格的形式显示了当前捕获文件中的所有数据报，从下面可以看出，一共有7列：</p>
 <p>No（Number列）：包的编号<br>默认wireshark是按照数据包编号从低到高排序<br>该编号不会发生改变，即使使用了过滤也同样如此<br>Time列：包的时间戳。时间格式可以自己设置<br>Source列和Destination列：包的源地址和目的地址<br>Protocol列：包的协议类型<br>Length列：包的长度<br>Info列：包的附加信息</p>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="13.png" alt="13"></p>
-<h2 id="packet-details"><a href="#packet-details" class="headerlink" title="packet details"></a>packet details</h2><p>packet details面板：分层的显示了一个数据包中的内容，并且可以通过展开或者收缩来显示这个数据包中所捕获的全部内容<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="14.png" alt="14"><br>默认数据详细信息都是合并的，如果要查看，可以单击每行前面的箭头：<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="15.png" alt="15"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/13.png" alt="13"></p>
+<h2 id="packet-details"><a href="#packet-details" class="headerlink" title="packet details"></a>packet details</h2><p>packet details面板：分层的显示了一个数据包中的内容，并且可以通过展开或者收缩来显示这个数据包中所捕获的全部内容<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/14.png" alt="14"><br>默认数据详细信息都是合并的，如果要查看，可以单击每行前面的箭头：<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/15.png" alt="15"></p>
 <h2 id="packet-bytes"><a href="#packet-bytes" class="headerlink" title="packet bytes"></a>packet bytes</h2><p>packet bytes面板：</p>
 <ul>
 <li>显示了一个数据包未经处理的原始样子，也就是它在链路上传播时的样子。</li>
 <li>在该面板中的数据是以16进制和ASCII格式显示了帧的内容</li>
 <li>当在packet details面板中选择任意一个字段后，在packet bytes面板中包含该字段的字节也高亮显示。</li>
 </ul>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="16.png" alt="16"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/16.png" alt="16"></p>
 </li>
 </ul>
 <h3 id="1-协议过滤器"><a href="#1-协议过滤器" class="headerlink" title="1. 协议过滤器"></a>1. 协议过滤器</h3><ul>

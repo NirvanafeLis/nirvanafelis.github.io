@@ -226,13 +226,13 @@
 <p>可以通过get_int函数达到获取int数值的作用</p>
 <p>const是常量 定义之后无法再更改<br>例<br><code>const int n =3</code></p>
 <p>数据在处理的时候会占用内存<br>而每段数据为了表明字符串已结束会多加一个字节<br>例： 3个字符 将占用3+1个字节</p>
-<p>string 字符串 由char（字符） 组成<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="image.png" alt="image"></p>
-<p>大写和小写字母在acsii码中正好差32<br>小写转大写减去32即可<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="12.png" alt="12"></p>
-<p>比较string用的是strcmp（string1，string2）<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="22.png" alt="22"><br>linear search 线性<br>binary search 二分<br>还有排序相关的<br>选择排序算法<br>一次一次选最小的元素 放到最左边</p>
+<p>string 字符串 由char（字符） 组成<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image.png" alt="image"></p>
+<p>大写和小写字母在acsii码中正好差32<br>小写转大写减去32即可<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/12.png" alt="12"></p>
+<p>比较string用的是strcmp（string1，string2）<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/22.png" alt="22"><br>linear search 线性<br>binary search 二分<br>还有排序相关的<br>选择排序算法<br>一次一次选最小的元素 放到最左边</p>
 <p>冒泡排序算法<br>抓出来一个和别的依次比较<br>假如大就往右移（互换位置）<br>然后依次解决</p>
 <p>选择排序的次数是n（n-1）&#x2F;2 (已编辑)<br>数量大概是n的平方</p>
 <p>冒泡排序的次数为（n-1）（n-1）<br>这俩的上限其实都差不多<br>这俩的上界都是n方<br>下界是<br>冒泡排序在数据已经接近或已经有序的情况下<br>更有优势吧<br>感觉这俩更像是两个顺序不同的排序<br>选择排序主要是从左到右筛选<br>冒泡排序主要是从右到左</p>
-<p>然后是在函数里套函数的情况<br>void draw(int n)<br>{}<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="31.png" alt="31"><br>归并排序<br>把数据拆成两半<br>并分别排好顺序<br>例<br>0136 2457<br>然后先看两边的第一个<br>0<br>排前面<br>现在揭露0右边的1<br>再把1和2比较<br>以此类推<br>归并会将这些数据先拆成两个两个<br>二个排序→四个排序→八个排序<br>以此类推<br>有更好的效率</p>
+<p>然后是在函数里套函数的情况<br>void draw(int n)<br>{}<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/31.png" alt="31"><br>归并排序<br>把数据拆成两半<br>并分别排好顺序<br>例<br>0136 2457<br>然后先看两边的第一个<br>0<br>排前面<br>现在揭露0右边的1<br>再把1和2比较<br>以此类推<br>归并会将这些数据先拆成两个两个<br>二个排序→四个排序→八个排序<br>以此类推<br>有更好的效率</p>
 <p>%p 输出地址<br>变量名前面要加上&amp;<br>上面这个是在printf中的用法<br>定义时使用<code>*p</code> 表明p是一个指针</p>
 <p>静态数组：静态定义的数组在程序加载的时候就已经分配了内存空间，直到函数结束或者程序结束后才会被释放；%20动态数组：由malloc()或new()等函数定义的数组，在程序运行时才申请内存空间，使用完后可以借助free()或delete()手动释放。</p>
 <p>以scanf来获取数据</p>

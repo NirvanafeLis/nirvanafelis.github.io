@@ -228,7 +228,7 @@
 <li>glibc所需要的组件多且版本要求高 基本也同样是没法用yum一站式解决的 需要源码安装</li>
 <li>具体需求（可能不对 可以去实际操作的时候查看目录下的install文件）<br>需要python版本2.7.6以上 3.4以上（python2 3同时需要）<br>gcc版本4.7以上<br>make版本3.79以上<br>bison（有个叫m4的依赖）版本2.7以上</li>
 <li>源码安装运行.&#x2F;configure时 务必谨慎配置–prefix项（决定安装目录） 并且搞懂每个版本的相同软件在系统中的位置</li>
-<li>yum依靠python运行 若更新python时覆盖了原版本 会十分麻烦 重装相同版本也难以恢复 需要通过卸载所有python 以rpm覆盖的方式恢复yum的使用 还有yum的指定python运行路径由文件 &#x2F;usr&#x2F;libexec&#x2F;urlgrabber-ext-down 与 &#x2F;usr&#x2F;bin&#x2F;yum 决定<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="1.jpg" alt="1"><br>如果yum出现了各种各样的问题 记得先检查这两个文件的第一行</li>
+<li>yum依靠python运行 若更新python时覆盖了原版本 会十分麻烦 重装相同版本也难以恢复 需要通过卸载所有python 以rpm覆盖的方式恢复yum的使用 还有yum的指定python运行路径由文件 &#x2F;usr&#x2F;libexec&#x2F;urlgrabber-ext-down 与 &#x2F;usr&#x2F;bin&#x2F;yum 决定<br><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/1.jpg" alt="1"><br>如果yum出现了各种各样的问题 记得先检查这两个文件的第一行</li>
 <li>源码安装时有些软件会强制你在文件夹下新建build文件夹再执行configure 这里建议先手创建好文件夹再..&#x2F;configure 先下手为强</li>
 <li>源码安装gcc非常非常慢 建议做好等待半小时-一小时（基于你make时候指定的-j参数 后面会说）的准备</li>
 <li>更新glibc似乎会导致不少命令暂时失效 如果你是通过ssh等命令连接的服务器 务必不要退出 不然会导致服务器爆炸可以<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35345103/article/details/99679506">参考这玩意里的代码</a>试图恢复</li>
