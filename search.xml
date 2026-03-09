@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>数据库原理</title>
+      <title>数据库原理相关</title>
       <link href="/2026/03/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/"/>
       <url>/2026/03/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<div class="note blue modern icon-padding flat"><i class="note-icon fa fa-circle-info"></i><p>该文章还在更新中 更新进度大概为<strong>0%</strong> 最新一次更新的日期为 <strong>2026年3月7日</strong><br>如果那个日期是很久以前的 <del>那该文章大概是腰斩了 不用太过伤心</del></p></div><h1 id="标题文字"><a href="#标题文字" class="headerlink" title="标题文字"></a>标题文字</h1><p>因为有这样的课所以开个新文章 内容后边跟上</p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<div class="note blue modern icon-padding flat"><i class="note-icon fa fa-circle-info"></i><p>该文章还在更新中 更新进度大概为<strong>我也不知道</strong> 最新一次更新的日期为 <strong>2026年3月9日</strong><br>如果那个日期是很久以前的 <del>那该文章大概是腰斩了 不用太过伤心</del></p></div><p>因为有这样的课所以开个新文 内容后边跟上</p><h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h2><h3 id="数据库技术的基本术语"><a href="#数据库技术的基本术语" class="headerlink" title="数据库技术的基本术语"></a>数据库技术的基本术语</h3><p>1.DB 数据库<br>通俗的讲 可以把数据库比作仓库<br>仓库是保存和管理物资的 并能根据其服务对象的要求随时提供所需物资<br>数据库是存储和管理数据并负责向用户提供所需数据的”机构” 只不过这个仓库是在计算机存储设备上 同时数据是按一定的格式存放的<br><strong>所谓数据库 是指<em>长期存储在计算机内的 有组织的 可共享的</em>数据集合</strong></p><p>2.DBS 数据库系统<br>数据库系统包括和数据库有关的整个系统 一般由数据库、数据库管理系统、应用程序、数据库管理员和用户等构成<br>当然 人们也常把除人以外与数据库有关的硬件和软件系统称为数据库系统<br>数据库的设计、建立、管理、维护和协调各用户对数据库的要求等工作 只靠一个数据库管理系统远远不够 还要有专门的人员来完成 这些人被称为 <strong>数据库管理员</strong> (Database Administrators,DBA)<br>DBA应该对程序语言和系统软件(如OS、DBMS等)都比较熟悉 还要了解各应用部门的所有业务工作<br>因此DBA不一定只是一个人 尤其对于一些大型数据库系统 它往往是一个工作小组 </p><p>3.DBMS 数据库管理系统<br>数据库管理系统是专门用于建立和管理数据库的一套软件 介于应用程序和操作系统之间<br>它为用户或应用程序提供访问数据库的方法 包括数据库的<strong>定义 查询 更新 和 各种数据控制</strong><br>也就是说 DBMS不仅具有最基本的数据管理功能 还能保证数据的完整性、安全性、提供多用户的并发控制 当数据库出现故障时对系统进行恢复</p><p>三者之间的关系是<strong>DBS包括DB和DBMS</strong></p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><p>全文提纲与大部分内容摘自 <strong>第3版 《数据库原理及应用》 清华大学出版社</strong></p><hr><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]></content>
       
       
       
@@ -505,9 +505,9 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -559,9 +559,9 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -613,9 +613,9 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -825,9 +825,9 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -883,9 +883,9 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
             <tag> CTF </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
