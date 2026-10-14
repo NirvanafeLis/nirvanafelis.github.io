@@ -11,21 +11,21 @@
   <rights>All rights reserved 2026, nirvana_felis</rights>
   <subtitle>呜喵~~~~</subtitle>
   <title>猫涅的秘密结社</title>
-  <updated>2026-09-23T03:09:53.251Z</updated>
+  <updated>2026-10-04T06:33:34.091Z</updated>
   <entry>
     <author>
       <name>nirvana_felis</name>
     </author>
     <category term="学习" scheme="http://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
     <content>
-      <![CDATA[<h2 id="Dataease"><a href="#Dataease" class="headerlink" title="Dataease"></a>Dataease</h2><p>使用文档网上搜搜就有 我接触到的是V2版本<br>是个较为简易的数据可视化 网页端应用 只要导入数据作为数据源 投入筛选语句&#x2F;函数精简为数据集 </p><h2 id="siem-asoc-安全产品"><a href="#siem-asoc-安全产品" class="headerlink" title="siem&#x2F;asoc 安全产品"></a>siem&#x2F;asoc 安全产品</h2><p>相关词汇啥的:elk use case 告警规则编写</p><p>整个流程下来就是<br>——公司处接到租户的需求 对对方的网络环境 告警细则等进行沟通<br>——公司根据如上信息编辑安全产品处的告警规则（use case） 并持续联系与更新<br>——投入使用阶段 期间涉及不间断的规则调整 威胁情报分析&#x2F;加白&#x2F;拉黑<br>——直到结束为止 公司处总结周次&#x2F;月次的报告 并不断反馈给公司</p><p>是的 期间涉及了极其之多的交流 沟通 不断与客户确认其所需 并尽可能满足其需求 直到整个过程可以被简化为一段较为简易的流程 便能放心交给自动化的程序去处理 期间经由人工审核即可</p><p>或者说 在编辑use case时为告警严重程度分级 </p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><hr><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]>
+      <![CDATA[<p>撇去前言 总之入了行 体会到了企业与学院的大不同<br>实业阶段终究是要求<strong>积累经验</strong> 信息安全则更甚</p><h2 id="Dataease"><a href="#Dataease" class="headerlink" title="Dataease"></a>Dataease</h2><p>使用文档网上搜搜就有 我接触到的是V2版本<br>是个较为简易的数据可视化 网页端应用 只要导入数据作为数据源 投入筛选语句&#x2F;函数精简为数据集 </p><h2 id="siem-asoc-安全产品"><a href="#siem-asoc-安全产品" class="headerlink" title="siem&#x2F;asoc 安全产品"></a>siem&#x2F;asoc 安全产品</h2><p>相关词汇啥的:elk use case 告警规则编写</p><p>整个流程下来就是<br>——公司处接到租户的需求 对对方的网络环境 告警细则等进行沟通<br>——公司根据如上信息编辑安全产品处的告警规则（use case） 并持续联系与更新<br>——投入使用阶段 期间涉及不间断的规则调整 威胁情报分析&#x2F;加白&#x2F;拉黑<br>——直到结束为止 公司处总结周次&#x2F;月次的报告 并不断反馈给公司</p><p>是的 期间涉及了极其之多的交流 沟通 不断与客户确认其所需 并尽可能满足其需求 直到整个过程可以被简化为一段较为简易的流程 便能放心交给自动化的程序去处理 期间经由人工审核即可</p><p>或者说 在编辑use case时为告警严重程度分级 </p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><hr><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]>
     </content>
     <id>http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/</id>
     <link href="http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/"/>
     <published>2026-09-12T06:50:30.000Z</published>
     <summary>记点儿工作时的东西...</summary>
     <title>（soc运营入职后的）见与解</title>
-    <updated>2026-09-23T03:09:53.251Z</updated>
+    <updated>2026-10-04T06:33:34.091Z</updated>
   </entry>
   <entry>
     <author>
@@ -41,8 +41,8 @@
     <link href="http://www.maonie.top/2026/07/13/%E5%85%B3%E4%BA%8E%E5%B0%B1%E8%81%8C%E7%9A%84%E6%80%9D%E8%80%83/"/>
     <published>2026-07-13T03:05:25.000Z</published>
     <summary>嗯 字面意思</summary>
-    <title>关于就职的思考</title>
-    <updated>2026-08-31T21:26:50.762Z</updated>
+    <title>就职的相关思考</title>
+    <updated>2026-10-10T00:28:06.412Z</updated>
   </entry>
   <entry>
     <author>
@@ -83,14 +83,14 @@
     <category term="公告" scheme="http://www.maonie.top/categories/%E5%85%AC%E5%91%8A/"/>
     <category term="公告" scheme="http://www.maonie.top/tags/%E5%85%AC%E5%91%8A/"/>
     <content>
-      <![CDATA[<h2 id="感觉得修缮下内容-所以正文出来前先撤下了-慢慢搞吧"><a href="#感觉得修缮下内容-所以正文出来前先撤下了-慢慢搞吧" class="headerlink" title="感觉得修缮下内容 所以正文出来前先撤下了 慢慢搞吧"></a>感觉得修缮下内容 所以正文出来前先撤下了 慢慢搞吧</h2><p>—— 留于 2026&#x2F;9&#x2F;25</p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>Life is a series of choices.</p></blockquote><p>封面图源自<a href="https://www.bilibili.com/video/BV1u1421f7YH">【初音ミク】JUMPIN’ OVER !【r-906】</a>的PV</p>]]>
+      <![CDATA[<blockquote><p>为了防止大部分”我早说过了”的情况发生 所以先在这立个牌子<br>总比把宇宙安全叠甲声明拿出来简单易懂一些</p></blockquote><h2 id="一、关于作者本人"><a href="#一、关于作者本人" class="headerlink" title="一、关于作者本人"></a>一、关于作者本人</h2><p>我将我在网络上的正式名称设定为nirvana_felis 中文名为猫涅<br>命名成分喜欢的乐队名涅槃 还有命运石之门里的菲利斯喵喵 译名取了倒装</p><p>头像就是自个儿画的 这个常换 没啥好说的</p><p>既然是互联网 那重名&#x2F;高仿&#x2F;冒充等行为基本不可避免 请谨记以下事项:<br>除了该网站中提供的部分其他平台的账号链接以及邮箱联系方式 其余都<strong>无法保证是我本人</strong><br>若因此导致任何损失 本人将概不负责 </p><p>为避免不必要的误会并做一个基本的自我介绍 本人将表明以下真实身份<br>本人性别为男 异性恋 有精神疾病史 已随服药与诊疗大致恢复<br>即便在大数据时代难以拥有太多隐私 本人依旧不建议您在互联网中公开太多现实讯息</p><h2 id="二、关于AI生成内容"><a href="#二、关于AI生成内容" class="headerlink" title="二、关于AI生成内容"></a>二、关于AI生成内容</h2><p>距今2026年 生成式人工智能实力突飞猛进 正是对各行各业造成影响的磨合期<br>本人有关ai的相关申明与使用范围如下:<br>——本人支持ai可作为工具解决大部分的技术问题 但用于艺术创作较为乏善可陈 鲜有良作 且有版权之嫌<br>——本人在构建网站框架（静态HTML&#x2F;css&#x2F;js部分）时使用了ai 且本人进行的大多是微调<br>——本人承诺在书写博客文章&#x2F;随笔&#x2F;动漫简评 部分时 除去特意标注与引用内容 皆为本人人工书写 </p><h2 id="三、关于创作部分"><a href="#三、关于创作部分" class="headerlink" title="三、关于创作部分"></a>三、关于创作部分</h2><p>分站的原因主要是我想分开不太严肃的内容&#x2F;技术和工作方面的分享<br>关于个人主页中随笔的相关申明:<br>其中大部分就是我脑子里蹦出来 经过部分剪切的事物 因此包含以下成分——胡言乱语 毫无逻辑 虚拟创作 </p><h2 id="四、关于评论区-留言功能"><a href="#四、关于评论区-留言功能" class="headerlink" title="四、关于评论区\留言功能"></a>四、关于评论区\留言功能</h2><p>我懒得立太多规矩 总之别吵架 以下是作为提议的参考 大可集中于以下用途 </p><p>——对网站本身&#x2F;所发布文章相关内容的讨论<br>——各种介绍 问好与日常向分享<br>——在我能力范围内的问答</p><h2 id="五、不知该不该说的"><a href="#五、不知该不该说的" class="headerlink" title="五、不知该不该说的"></a>五、不知该不该说的</h2><p>本人没有较为鲜明的政治立场 且对建政没有太多兴趣 会尽量回避对政治的直球讨论</p><p>我不太建议未成年和心智不成熟的小崽子看到我酒后写的胡话开始遐想联翩 希望相关人员能自行回避</p><p>就这点了 后边我想起来了再加 </p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><blockquote><p>Life is a series of choices.</p></blockquote><p>封面图源自<a href="https://www.bilibili.com/video/BV1u1421f7YH">【初音ミク】JUMPIN’ OVER !【r-906】</a>的PV</p>]]>
     </content>
     <id>http://www.maonie.top/2026/02/27/%E5%85%B3%E4%BA%8E%E5%9C%A8%E4%B8%8E%E6%88%91%E4%BA%92%E5%8A%A8%E5%89%8D%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E4%BA%8B/</id>
     <link href="http://www.maonie.top/2026/02/27/%E5%85%B3%E4%BA%8E%E5%9C%A8%E4%B8%8E%E6%88%91%E4%BA%92%E5%8A%A8%E5%89%8D%E4%BD%A0%E5%8F%AF%E8%83%BD%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E4%BA%8B/"/>
     <published>2026-02-27T11:02:24.000Z</published>
     <summary>字面意思 后边会放在评论区上边用于公示</summary>
     <title>关于在与我互动前你可能需要了解的事</title>
-    <updated>2026-09-24T23:31:00.152Z</updated>
+    <updated>2026-10-14T00:40:44.811Z</updated>
   </entry>
   <entry>
     <author>
