@@ -11,21 +11,21 @@
   <rights>All rights reserved 2026, nirvana_felis</rights>
   <subtitle>呜喵~~~~</subtitle>
   <title>猫涅的秘密结社</title>
-  <updated>2026-10-21T00:51:21.618Z</updated>
+  <updated>2026-10-21T02:31:35.814Z</updated>
   <entry>
     <author>
       <name>nirvana_felis</name>
     </author>
     <category term="学习" scheme="http://www.maonie.top/tags/%E5%AD%A6%E4%B9%A0/"/>
     <content>
-      <![CDATA[<p>撇去前言 总之入了行 体会到了企业与学院的大不同<br>实业阶段终究是要求<strong>积累经验</strong> 信息安全则更甚</p><h2 id="Dataease"><a href="#Dataease" class="headerlink" title="Dataease"></a>Dataease</h2><p>使用文档网上搜搜就有 我接触到的是V2版本<br>是个较为简易的数据可视化 网页端应用 只要导入数据作为数据源 投入筛选语句&#x2F;函数精简为数据集 </p><h2 id="siem-asoc-安全产品"><a href="#siem-asoc-安全产品" class="headerlink" title="siem&#x2F;asoc 安全产品"></a>siem&#x2F;asoc 安全产品</h2><p>相关词汇啥的:elk use case 告警规则编写</p><p>整个流程下来就是<br>——公司处接到租户的需求 对对方的网络环境 告警细则等进行沟通<br>——公司根据如上信息编辑安全产品处的告警规则（use case） 并持续联系与更新<br>——投入使用阶段 期间涉及不间断的规则调整 威胁情报分析&#x2F;加白&#x2F;拉黑<br>——直到结束为止 公司处总结周次&#x2F;月次的报告 并不断反馈给公司</p><p>是的 期间涉及了极其之多的交流 沟通 不断与客户确认其所需 并尽可能满足其需求 直到整个过程可以被简化为一段较为简易的流程 便能放心交给自动化的程序去处理 期间经由人工审核即可</p><p>或者说 在编辑use case时为告警严重程度分级 </p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><hr><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]>
+      <![CDATA[<p>撇去前言 总之入了行 体会到了企业与学院的大不同<br>实业阶段终究是要求<strong>积累经验</strong> 信息安全则更甚</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>想了想还是最好把结论放在前边 后边都是些备忘录和笔记作用的片段<br>1.蓝队初级hw 尤其是<strong>值守工作</strong> 基本类似于门卫大爷或是搬砖 属于是个人经过2-3天系统性培训便能熟练掌握的活儿<br>即使工钱给的较多 期间大多涉及<strong>7*24小时 两班换</strong>的机制 建议在面试时仔细询问相关安排 避免踩坑<br>注:值守岗的工作强度基本与告警数量有关 一般来说公司会根据告警类型构建对应的sop<br>紧急情况都是及时联系上级 并不会有把应急响应安心交给你的部分<br>综上所述  实际上手<strong>重复性极高</strong> 且<strong>碎片化时间即便很多 也无法合理利用</strong> 属于较为耗人的工作</p><p> 2.关于职位的问题 不论是仅做实习还是期望转正 建议询问有没有一套完整的<strong>练习&amp;实战</strong>业务流程<br>类似于先做两周-一个月的练习 随后正式开始处理业务 与用户层进行对接 类似于打怪升级的循序渐进<br>若是连<strong>口头形式的许诺</strong>都没有 抑或是<strong>管理人员层层嵌套 上下信息不流通 有活基本都是高层随意分配</strong><br>多少能体现出该企业内部管理混乱 不建议您长待</p><h2 id="Dataease"><a href="#Dataease" class="headerlink" title="Dataease"></a>Dataease</h2><p>使用文档网上搜搜就有 我接触到的是V2版本<br>是个较为简易的数据可视化 网页端应用 只要导入数据作为数据源 投入筛选语句&#x2F;函数精简为数据集 </p><h2 id="siem-asoc-安全产品"><a href="#siem-asoc-安全产品" class="headerlink" title="siem&#x2F;asoc 安全产品"></a>siem&#x2F;asoc 安全产品</h2><p>相关词汇啥的:elk use case 告警规则编写</p><p>整个流程下来就是<br>——公司处接到租户的需求 对对方的网络环境 告警细则等进行沟通<br>——公司根据如上信息编辑安全产品处的告警规则（use case） 并持续联系与更新<br>——投入使用阶段 期间涉及不间断的规则调整 威胁情报分析&#x2F;加白&#x2F;拉黑<br>——直到结束为止 公司处总结周次&#x2F;月次的报告 并不断反馈给公司</p><p>是的 期间涉及了极其之多的交流 沟通 不断与客户确认其所需 并尽可能满足其需求 直到整个过程可以被简化为一段较为简易的流程 便能放心交给自动化的程序去处理 期间经由人工审核即可</p><p>或者说 在编辑use case时为告警严重程度分级 </p><h1 id="结尾-引用"><a href="#结尾-引用" class="headerlink" title="结尾&#x2F;引用"></a>结尾&#x2F;引用</h1><hr><blockquote><p>We are just another visitor in a transient world.</p></blockquote>]]>
     </content>
     <id>http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/</id>
     <link href="http://www.maonie.top/2026/09/12/%E6%9C%89%E5%85%B3%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%9A%84%E8%A7%81%E4%B8%8E%E8%A7%A3/"/>
     <published>2026-09-12T06:50:30.000Z</published>
     <summary>记点儿工作时的东西...</summary>
     <title>（soc运营入职后的）见与解</title>
-    <updated>2026-10-21T00:51:21.618Z</updated>
+    <updated>2026-10-21T02:31:35.814Z</updated>
   </entry>
   <entry>
     <author>
